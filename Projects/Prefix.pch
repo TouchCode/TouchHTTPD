@@ -1,0 +1,15 @@
+//
+// Prefix header for all source files of the 'TouchHTTP' target in the 'TouchHTTP' project.
+//
+
+#ifdef __OBJC__
+    #import <Foundation/Foundation.h>
+	
+	#define LOGGING 1
+	
+	#if LOGGING
+	#define LOG_ NSLog
+	#else
+	#define LOG_
+	#endif
+#endif

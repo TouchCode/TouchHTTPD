@@ -1,0 +1,291 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 45;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		45260F500EEDC97B0032CEE1 /* CMultiInputStream.m in Sources */ = {isa = PBXBuildFile; fileRef = 45260F4E0EEDC97B0032CEE1 /* CMultiInputStream.m */; };
+		45A8F7990EED843D00F076A5 /* CTCPEchoConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8F7980EED843D00F076A5 /* CTCPEchoConnection.m */; };
+		45A8F7AA0EED844900F076A5 /* CLoggingConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8F79E0EED844900F076A5 /* CLoggingConnection.m */; };
+		45A8F7AC0EED844900F076A5 /* CTCPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8F7A20EED844900F076A5 /* CTCPConnection.m */; };
+		45A8F7AD0EED844900F076A5 /* CTCPSocketListener.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8F7A40EED844900F076A5 /* CTCPSocketListener.m */; };
+		45A8F7AE0EED844900F076A5 /* CTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8F7A60EED844900F076A5 /* CTransport.m */; };
+		45A8F7AF0EED844900F076A5 /* CWireProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8F7A80EED844900F076A5 /* CWireProtocol.m */; };
+		45A8F7D50EED847900F076A5 /* CStreamConnector.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8F7BE0EED847900F076A5 /* CStreamConnector.m */; };
+		45A8F7DB0EED847900F076A5 /* NSStream_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8F7CA0EED847900F076A5 /* NSStream_Extensions.m */; };
+		45A8F88A0EED880D00F076A5 /* CTCPEchoServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8F8890EED880D00F076A5 /* CTCPEchoServer.m */; };
+		45A8F96E0EED91A900F076A5 /* CTCPSocketListener_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45A8F96D0EED91A900F076A5 /* CTCPSocketListener_Extensions.m */; };
+		8DD76F9A0486AA7600D96B5E /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.m */; settings = {ATTRIBUTES = (); }; };
+		8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 08FB779EFE84155DC02AAC07 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F9E0486AA7600D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08FB7796FE84155DC02AAC07 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		08FB779EFE84155DC02AAC07 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = /System/Library/Frameworks/Foundation.framework; sourceTree = "<absolute>"; };
+		45260F4E0EEDC97B0032CEE1 /* CMultiInputStream.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CMultiInputStream.m; sourceTree = "<group>"; };
+		45260F4F0EEDC97B0032CEE1 /* CMultiInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMultiInputStream.h; sourceTree = "<group>"; };
+		45A8F7970EED843D00F076A5 /* CTCPEchoConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCPEchoConnection.h; sourceTree = "<group>"; };
+		45A8F7980EED843D00F076A5 /* CTCPEchoConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCPEchoConnection.m; sourceTree = "<group>"; };
+		45A8F79D0EED844900F076A5 /* CLoggingConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CLoggingConnection.h; sourceTree = "<group>"; };
+		45A8F79E0EED844900F076A5 /* CLoggingConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CLoggingConnection.m; sourceTree = "<group>"; };
+		45A8F7A10EED844900F076A5 /* CTCPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCPConnection.h; sourceTree = "<group>"; };
+		45A8F7A20EED844900F076A5 /* CTCPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCPConnection.m; sourceTree = "<group>"; };
+		45A8F7A30EED844900F076A5 /* CTCPSocketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCPSocketListener.h; sourceTree = "<group>"; };
+		45A8F7A40EED844900F076A5 /* CTCPSocketListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCPSocketListener.m; sourceTree = "<group>"; };
+		45A8F7A50EED844900F076A5 /* CTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTransport.h; sourceTree = "<group>"; };
+		45A8F7A60EED844900F076A5 /* CTransport.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTransport.m; sourceTree = "<group>"; };
+		45A8F7A70EED844900F076A5 /* CWireProtocol.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWireProtocol.h; sourceTree = "<group>"; };
+		45A8F7A80EED844900F076A5 /* CWireProtocol.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWireProtocol.m; sourceTree = "<group>"; };
+		45A8F7BD0EED847900F076A5 /* CStreamConnector.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CStreamConnector.h; sourceTree = "<group>"; };
+		45A8F7BE0EED847900F076A5 /* CStreamConnector.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CStreamConnector.m; sourceTree = "<group>"; };
+		45A8F7C90EED847900F076A5 /* NSStream_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStream_Extensions.h; sourceTree = "<group>"; };
+		45A8F7CA0EED847900F076A5 /* NSStream_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStream_Extensions.m; sourceTree = "<group>"; };
+		45A8F8880EED880D00F076A5 /* CTCPEchoServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCPEchoServer.h; sourceTree = "<group>"; };
+		45A8F8890EED880D00F076A5 /* CTCPEchoServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCPEchoServer.m; sourceTree = "<group>"; };
+		45A8F96C0EED91A900F076A5 /* CTCPSocketListener_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCPSocketListener_Extensions.h; sourceTree = "<group>"; };
+		45A8F96D0EED91A900F076A5 /* CTCPSocketListener_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCPSocketListener_Extensions.m; sourceTree = "<group>"; };
+		45A8F98F0EED944F00F076A5 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Prefix.pch; sourceTree = "<group>"; };
+		8DD76FA10486AA7600D96B5E /* Echo */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Echo; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F9B0486AA7600D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD76F9C0486AA7600D96B5E /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* Echo */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source */,
+				45A8F79A0EED844900F076A5 /* Connections */,
+				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = Echo;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				45A8F7970EED843D00F076A5 /* CTCPEchoConnection.h */,
+				45A8F7980EED843D00F076A5 /* CTCPEchoConnection.m */,
+				45A8F8880EED880D00F076A5 /* CTCPEchoServer.h */,
+				45A8F8890EED880D00F076A5 /* CTCPEchoServer.m */,
+				08FB7796FE84155DC02AAC07 /* main.m */,
+				45A8F98F0EED944F00F076A5 /* Prefix.pch */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */ = {
+			isa = PBXGroup;
+			children = (
+				08FB779EFE84155DC02AAC07 /* Foundation.framework */,
+			);
+			name = "External Frameworks and Libraries";
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76FA10486AA7600D96B5E /* Echo */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		45A8F79A0EED844900F076A5 /* Connections */ = {
+			isa = PBXGroup;
+			children = (
+				45A8F79D0EED844900F076A5 /* CLoggingConnection.h */,
+				45A8F79E0EED844900F076A5 /* CLoggingConnection.m */,
+				45A8F7A10EED844900F076A5 /* CTCPConnection.h */,
+				45A8F7A20EED844900F076A5 /* CTCPConnection.m */,
+				45A8F7A30EED844900F076A5 /* CTCPSocketListener.h */,
+				45A8F7A40EED844900F076A5 /* CTCPSocketListener.m */,
+				45A8F96C0EED91A900F076A5 /* CTCPSocketListener_Extensions.h */,
+				45A8F96D0EED91A900F076A5 /* CTCPSocketListener_Extensions.m */,
+				45A8F7A50EED844900F076A5 /* CTransport.h */,
+				45A8F7A60EED844900F076A5 /* CTransport.m */,
+				45A8F7A70EED844900F076A5 /* CWireProtocol.h */,
+				45A8F7A80EED844900F076A5 /* CWireProtocol.m */,
+				45A8F7BA0EED847900F076A5 /* Support */,
+			);
+			name = Connections;
+			path = ../../Source/Connections;
+			sourceTree = SOURCE_ROOT;
+		};
+		45A8F7BA0EED847900F076A5 /* Support */ = {
+			isa = PBXGroup;
+			children = (
+				45A8F7BD0EED847900F076A5 /* CStreamConnector.h */,
+				45A8F7BE0EED847900F076A5 /* CStreamConnector.m */,
+				45A8F7C90EED847900F076A5 /* NSStream_Extensions.h */,
+				45A8F7CA0EED847900F076A5 /* NSStream_Extensions.m */,
+				45260F4F0EEDC97B0032CEE1 /* CMultiInputStream.h */,
+				45260F4E0EEDC97B0032CEE1 /* CMultiInputStream.m */,
+			);
+			name = Support;
+			path = ../../Source/Support;
+			sourceTree = SOURCE_ROOT;
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F960486AA7600D96B5E /* Echo */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "Echo" */;
+			buildPhases = (
+				8DD76F990486AA7600D96B5E /* Sources */,
+				8DD76F9B0486AA7600D96B5E /* Frameworks */,
+				8DD76F9E0486AA7600D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Echo;
+			productInstallPath = "$(HOME)/bin";
+			productName = Echo;
+			productReference = 8DD76FA10486AA7600D96B5E /* Echo */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "Echo" */;
+			compatibilityVersion = "Xcode 3.1";
+			hasScannedForEncodings = 1;
+			mainGroup = 08FB7794FE84155DC02AAC07 /* Echo */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76F960486AA7600D96B5E /* Echo */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F990486AA7600D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8DD76F9A0486AA7600D96B5E /* main.m in Sources */,
+				45A8F7990EED843D00F076A5 /* CTCPEchoConnection.m in Sources */,
+				45A8F7AA0EED844900F076A5 /* CLoggingConnection.m in Sources */,
+				45A8F7AC0EED844900F076A5 /* CTCPConnection.m in Sources */,
+				45A8F7AD0EED844900F076A5 /* CTCPSocketListener.m in Sources */,
+				45A8F7AE0EED844900F076A5 /* CTransport.m in Sources */,
+				45A8F7AF0EED844900F076A5 /* CWireProtocol.m in Sources */,
+				45A8F7D50EED847900F076A5 /* CStreamConnector.m in Sources */,
+				45A8F7DB0EED847900F076A5 /* NSStream_Extensions.m in Sources */,
+				45A8F88A0EED880D00F076A5 /* CTCPEchoServer.m in Sources */,
+				45A8F96E0EED91A900F076A5 /* CTCPSocketListener_Extensions.m in Sources */,
+				45260F500EEDC97B0032CEE1 /* CMultiInputStream.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB927508733DD40010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREFIX_HEADER = Prefix.pch;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = Echo;
+			};
+			name = Debug;
+		};
+		1DEB927608733DD40010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				GCC_PREFIX_HEADER = Prefix.pch;
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = Echo;
+			};
+			name = Release;
+		};
+		1DEB927908733DD40010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Debug;
+		};
+		1DEB927A08733DD40010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				PREBINDING = NO;
+				SDKROOT = macosx10.5;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB927408733DD40010E9CD /* Build configuration list for PBXNativeTarget "Echo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB927508733DD40010E9CD /* Debug */,
+				1DEB927608733DD40010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "Echo" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB927908733DD40010E9CD /* Debug */,
+				1DEB927A08733DD40010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}
