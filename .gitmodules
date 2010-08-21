@@ -1,6 +1,0 @@
-[submodule "Externals/TouchXML"]
-	path = Externals/TouchXML
-	url = git@github.com:schwa/TouchXML.git
-[submodule "Externals/TouchFoundation"]
-	path = Externals/TouchFoundation
-	url = git@github.com:schwa/TouchFoundation.git
