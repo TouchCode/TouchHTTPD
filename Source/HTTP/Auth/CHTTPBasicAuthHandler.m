@@ -70,9 +70,9 @@ if (theAuthorizationHeader)
 		NSString *theString = NULL;
 		if ([theScanner scanCharactersFromSet:theBase64Characters intoString:&theString])
 			{
-			size_t theBufferSize = EstimateBas64DecodedDataSize([theString length]);
+			size_t theBufferSize = EstimateBas64DecodedDataSize([theString length], 0);
 			NSMutableData *theBuffer = [NSMutableData dataWithLength:theBufferSize];
-			BOOL theResult = Base64DecodeData([theString UTF8String], [theString length], [theBuffer mutableBytes], &theBufferSize);
+			BOOL theResult = Base64DecodeData([theString UTF8String], [theString length], [theBuffer mutableBytes], &theBufferSize, 0);
 			if (theResult == YES)
 				{
 				[theBuffer setLength:theBufferSize];

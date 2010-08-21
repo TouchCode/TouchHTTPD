@@ -93,7 +93,7 @@ for (NSString *theHeader in self.defaultHeaders)
 
 if ([theResponse responseStatusCode] >= 200 && [theResponse headerForKey:@"Date"] == NULL)
 	{
-	[theResponse setHeader:[[NSDate date] RFC1822StringValue] forKey:@"Date"];
+	[theResponse setHeader:[[NSDate date] RFC822String] forKey:@"Date"];
 	}
 
 // Tue, 15 Nov 1994 08:12:31 GMT

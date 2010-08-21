@@ -197,7 +197,7 @@ if ([self.fileSystem fileExistsAtPath:thePath isDirectory:&theIsDirectoryFlag] =
 
 		NSDictionary *theFileAttributes = [self.fileSystem fileAttributesAtPath:thePath error:outError];
 		
-		[theResponse setHeader:[[theFileAttributes fileModificationDate] RFC1822StringValue] forKey:@"Last-Modified"];
+		[theResponse setHeader:[[theFileAttributes fileModificationDate] RFC822String] forKey:@"Last-Modified"];
 
 
 		NSInteger theFileSize = theFileAttributes.fileSize;

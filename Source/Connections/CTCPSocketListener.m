@@ -57,7 +57,6 @@ static void TCPSocketListenerAcceptCallBack(CFSocketRef socket, CFSocketCallBack
 @synthesize connectionCreationDelegate;
 @synthesize port;
 @synthesize type;
-@synthesize connections = mutableConnections;
 @synthesize mutableConnections;
 @synthesize listening;
 

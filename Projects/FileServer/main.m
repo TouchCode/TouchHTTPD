@@ -49,13 +49,13 @@ CHTTPServer *theHTTPServer = [[[CHTTPServer alloc] init] autorelease];
 [theHTTPServer createDefaultSocketListener];
 
 NSString *homeFolder = NSHomeDirectory();
-NSString *sitesRoot = [homeFolder stringByAppendingPathComponent:@"Sites/Test"];
+NSString *sitesRoot = [homeFolder stringByAppendingPathComponent:@"Sites"];
     
 CHTTPFileSystemHandler *theRequestHandler = [[[CWebDavHTTPHandler alloc] initWithRootPath:sitesRoot] autorelease];
 [theHTTPServer.defaultRequestHandlers addObject:theRequestHandler];
 
 CHTTPStaticResourcesHandler *theStaticResourceHandler = [[[CHTTPStaticResourcesHandler alloc] init] autorelease];
-theStaticResourceHandler.rootDirectory = [@"~/Sites/static" stringByExpandingTildeInPath];
+theStaticResourceHandler.rootDirectory = [[[NSFileManager defaultManager] currentDirectoryPath] stringByAppendingPathComponent:@"FileServerData/static"];
 [theHTTPServer.defaultRequestHandlers addObject:theStaticResourceHandler];
 
 CHTTPDefaultHandler *theDefaultHandler = [[[CHTTPDefaultHandler alloc] init] autorelease];

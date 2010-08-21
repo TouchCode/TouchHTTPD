@@ -33,7 +33,7 @@
 #import "TouchXML.h"
 #import "NSDate_InternetDateExtensions.h"
 #import "NSFileManager_Extensions.h"
-#import "NSString_Extensions.h"
+#import "NSString_AppleDoubleExtensions.h"
 #import "CWebDAVLock.h"
 #import "CWebDAVLockDatabase.h"
 #import "CWebDavHTTPHandler.h"
@@ -127,7 +127,7 @@ if (theFileAttributes == NULL)
 // #### getlastmodified
 if (theAllPropFlag == YES || [[inDocument nodesForXPath:@"/D:propfind/D:prop/D:getlastmodified" namespaceMappings:theNamespaceMappings error:&theError] count] == 1)
 	{
-	[thePropElement subelement:@"getlastmodified"].stringValue = [[theFileAttributes objectForKey:NSFileModificationDate] RFC1822StringValue];
+	[thePropElement subelement:@"getlastmodified"].stringValue = [[theFileAttributes objectForKey:NSFileModificationDate] RFC822String];
 	}
 
 // #### getcontentlength

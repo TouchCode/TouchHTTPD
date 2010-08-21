@@ -34,7 +34,7 @@
 @property (readwrite, retain) NSString *mode;
 @property (readwrite, retain) NSArray *streams;
 @property (readwrite, retain) NSInputStream *currentStream;
-@property (readwrite, retain) NSInputStream *nextStream;
+@property (readonly, retain) NSInputStream *nextStream;
 @property (readwrite, retain) NSEnumerator *enumerator;
 
 - (NSInputStream *)currentStream;

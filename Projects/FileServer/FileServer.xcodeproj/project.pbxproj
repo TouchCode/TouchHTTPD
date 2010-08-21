@@ -11,7 +11,35 @@
 		453F70F50F0EADCA00929209 /* WebDAVConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 453F70F40F0EADCA00929209 /* WebDAVConstants.m */; };
 		453F72060F0EB9D800929209 /* CHTTPLogHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 453F72050F0EB9D800929209 /* CHTTPLogHandler.m */; };
 		453F73710F0EE24D00929209 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 453F73700F0EE24D00929209 /* main.m */; };
-		45889C780F09689E0069239C /* CTempFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 45889C770F09689E0069239C /* CTempFile.m */; };
+		45426998121FB5550078E320 /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4542697F121FB5550078E320 /* CXMLDocument_CreationExtensions.m */; };
+		45426999121FB5550078E320 /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426981121FB5550078E320 /* CXMLNode_CreationExtensions.m */; };
+		4542699A121FB5550078E320 /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426983121FB5550078E320 /* CXMLDocument.m */; };
+		4542699B121FB5550078E320 /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426985121FB5550078E320 /* CXMLDocument_PrivateExtensions.m */; };
+		4542699C121FB5550078E320 /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426987121FB5550078E320 /* CXMLElement.m */; };
+		4542699D121FB5550078E320 /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426989121FB5550078E320 /* CXMLElement_CreationExtensions.m */; };
+		4542699E121FB5550078E320 /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 4542698B121FB5550078E320 /* CXMLElement_ElementTreeExtensions.m */; };
+		4542699F121FB5550078E320 /* CXMLNamespaceNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4542698D121FB5550078E320 /* CXMLNamespaceNode.m */; };
+		454269A0121FB5550078E320 /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4542698F121FB5550078E320 /* CXMLNode.m */; };
+		454269A1121FB5550078E320 /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426991121FB5550078E320 /* CXMLNode_PrivateExtensions.m */; };
+		454269A2121FB5550078E320 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426993121FB5550078E320 /* CXMLNode_XPathExtensions.m */; };
+		45426A18121FB87A0078E320 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 454269C4121FB87A0078E320 /* Base64Transcoder.c */; };
+		45426A20121FB87A0078E320 /* CTempFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269D5121FB87A0078E320 /* CTempFile.m */; };
+		45426A25121FB87A0078E320 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269E2121FB87A0078E320 /* ISO8601DateFormatter.m */; };
+		45426A26121FB87A0078E320 /* NSDate_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269E4121FB87A0078E320 /* NSDate_Extensions.m */; };
+		45426A27121FB87A0078E320 /* NSDate_InternetDateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269E6121FB87A0078E320 /* NSDate_InternetDateExtensions.m */; };
+		45426A28121FB87A0078E320 /* NSDateFormatter_InternetDateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269E8121FB87A0078E320 /* NSDateFormatter_InternetDateExtensions.m */; };
+		45426A29121FB87A0078E320 /* NSData_Base64Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269EA121FB87A0078E320 /* NSData_Base64Extensions.m */; };
+		45426A2A121FB87A0078E320 /* NSData_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269EC121FB87A0078E320 /* NSData_Extensions.m */; };
+		45426A2C121FB87A0078E320 /* NSError_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269F0121FB87A0078E320 /* NSError_Extensions.m */; };
+		45426A2D121FB87A0078E320 /* NSFileManager_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269F2121FB87A0078E320 /* NSFileManager_Extensions.m */; };
+		45426A2E121FB87A0078E320 /* NSIndexPath_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269F4121FB87A0078E320 /* NSIndexPath_Extensions.m */; };
+		45426A33121FB87A0078E320 /* NSString_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269FE121FB87A0078E320 /* NSString_Extensions.m */; };
+		45426A34121FB87A0078E320 /* NSURL_DataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426A00121FB87A0078E320 /* NSURL_DataExtensions.m */; };
+		45426A35121FB87A0078E320 /* NSURL_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426A02121FB87A0078E320 /* NSURL_Extensions.m */; };
+		45426A36121FB87A0078E320 /* NSURLResponse_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426A04121FB87A0078E320 /* NSURLResponse_Extensions.m */; };
+		45426A44121FB8F40078E320 /* NSString_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426A43121FB8F40078E320 /* NSString_AppleDoubleExtensions.m */; };
+		45426A6F121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426A6E121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.m */; };
+		45426AE8121FBD8A0078E320 /* static in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45426AE3121FBD870078E320 /* static */; };
 		45889E050F0AC97D0069239C /* CChunkWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45889E040F0AC97D0069239C /* CChunkWriter.m */; };
 		459DF3250F0E58D60028AEEF /* GMAppleDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF3130F0E58D60028AEEF /* GMAppleDouble.m */; };
 		459DF32A0F0E58D60028AEEF /* getgateway.c in Sources */ = {isa = PBXBuildFile; fileRef = 459DF31E0F0E58D60028AEEF /* getgateway.c */; };
@@ -27,14 +55,8 @@
 		45F167AD0EEAFCCB00002383 /* CHTTPServer.m in Sources */ = {isa = PBXBuildFile; fileRef = 454EF4FD0DA969B6005E651B /* CHTTPServer.m */; };
 		45F167AF0EEAFCCB00002383 /* CNATPMPManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 450E2DF10DA9A1C300F1A2FD /* CNATPMPManager.m */; };
 		45F167B00EEAFCCB00002383 /* CHTTPBasicAuthHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 45AA85870DAAEC93008827B0 /* CHTTPBasicAuthHandler.m */; };
-		45F167B20EEAFCCB00002383 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 452AD66B0ECF401F009733FB /* Base64Transcoder.c */; };
-		45F167B30EEAFCCB00002383 /* NSDate_InternetDateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 452AD66E0ECF401F009733FB /* NSDate_InternetDateExtensions.m */; };
-		45F167B40EEAFCCB00002383 /* NSDate_ISO8601Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 452AD6700ECF401F009733FB /* NSDate_ISO8601Extensions.m */; };
 		45F167B50EEAFCCB00002383 /* NSError_HTTPDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 452AD6720ECF401F009733FB /* NSError_HTTPDExtensions.m */; };
 		45F167B60EEAFCCB00002383 /* NSError_XMLOutputExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 452AD6740ECF401F009733FB /* NSError_XMLOutputExtensions.m */; };
-		45F167B70EEAFCCB00002383 /* NSFileManager_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 452AD6760ECF401F009733FB /* NSFileManager_Extensions.m */; };
-		45F167B80EEAFCCB00002383 /* NSString_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 452AD6780ECF401F009733FB /* NSString_Extensions.m */; };
-		45F167B90EEAFCCB00002383 /* NSURL_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 452AD67A0ECF401F009733FB /* NSURL_Extensions.m */; };
 		45F167BC0EEAFCCB00002383 /* CWireProtocol.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F1663C0EE9B2F700002383 /* CWireProtocol.m */; };
 		45F167BD0EEAFCCB00002383 /* CSecureTransportConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F1663E0EE9B2F700002383 /* CSecureTransportConnection.m */; };
 		45F167BE0EEAFCCB00002383 /* CTCPConnection.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F166400EE9B2F700002383 /* CTCPConnection.m */; };
@@ -57,16 +79,6 @@
 		45F167D20EEAFCCB00002383 /* QTKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458797D10D878D9F004D5E47 /* QTKit.framework */; };
 		45F167D30EEAFCCB00002383 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 458798880D8791C1004D5E47 /* QuartzCore.framework */; };
 		45F167D40EEAFCCB00002383 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450E2D9D0DA9A04C00F1A2FD /* Security.framework */; };
-		45F16DDA0EEAFD3300002383 /* CXMLDocument.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F167F60EEAFD3100002383 /* CXMLDocument.m */; };
-		45F16DDB0EEAFD3300002383 /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F167F80EEAFD3100002383 /* CXMLDocument_CreationExtensions.m */; };
-		45F16DDC0EEAFD3300002383 /* CXMLDocument_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F167FA0EEAFD3100002383 /* CXMLDocument_PrivateExtensions.m */; };
-		45F16DDD0EEAFD3300002383 /* CXMLElement.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F167FC0EEAFD3100002383 /* CXMLElement.m */; };
-		45F16DDE0EEAFD3300002383 /* CXMLElement_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F167FE0EEAFD3100002383 /* CXMLElement_CreationExtensions.m */; };
-		45F16DDF0EEAFD3300002383 /* CXMLElement_ElementTreeExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F168000EEAFD3100002383 /* CXMLElement_ElementTreeExtensions.m */; };
-		45F16DE00EEAFD3300002383 /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F168020EEAFD3100002383 /* CXMLNode.m */; };
-		45F16DE10EEAFD3300002383 /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F168040EEAFD3100002383 /* CXMLNode_CreationExtensions.m */; };
-		45F16DE20EEAFD3300002383 /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F168060EEAFD3100002383 /* CXMLNode_PrivateExtensions.m */; };
-		45F16DE30EEAFD3300002383 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F168080EEAFD3100002383 /* CXMLNode_XPathExtensions.m */; };
 		45F16E340EEAFDE000002383 /* TouchHTTPDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F16E2C0EEAFDE000002383 /* TouchHTTPDConstants.m */; };
 		45F16E7A0EEB01FB00002383 /* CTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F16E740EEB01FB00002383 /* CTransport.m */; };
 		45F16F5B0EEB0DD700002383 /* HSK_CFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F1666F0EEAF9E400002383 /* HSK_CFUtilities.m */; };
@@ -75,12 +87,13 @@
 /* Begin PBXCopyFilesBuildPhase section */
 		45F167D50EEAFCCB00002383 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
-			buildActionMask = 8;
-			dstPath = /usr/share/man/man1/;
-			dstSubfolderSpec = 0;
+			buildActionMask = 12;
+			dstPath = FileServerData;
+			dstSubfolderSpec = 16;
 			files = (
+				45426AE8121FBD8A0078E320 /* static in CopyFiles */,
 			);
-			runOnlyForDeploymentPostprocessing = 1;
+			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXCopyFilesBuildPhase section */
 
@@ -91,28 +104,74 @@
 		450E2D9D0DA9A04C00F1A2FD /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = /System/Library/Frameworks/Security.framework; sourceTree = "<absolute>"; };
 		450E2DF00DA9A1C300F1A2FD /* CNATPMPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNATPMPManager.h; sourceTree = "<group>"; };
 		450E2DF10DA9A1C300F1A2FD /* CNATPMPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNATPMPManager.m; sourceTree = "<group>"; };
-		452AD66B0ECF401F009733FB /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
-		452AD66C0ECF401F009733FB /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
-		452AD66D0ECF401F009733FB /* NSDate_InternetDateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDate_InternetDateExtensions.h; sourceTree = "<group>"; };
-		452AD66E0ECF401F009733FB /* NSDate_InternetDateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDate_InternetDateExtensions.m; sourceTree = "<group>"; };
-		452AD66F0ECF401F009733FB /* NSDate_ISO8601Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDate_ISO8601Extensions.h; sourceTree = "<group>"; };
-		452AD6700ECF401F009733FB /* NSDate_ISO8601Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDate_ISO8601Extensions.m; sourceTree = "<group>"; };
 		452AD6710ECF401F009733FB /* NSError_HTTPDExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSError_HTTPDExtensions.h; sourceTree = "<group>"; };
 		452AD6720ECF401F009733FB /* NSError_HTTPDExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSError_HTTPDExtensions.m; sourceTree = "<group>"; };
 		452AD6730ECF401F009733FB /* NSError_XMLOutputExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSError_XMLOutputExtensions.h; sourceTree = "<group>"; };
 		452AD6740ECF401F009733FB /* NSError_XMLOutputExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSError_XMLOutputExtensions.m; sourceTree = "<group>"; };
-		452AD6750ECF401F009733FB /* NSFileManager_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFileManager_Extensions.h; sourceTree = "<group>"; };
-		452AD6760ECF401F009733FB /* NSFileManager_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSFileManager_Extensions.m; sourceTree = "<group>"; };
-		452AD6770ECF401F009733FB /* NSString_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_Extensions.h; sourceTree = "<group>"; };
-		452AD6780ECF401F009733FB /* NSString_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_Extensions.m; sourceTree = "<group>"; };
-		452AD6790ECF401F009733FB /* NSURL_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURL_Extensions.h; sourceTree = "<group>"; };
-		452AD67A0ECF401F009733FB /* NSURL_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURL_Extensions.m; sourceTree = "<group>"; };
 		453F70F30F0EADCA00929209 /* WebDAVConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WebDAVConstants.h; sourceTree = "<group>"; };
 		453F70F40F0EADCA00929209 /* WebDAVConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WebDAVConstants.m; sourceTree = "<group>"; };
 		453F72040F0EB9D800929209 /* CHTTPLogHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTTPLogHandler.h; sourceTree = "<group>"; };
 		453F72050F0EB9D800929209 /* CHTTPLogHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTTPLogHandler.m; sourceTree = "<group>"; };
 		453F73700F0EE24D00929209 /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		453F73720F0EE25400929209 /* Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Prefix.pch; path = ../Prefix.pch; sourceTree = SOURCE_ROOT; };
+		4542697E121FB5550078E320 /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
+		4542697F121FB5550078E320 /* CXMLDocument_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_CreationExtensions.m; sourceTree = "<group>"; };
+		45426980121FB5550078E320 /* CXMLNode_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_CreationExtensions.h; sourceTree = "<group>"; };
+		45426981121FB5550078E320 /* CXMLNode_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_CreationExtensions.m; sourceTree = "<group>"; };
+		45426982121FB5550078E320 /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
+		45426983121FB5550078E320 /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
+		45426984121FB5550078E320 /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
+		45426985121FB5550078E320 /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
+		45426986121FB5550078E320 /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
+		45426987121FB5550078E320 /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
+		45426988121FB5550078E320 /* CXMLElement_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_CreationExtensions.h; sourceTree = "<group>"; };
+		45426989121FB5550078E320 /* CXMLElement_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_CreationExtensions.m; sourceTree = "<group>"; };
+		4542698A121FB5550078E320 /* CXMLElement_ElementTreeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_ElementTreeExtensions.h; sourceTree = "<group>"; };
+		4542698B121FB5550078E320 /* CXMLElement_ElementTreeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_ElementTreeExtensions.m; sourceTree = "<group>"; };
+		4542698C121FB5550078E320 /* CXMLNamespaceNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNamespaceNode.h; sourceTree = "<group>"; };
+		4542698D121FB5550078E320 /* CXMLNamespaceNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNamespaceNode.m; sourceTree = "<group>"; };
+		4542698E121FB5550078E320 /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
+		4542698F121FB5550078E320 /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
+		45426990121FB5550078E320 /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
+		45426991121FB5550078E320 /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
+		45426992121FB5550078E320 /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
+		45426993121FB5550078E320 /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
+		45426997121FB5550078E320 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
+		454269C4121FB87A0078E320 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
+		454269C5121FB87A0078E320 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		454269D5121FB87A0078E320 /* CTempFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTempFile.m; sourceTree = "<group>"; };
+		454269E1121FB87A0078E320 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
+		454269E2121FB87A0078E320 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
+		454269E3121FB87A0078E320 /* NSDate_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDate_Extensions.h; sourceTree = "<group>"; };
+		454269E4121FB87A0078E320 /* NSDate_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDate_Extensions.m; sourceTree = "<group>"; };
+		454269E5121FB87A0078E320 /* NSDate_InternetDateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDate_InternetDateExtensions.h; sourceTree = "<group>"; };
+		454269E6121FB87A0078E320 /* NSDate_InternetDateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDate_InternetDateExtensions.m; sourceTree = "<group>"; };
+		454269E7121FB87A0078E320 /* NSDateFormatter_InternetDateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDateFormatter_InternetDateExtensions.h; sourceTree = "<group>"; };
+		454269E8121FB87A0078E320 /* NSDateFormatter_InternetDateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSDateFormatter_InternetDateExtensions.m; sourceTree = "<group>"; };
+		454269E9121FB87A0078E320 /* NSData_Base64Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSData_Base64Extensions.h; sourceTree = "<group>"; };
+		454269EA121FB87A0078E320 /* NSData_Base64Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSData_Base64Extensions.m; sourceTree = "<group>"; };
+		454269EB121FB87A0078E320 /* NSData_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSData_Extensions.h; sourceTree = "<group>"; };
+		454269EC121FB87A0078E320 /* NSData_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSData_Extensions.m; sourceTree = "<group>"; };
+		454269EF121FB87A0078E320 /* NSError_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSError_Extensions.h; sourceTree = "<group>"; };
+		454269F0121FB87A0078E320 /* NSError_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSError_Extensions.m; sourceTree = "<group>"; };
+		454269F1121FB87A0078E320 /* NSFileManager_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFileManager_Extensions.h; sourceTree = "<group>"; };
+		454269F2121FB87A0078E320 /* NSFileManager_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSFileManager_Extensions.m; sourceTree = "<group>"; };
+		454269F3121FB87A0078E320 /* NSIndexPath_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSIndexPath_Extensions.h; sourceTree = "<group>"; };
+		454269F4121FB87A0078E320 /* NSIndexPath_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSIndexPath_Extensions.m; sourceTree = "<group>"; };
+		454269FD121FB87A0078E320 /* NSString_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_Extensions.h; sourceTree = "<group>"; };
+		454269FE121FB87A0078E320 /* NSString_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_Extensions.m; sourceTree = "<group>"; };
+		454269FF121FB87A0078E320 /* NSURL_DataExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURL_DataExtensions.h; sourceTree = "<group>"; };
+		45426A00121FB87A0078E320 /* NSURL_DataExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURL_DataExtensions.m; sourceTree = "<group>"; };
+		45426A01121FB87A0078E320 /* NSURL_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURL_Extensions.h; sourceTree = "<group>"; };
+		45426A02121FB87A0078E320 /* NSURL_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURL_Extensions.m; sourceTree = "<group>"; };
+		45426A03121FB87A0078E320 /* NSURLResponse_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLResponse_Extensions.h; sourceTree = "<group>"; };
+		45426A04121FB87A0078E320 /* NSURLResponse_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLResponse_Extensions.m; sourceTree = "<group>"; };
+		45426A3F121FB89B0078E320 /* CTempFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTempFile.h; sourceTree = "<group>"; };
+		45426A42121FB8F40078E320 /* NSString_AppleDoubleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSString_AppleDoubleExtensions.h; path = ../../../../Users/schwa/Development/Source/Git/public/TouchHTTPD/Source/Support/NSString_AppleDoubleExtensions.h; sourceTree = SOURCE_ROOT; };
+		45426A43121FB8F40078E320 /* NSString_AppleDoubleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSString_AppleDoubleExtensions.m; path = ../../../../Users/schwa/Development/Source/Git/public/TouchHTTPD/Source/Support/NSString_AppleDoubleExtensions.m; sourceTree = SOURCE_ROOT; };
+		45426A6D121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSFileManager_AppleDoubleExtensions.h; path = ../../../../Users/schwa/Development/Source/Git/public/TouchHTTPD/Source/Support/NSFileManager_AppleDoubleExtensions.h; sourceTree = SOURCE_ROOT; };
+		45426A6E121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSFileManager_AppleDoubleExtensions.m; path = ../../../../Users/schwa/Development/Source/Git/public/TouchHTTPD/Source/Support/NSFileManager_AppleDoubleExtensions.m; sourceTree = SOURCE_ROOT; };
+		45426AE3121FBD870078E320 /* static */ = {isa = PBXFileReference; lastKnownFileType = folder; path = static; sourceTree = "<group>"; };
 		454EF4F40DA969B6005E651B /* CHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTTPConnection.h; sourceTree = "<group>"; };
 		454EF4F50DA969B6005E651B /* CHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTTPConnection.m; sourceTree = "<group>"; };
 		454EF4F60DA969B6005E651B /* CHTTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTTPMessage.h; sourceTree = "<group>"; };
@@ -129,8 +188,6 @@
 		458797D00D878D9F004D5E47 /* QuickTime.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuickTime.framework; path = /System/Library/Frameworks/QuickTime.framework; sourceTree = "<absolute>"; };
 		458797D10D878D9F004D5E47 /* QTKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QTKit.framework; path = /System/Library/Frameworks/QTKit.framework; sourceTree = "<absolute>"; };
 		458798880D8791C1004D5E47 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = /System/Library/Frameworks/QuartzCore.framework; sourceTree = "<absolute>"; };
-		45889C760F09689E0069239C /* CTempFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTempFile.h; sourceTree = "<group>"; };
-		45889C770F09689E0069239C /* CTempFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTempFile.m; sourceTree = "<group>"; };
 		45889E030F0AC97D0069239C /* CChunkWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CChunkWriter.h; sourceTree = "<group>"; };
 		45889E040F0AC97D0069239C /* CChunkWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CChunkWriter.m; sourceTree = "<group>"; };
 		459DF3120F0E58D60028AEEF /* GMAppleDouble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAppleDouble.h; sourceTree = "<group>"; };
@@ -181,27 +238,6 @@
 		45F1674D0EEAFC8400002383 /* CWebDAVLockDatabase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWebDAVLockDatabase.h; sourceTree = "<group>"; };
 		45F1674E0EEAFC8400002383 /* CWebDAVLockDatabase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWebDAVLockDatabase.m; sourceTree = "<group>"; };
 		45F167DB0EEAFCCB00002383 /* HTTPFileServer */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = HTTPFileServer; sourceTree = BUILT_PRODUCTS_DIR; };
-		45F167F50EEAFD3100002383 /* CXMLDocument.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument.h; sourceTree = "<group>"; };
-		45F167F60EEAFD3100002383 /* CXMLDocument.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument.m; sourceTree = "<group>"; };
-		45F167F70EEAFD3100002383 /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
-		45F167F80EEAFD3100002383 /* CXMLDocument_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_CreationExtensions.m; sourceTree = "<group>"; };
-		45F167F90EEAFD3100002383 /* CXMLDocument_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_PrivateExtensions.h; sourceTree = "<group>"; };
-		45F167FA0EEAFD3100002383 /* CXMLDocument_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLDocument_PrivateExtensions.m; sourceTree = "<group>"; };
-		45F167FB0EEAFD3100002383 /* CXMLElement.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement.h; sourceTree = "<group>"; };
-		45F167FC0EEAFD3100002383 /* CXMLElement.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement.m; sourceTree = "<group>"; };
-		45F167FD0EEAFD3100002383 /* CXMLElement_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_CreationExtensions.h; sourceTree = "<group>"; };
-		45F167FE0EEAFD3100002383 /* CXMLElement_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_CreationExtensions.m; sourceTree = "<group>"; };
-		45F167FF0EEAFD3100002383 /* CXMLElement_ElementTreeExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLElement_ElementTreeExtensions.h; sourceTree = "<group>"; };
-		45F168000EEAFD3100002383 /* CXMLElement_ElementTreeExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLElement_ElementTreeExtensions.m; sourceTree = "<group>"; };
-		45F168010EEAFD3100002383 /* CXMLNode.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode.h; sourceTree = "<group>"; };
-		45F168020EEAFD3100002383 /* CXMLNode.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode.m; sourceTree = "<group>"; };
-		45F168030EEAFD3100002383 /* CXMLNode_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_CreationExtensions.h; sourceTree = "<group>"; };
-		45F168040EEAFD3100002383 /* CXMLNode_CreationExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_CreationExtensions.m; sourceTree = "<group>"; };
-		45F168050EEAFD3100002383 /* CXMLNode_PrivateExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_PrivateExtensions.h; sourceTree = "<group>"; };
-		45F168060EEAFD3100002383 /* CXMLNode_PrivateExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_PrivateExtensions.m; sourceTree = "<group>"; };
-		45F168070EEAFD3100002383 /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
-		45F168080EEAFD3100002383 /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
-		45F168090EEAFD3100002383 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		45F16E2C0EEAFDE000002383 /* TouchHTTPDConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchHTTPDConstants.m; sourceTree = "<group>"; };
 		45F16E2D0EEAFDE000002383 /* TouchHTTPDConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchHTTPDConstants.h; sourceTree = "<group>"; };
 		45F16E730EEB01FB00002383 /* CTransport.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTransport.h; sourceTree = "<group>"; };
@@ -234,6 +270,7 @@
 				453F73700F0EE24D00929209 /* main.m */,
 				454EF4EA0DA969B6005E651B /* Source */,
 				459DF3110F0E58D60028AEEF /* Externals */,
+				45426ADE121FBD7D0078E320 /* Resources */,
 				08FB779DFE84155DC02AAC07 /* External Frameworks and Libraries */,
 				1AB674ADFE9D54B511CA2CBB /* Products */,
 			);
@@ -275,22 +312,10 @@
 		452AD66A0ECF401F009733FB /* Support */ = {
 			isa = PBXGroup;
 			children = (
-				452AD66B0ECF401F009733FB /* Base64Transcoder.c */,
-				452AD66C0ECF401F009733FB /* Base64Transcoder.h */,
-				452AD66D0ECF401F009733FB /* NSDate_InternetDateExtensions.h */,
-				452AD66E0ECF401F009733FB /* NSDate_InternetDateExtensions.m */,
-				452AD66F0ECF401F009733FB /* NSDate_ISO8601Extensions.h */,
-				452AD6700ECF401F009733FB /* NSDate_ISO8601Extensions.m */,
 				452AD6710ECF401F009733FB /* NSError_HTTPDExtensions.h */,
 				452AD6720ECF401F009733FB /* NSError_HTTPDExtensions.m */,
 				452AD6730ECF401F009733FB /* NSError_XMLOutputExtensions.h */,
 				452AD6740ECF401F009733FB /* NSError_XMLOutputExtensions.m */,
-				452AD6750ECF401F009733FB /* NSFileManager_Extensions.h */,
-				452AD6760ECF401F009733FB /* NSFileManager_Extensions.m */,
-				452AD6770ECF401F009733FB /* NSString_Extensions.h */,
-				452AD6780ECF401F009733FB /* NSString_Extensions.m */,
-				452AD6790ECF401F009733FB /* NSURL_Extensions.h */,
-				452AD67A0ECF401F009733FB /* NSURL_Extensions.m */,
 				45E2B9A80EEB1230001CB460 /* CStreamConnector.h */,
 				45E2B9A70EEB1230001CB460 /* CStreamConnector.m */,
 				450CC4B80EFC1FB200202E91 /* CMultiInputStream.h */,
@@ -298,13 +323,124 @@
 				45BA71450EEB37E500B0C384 /* NSStream_Extensions.h */,
 				45BA71460EEB37E500B0C384 /* NSStream_Extensions.m */,
 				45F1666D0EEAF9E400002383 /* SKPInputStreamConnector */,
-				45889C760F09689E0069239C /* CTempFile.h */,
-				45889C770F09689E0069239C /* CTempFile.m */,
 				45889E030F0AC97D0069239C /* CChunkWriter.h */,
 				45889E040F0AC97D0069239C /* CChunkWriter.m */,
+				45426A6D121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.h */,
+				45426A6E121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.m */,
+				45426A42121FB8F40078E320 /* NSString_AppleDoubleExtensions.h */,
+				45426A43121FB8F40078E320 /* NSString_AppleDoubleExtensions.m */,
 			);
 			path = Support;
 			sourceTree = "<group>";
+		};
+		4542697C121FB5550078E320 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				4542697D121FB5550078E320 /* Creation */,
+				45426982121FB5550078E320 /* CXMLDocument.h */,
+				45426983121FB5550078E320 /* CXMLDocument.m */,
+				45426984121FB5550078E320 /* CXMLDocument_PrivateExtensions.h */,
+				45426985121FB5550078E320 /* CXMLDocument_PrivateExtensions.m */,
+				45426986121FB5550078E320 /* CXMLElement.h */,
+				45426987121FB5550078E320 /* CXMLElement.m */,
+				45426988121FB5550078E320 /* CXMLElement_CreationExtensions.h */,
+				45426989121FB5550078E320 /* CXMLElement_CreationExtensions.m */,
+				4542698A121FB5550078E320 /* CXMLElement_ElementTreeExtensions.h */,
+				4542698B121FB5550078E320 /* CXMLElement_ElementTreeExtensions.m */,
+				4542698C121FB5550078E320 /* CXMLNamespaceNode.h */,
+				4542698D121FB5550078E320 /* CXMLNamespaceNode.m */,
+				4542698E121FB5550078E320 /* CXMLNode.h */,
+				4542698F121FB5550078E320 /* CXMLNode.m */,
+				45426990121FB5550078E320 /* CXMLNode_PrivateExtensions.h */,
+				45426991121FB5550078E320 /* CXMLNode_PrivateExtensions.m */,
+				45426992121FB5550078E320 /* CXMLNode_XPathExtensions.h */,
+				45426993121FB5550078E320 /* CXMLNode_XPathExtensions.m */,
+				45426997121FB5550078E320 /* TouchXML.h */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		4542697D121FB5550078E320 /* Creation */ = {
+			isa = PBXGroup;
+			children = (
+				4542697E121FB5550078E320 /* CXMLDocument_CreationExtensions.h */,
+				4542697F121FB5550078E320 /* CXMLDocument_CreationExtensions.m */,
+				45426980121FB5550078E320 /* CXMLNode_CreationExtensions.h */,
+				45426981121FB5550078E320 /* CXMLNode_CreationExtensions.m */,
+			);
+			path = Creation;
+			sourceTree = "<group>";
+		};
+		454269C3121FB87A0078E320 /* TouchFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				454269C4121FB87A0078E320 /* Base64Transcoder.c */,
+				454269C5121FB87A0078E320 /* Base64Transcoder.h */,
+				45426A3F121FB89B0078E320 /* CTempFile.h */,
+				454269D5121FB87A0078E320 /* CTempFile.m */,
+				454269DE121FB87A0078E320 /* Extensions */,
+			);
+			name = TouchFoundation;
+			path = TouchFoundation/Common;
+			sourceTree = "<group>";
+		};
+		454269DE121FB87A0078E320 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				454269DF121FB87A0078E320 /* Dates */,
+				454269E9121FB87A0078E320 /* NSData_Base64Extensions.h */,
+				454269EA121FB87A0078E320 /* NSData_Base64Extensions.m */,
+				454269EB121FB87A0078E320 /* NSData_Extensions.h */,
+				454269EC121FB87A0078E320 /* NSData_Extensions.m */,
+				454269EF121FB87A0078E320 /* NSError_Extensions.h */,
+				454269F0121FB87A0078E320 /* NSError_Extensions.m */,
+				454269F1121FB87A0078E320 /* NSFileManager_Extensions.h */,
+				454269F2121FB87A0078E320 /* NSFileManager_Extensions.m */,
+				454269F3121FB87A0078E320 /* NSIndexPath_Extensions.h */,
+				454269F4121FB87A0078E320 /* NSIndexPath_Extensions.m */,
+				454269FD121FB87A0078E320 /* NSString_Extensions.h */,
+				454269FE121FB87A0078E320 /* NSString_Extensions.m */,
+				454269FF121FB87A0078E320 /* NSURL_DataExtensions.h */,
+				45426A00121FB87A0078E320 /* NSURL_DataExtensions.m */,
+				45426A01121FB87A0078E320 /* NSURL_Extensions.h */,
+				45426A02121FB87A0078E320 /* NSURL_Extensions.m */,
+				45426A03121FB87A0078E320 /* NSURLResponse_Extensions.h */,
+				45426A04121FB87A0078E320 /* NSURLResponse_Extensions.m */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		454269DF121FB87A0078E320 /* Dates */ = {
+			isa = PBXGroup;
+			children = (
+				454269E0121FB87A0078E320 /* ISO-8601-parser-0.5 */,
+				454269E3121FB87A0078E320 /* NSDate_Extensions.h */,
+				454269E4121FB87A0078E320 /* NSDate_Extensions.m */,
+				454269E5121FB87A0078E320 /* NSDate_InternetDateExtensions.h */,
+				454269E6121FB87A0078E320 /* NSDate_InternetDateExtensions.m */,
+				454269E7121FB87A0078E320 /* NSDateFormatter_InternetDateExtensions.h */,
+				454269E8121FB87A0078E320 /* NSDateFormatter_InternetDateExtensions.m */,
+			);
+			path = Dates;
+			sourceTree = "<group>";
+		};
+		454269E0121FB87A0078E320 /* ISO-8601-parser-0.5 */ = {
+			isa = PBXGroup;
+			children = (
+				454269E1121FB87A0078E320 /* ISO8601DateFormatter.h */,
+				454269E2121FB87A0078E320 /* ISO8601DateFormatter.m */,
+			);
+			path = "ISO-8601-parser-0.5";
+			sourceTree = "<group>";
+		};
+		45426ADE121FBD7D0078E320 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				45426AE3121FBD870078E320 /* static */,
+			);
+			name = Resources;
+			path = ../../Resources;
+			sourceTree = SOURCE_ROOT;
 		};
 		454EF4EA0DA969B6005E651B /* Source */ = {
 			isa = PBXGroup;
@@ -346,6 +482,7 @@
 				459DF3130F0E58D60028AEEF /* GMAppleDouble.m */,
 				45F167F20EEAFD3100002383 /* TouchXML */,
 				459DF31C0F0E58D60028AEEF /* libnatpmp-20071213 */,
+				454269C3121FB87A0078E320 /* TouchFoundation */,
 			);
 			name = Externals;
 			path = ../../Externals;
@@ -452,46 +589,9 @@
 		45F167F20EEAFD3100002383 /* TouchXML */ = {
 			isa = PBXGroup;
 			children = (
-				45F167F30EEAFD3100002383 /* Common */,
+				4542697C121FB5550078E320 /* Source */,
 			);
-			name = TouchXML;
-			path = ../../../TouchXML;
-			sourceTree = SOURCE_ROOT;
-		};
-		45F167F30EEAFD3100002383 /* Common */ = {
-			isa = PBXGroup;
-			children = (
-				45F167F40EEAFD3100002383 /* Source */,
-			);
-			path = Common;
-			sourceTree = "<group>";
-		};
-		45F167F40EEAFD3100002383 /* Source */ = {
-			isa = PBXGroup;
-			children = (
-				45F167F50EEAFD3100002383 /* CXMLDocument.h */,
-				45F167F60EEAFD3100002383 /* CXMLDocument.m */,
-				45F167F70EEAFD3100002383 /* CXMLDocument_CreationExtensions.h */,
-				45F167F80EEAFD3100002383 /* CXMLDocument_CreationExtensions.m */,
-				45F167F90EEAFD3100002383 /* CXMLDocument_PrivateExtensions.h */,
-				45F167FA0EEAFD3100002383 /* CXMLDocument_PrivateExtensions.m */,
-				45F167FB0EEAFD3100002383 /* CXMLElement.h */,
-				45F167FC0EEAFD3100002383 /* CXMLElement.m */,
-				45F167FD0EEAFD3100002383 /* CXMLElement_CreationExtensions.h */,
-				45F167FE0EEAFD3100002383 /* CXMLElement_CreationExtensions.m */,
-				45F167FF0EEAFD3100002383 /* CXMLElement_ElementTreeExtensions.h */,
-				45F168000EEAFD3100002383 /* CXMLElement_ElementTreeExtensions.m */,
-				45F168010EEAFD3100002383 /* CXMLNode.h */,
-				45F168020EEAFD3100002383 /* CXMLNode.m */,
-				45F168030EEAFD3100002383 /* CXMLNode_CreationExtensions.h */,
-				45F168040EEAFD3100002383 /* CXMLNode_CreationExtensions.m */,
-				45F168050EEAFD3100002383 /* CXMLNode_PrivateExtensions.h */,
-				45F168060EEAFD3100002383 /* CXMLNode_PrivateExtensions.m */,
-				45F168070EEAFD3100002383 /* CXMLNode_XPathExtensions.h */,
-				45F168080EEAFD3100002383 /* CXMLNode_XPathExtensions.m */,
-				45F168090EEAFD3100002383 /* TouchXML.h */,
-			);
-			path = Source;
+			path = TouchXML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -522,7 +622,14 @@
 			isa = PBXProject;
 			buildConfigurationList = 1DEB927808733DD40010E9CD /* Build configuration list for PBXProject "FileServer" */;
 			compatibilityVersion = "Xcode 3.1";
+			developmentRegion = English;
 			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
 			mainGroup = 08FB7794FE84155DC02AAC07 /* TouchHTTP */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -544,14 +651,8 @@
 				45F167AD0EEAFCCB00002383 /* CHTTPServer.m in Sources */,
 				45F167AF0EEAFCCB00002383 /* CNATPMPManager.m in Sources */,
 				45F167B00EEAFCCB00002383 /* CHTTPBasicAuthHandler.m in Sources */,
-				45F167B20EEAFCCB00002383 /* Base64Transcoder.c in Sources */,
-				45F167B30EEAFCCB00002383 /* NSDate_InternetDateExtensions.m in Sources */,
-				45F167B40EEAFCCB00002383 /* NSDate_ISO8601Extensions.m in Sources */,
 				45F167B50EEAFCCB00002383 /* NSError_HTTPDExtensions.m in Sources */,
 				45F167B60EEAFCCB00002383 /* NSError_XMLOutputExtensions.m in Sources */,
-				45F167B70EEAFCCB00002383 /* NSFileManager_Extensions.m in Sources */,
-				45F167B80EEAFCCB00002383 /* NSString_Extensions.m in Sources */,
-				45F167B90EEAFCCB00002383 /* NSURL_Extensions.m in Sources */,
 				45F167BC0EEAFCCB00002383 /* CWireProtocol.m in Sources */,
 				45F167BD0EEAFCCB00002383 /* CSecureTransportConnection.m in Sources */,
 				45F167BE0EEAFCCB00002383 /* CTCPConnection.m in Sources */,
@@ -566,16 +667,6 @@
 				45F167C90EEAFCCB00002383 /* CHTTPMessage_WebDAVExtensions.m in Sources */,
 				45F167CA0EEAFCCB00002383 /* CWebDAVLock.m in Sources */,
 				45F167CB0EEAFCCB00002383 /* CWebDAVLockDatabase.m in Sources */,
-				45F16DDA0EEAFD3300002383 /* CXMLDocument.m in Sources */,
-				45F16DDB0EEAFD3300002383 /* CXMLDocument_CreationExtensions.m in Sources */,
-				45F16DDC0EEAFD3300002383 /* CXMLDocument_PrivateExtensions.m in Sources */,
-				45F16DDD0EEAFD3300002383 /* CXMLElement.m in Sources */,
-				45F16DDE0EEAFD3300002383 /* CXMLElement_CreationExtensions.m in Sources */,
-				45F16DDF0EEAFD3300002383 /* CXMLElement_ElementTreeExtensions.m in Sources */,
-				45F16DE00EEAFD3300002383 /* CXMLNode.m in Sources */,
-				45F16DE10EEAFD3300002383 /* CXMLNode_CreationExtensions.m in Sources */,
-				45F16DE20EEAFD3300002383 /* CXMLNode_PrivateExtensions.m in Sources */,
-				45F16DE30EEAFD3300002383 /* CXMLNode_XPathExtensions.m in Sources */,
 				45F16E340EEAFDE000002383 /* TouchHTTPDConstants.m in Sources */,
 				45F16E7A0EEB01FB00002383 /* CTransport.m in Sources */,
 				45F16F5B0EEB0DD700002383 /* HSK_CFUtilities.m in Sources */,
@@ -583,7 +674,6 @@
 				45BA71470EEB37E500B0C384 /* NSStream_Extensions.m in Sources */,
 				45A8F9E30EED98F000F076A5 /* CTCPSocketListener_Extensions.m in Sources */,
 				450CC4B90EFC1FB200202E91 /* CMultiInputStream.m in Sources */,
-				45889C780F09689E0069239C /* CTempFile.m in Sources */,
 				45889E050F0AC97D0069239C /* CChunkWriter.m in Sources */,
 				459DF3250F0E58D60028AEEF /* GMAppleDouble.m in Sources */,
 				459DF32A0F0E58D60028AEEF /* getgateway.c in Sources */,
@@ -592,6 +682,34 @@
 				453F70F50F0EADCA00929209 /* WebDAVConstants.m in Sources */,
 				453F72060F0EB9D800929209 /* CHTTPLogHandler.m in Sources */,
 				453F73710F0EE24D00929209 /* main.m in Sources */,
+				45426998121FB5550078E320 /* CXMLDocument_CreationExtensions.m in Sources */,
+				45426999121FB5550078E320 /* CXMLNode_CreationExtensions.m in Sources */,
+				4542699A121FB5550078E320 /* CXMLDocument.m in Sources */,
+				4542699B121FB5550078E320 /* CXMLDocument_PrivateExtensions.m in Sources */,
+				4542699C121FB5550078E320 /* CXMLElement.m in Sources */,
+				4542699D121FB5550078E320 /* CXMLElement_CreationExtensions.m in Sources */,
+				4542699E121FB5550078E320 /* CXMLElement_ElementTreeExtensions.m in Sources */,
+				4542699F121FB5550078E320 /* CXMLNamespaceNode.m in Sources */,
+				454269A0121FB5550078E320 /* CXMLNode.m in Sources */,
+				454269A1121FB5550078E320 /* CXMLNode_PrivateExtensions.m in Sources */,
+				454269A2121FB5550078E320 /* CXMLNode_XPathExtensions.m in Sources */,
+				45426A18121FB87A0078E320 /* Base64Transcoder.c in Sources */,
+				45426A20121FB87A0078E320 /* CTempFile.m in Sources */,
+				45426A25121FB87A0078E320 /* ISO8601DateFormatter.m in Sources */,
+				45426A26121FB87A0078E320 /* NSDate_Extensions.m in Sources */,
+				45426A27121FB87A0078E320 /* NSDate_InternetDateExtensions.m in Sources */,
+				45426A28121FB87A0078E320 /* NSDateFormatter_InternetDateExtensions.m in Sources */,
+				45426A29121FB87A0078E320 /* NSData_Base64Extensions.m in Sources */,
+				45426A2A121FB87A0078E320 /* NSData_Extensions.m in Sources */,
+				45426A2C121FB87A0078E320 /* NSError_Extensions.m in Sources */,
+				45426A2D121FB87A0078E320 /* NSFileManager_Extensions.m in Sources */,
+				45426A2E121FB87A0078E320 /* NSIndexPath_Extensions.m in Sources */,
+				45426A33121FB87A0078E320 /* NSString_Extensions.m in Sources */,
+				45426A34121FB87A0078E320 /* NSURL_DataExtensions.m in Sources */,
+				45426A35121FB87A0078E320 /* NSURL_Extensions.m in Sources */,
+				45426A36121FB87A0078E320 /* NSURLResponse_Extensions.m in Sources */,
+				45426A44121FB8F40078E320 /* NSString_AppleDoubleExtensions.m in Sources */,
+				45426A6F121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -29,8 +29,8 @@
 
 #import "CDefaultFileSystem.h"
 
-#import "NSString_Extensions.h"
-#import "NSFileManager_Extensions.h"
+#import "NSString_AppleDoubleExtensions.h"
+#import "NSFileManager_AppleDoubleExtensions.h"
 #import "TouchHTTPDConstants.h"
 
 @interface CDefaultFileSystem ()
