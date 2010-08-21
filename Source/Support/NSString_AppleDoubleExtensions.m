@@ -29,7 +29,7 @@
 
 #import "NSString_Extensions.h"
 
-@implementation NSString (NSString_Extensions)
+@implementation NSString (NSString_AppleDoubleExtensions)
 
 - (BOOL)pathIsAppleDouble
 {

@@ -29,7 +29,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSString (NSString_Extensions)
+@interface NSString (NSString_AppleDoubleExtensions)
 
 - (BOOL)pathIsAppleDouble;
 - (NSString *)pathByRemovingAppleDoublePrefix;
