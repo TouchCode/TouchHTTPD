@@ -55,7 +55,7 @@ while (theFlag)
 		{
 		if (inIgnoreExceptions == NO)
 			{
-			LOG_(@"Exception caught, exiting runloop: %@", exception);
+			NSLog(@"Exception caught, exiting runloop: %@", exception);
 			theFlag = NO;
 			}
 		}

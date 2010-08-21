@@ -29,9 +29,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "TouchXML.h"
-
-// JIWTODO -- work with URLs not path strings.
+// TODO: JIW -- work with URLs not path strings.
 
 @protocol CFileSystem <NSObject>
 

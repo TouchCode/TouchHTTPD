@@ -30,7 +30,6 @@
 #import "CHTTPMessage_ConvenienceExtensions.h"
 
 #import "TouchHTTPDConstants.h"
-#import "NSError_XMLOutputExtensions.h"
 
 @implementation CHTTPMessage (CHTTPMessage_ConvenienceExtensions)
 

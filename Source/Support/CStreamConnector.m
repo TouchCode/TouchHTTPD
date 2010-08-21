@@ -124,7 +124,7 @@ if (expectingMoreInputFlag && [self.inputStream hasBytesAvailable])
 		}
 	else if (theBytesRead < 0)
 		{
-		LOG_(@"ERROR: [CStreamConnector read] %d bytes read.", theBytesRead);
+		NSLog(@"ERROR: [CStreamConnector read] %d bytes read.", theBytesRead);
 		}
 	}
 }
@@ -143,7 +143,7 @@ if ([self.outputStream hasSpaceAvailable])
 			}
 		else if (theBytesWritten < 0)
 			{
-			LOG_(@"ERROR: [CStreamConnector read] %d bytes written.", theBytesWritten);
+			NSLog(@"ERROR: [CStreamConnector read] %d bytes written.", theBytesWritten);
 
 			}
 		else if (theBytesWritten < theBufferLength)
@@ -160,7 +160,7 @@ if ([self.outputStream hasSpaceAvailable])
 {
 if (inEventCode == NSStreamEventErrorOccurred)
 	{
-	LOG_(@"ERROR with %@ (%@)", inStream, inStream.streamError);
+	NSLog(@"ERROR with %@ (%@)", inStream, inStream.streamError);
 	return;
 	}
 

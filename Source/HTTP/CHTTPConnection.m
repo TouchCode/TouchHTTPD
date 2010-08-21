@@ -104,7 +104,7 @@ NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
 	}
 @catch (NSException *e)
 	{
-	LOG_(@"Exception caught: %@", e);
+	NSLog(@"Exception caught: %@", e);
 	self.currentRequest = NULL;
 	[self close];
 	}
@@ -130,7 +130,7 @@ NSError *theError = NULL;
 	}
 @catch (NSException *e)
 	{
-	LOG_(@"EXCEPTION CAUGHT: %@", e);
+	NSLog(@"EXCEPTION CAUGHT: %@", e);
 	
 	NSDictionary *theUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:
 		e, @"NSUnderlyingException",
@@ -150,12 +150,12 @@ if (theResponse == NULL)
 		{
 		if (theError != NULL)
 			{
-			LOG_(@"500: NULL response (%@).", theError);
+			NSLog(@"500: NULL response (%@).", theError);
 			theResponse = [CHTTPMessage HTTPMessageResponseWithStatusCode:kHTTPStatusCode_InternalServerError];
 			}
 		else
 			{
-			LOG_(@"500: NULL response.");
+			NSLog(@"500: NULL response.");
 			theResponse = [CHTTPMessage HTTPMessageResponseWithStatusCode:kHTTPStatusCode_InternalServerError];
 			}
 		}

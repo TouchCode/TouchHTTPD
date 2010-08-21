@@ -209,7 +209,7 @@ if ([self openIPV4Socket:outError] == NO)
 	}
 //if ([self openIPV6Socket:outError] == NO)
 //	{
-//	LOG_(@"IPV6 failed.");
+//	NSLog(@"IPV6 failed.");
 //	return(NO);
 //	}
 
@@ -459,12 +459,12 @@ if (inCallbackType == kCFSocketAcceptCallBack)
 		BOOL theResult = [theTCPSocketListener handleNewConnectionFromAddress:thePeerAddress nativeHandle:theNativeSocketHandle error:&theError];
 		if (theResult == NO)
 			{
-			LOG_(@"-[handleNewConnectionFromAddress:nativeHandle:error:] failed with: %@", theError);
+			NSLog(@"-[handleNewConnectionFromAddress:nativeHandle:error:] failed with: %@", theError);
 			}
 		}
 	}
 else
 	{
-	LOG_(@"TCPSocketListenerAcceptCallBack(): Unhandled callback type %d", inCallbackType);
+	NSLog(@"TCPSocketListenerAcceptCallBack(): Unhandled callback type %d", inCallbackType);
 	}
 }

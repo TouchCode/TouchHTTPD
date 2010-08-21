@@ -58,7 +58,7 @@ if ((self = [super init]) != NULL)
 		BOOL theResult = [[NSFileManager defaultManager] createDirectoryAtPath:theDirectory withIntermediateDirectories:YES attributes:NULL error:&theError];
 		if (theResult == NO)
 			{
-			LOG_(@"Could not create log directory: %@", theError);
+			NSLog(@"Could not create log directory: %@", theError);
 			[self dealloc];
 			self = NULL;
 			}
@@ -71,7 +71,7 @@ if ((self = [super init]) != NULL)
 		BOOL theResult = [[NSData data] writeToFile:self.logFile options:0 error:&theError];
 		if (theResult == NO)
 			{
-			LOG_(@"Could not create log file: %@", theError);
+			NSLog(@"Could not create log file: %@", theError);
 			[self dealloc];
 			self = NULL;
 			}

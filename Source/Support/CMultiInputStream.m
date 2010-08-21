@@ -183,7 +183,7 @@ if (eventCode == NSStreamEventEndEncountered)
 	}
 @catch (NSException *e)
 	{
-	LOG_(@"#### Exception caught: %@", e);
+	NSLog(@"#### Exception caught: %@", e);
 	}
 }
 

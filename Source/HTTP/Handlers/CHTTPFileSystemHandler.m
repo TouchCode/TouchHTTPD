@@ -261,7 +261,7 @@ CTempFile *theTempFile = inRequest.body;
 theResult = [self.fileSystem moveLocalFileSystemItemAtPath:theTempFile.path toPath:thePath error:&theError];
 if (theResult == NO)
 	{
-	LOG_(@"500: moveLocalFileSystemItemAtPath failed: %@", theError);
+	NSLog(@"500: moveLocalFileSystemItemAtPath failed: %@", theError);
 	theError = [NSError errorWithDomain:kHTTPErrorDomain code:kHTTPStatusCode_InternalServerError underlyingError:theError request:inRequest ];
 	theResponse = [CHTTPMessage HTTPMessageResponseWithError:theError];
 	}

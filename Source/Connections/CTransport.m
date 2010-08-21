@@ -195,7 +195,7 @@ inInputStream.delegate = self.streamConnector;
 {
 #pragma unused (inEventCode)
 
-LOG_(@"STREAM EVENT %@ (unhandled) %@", [NSStream stringForEvent:inEventCode], self.remoteWriteStream);
+NSLog(@"STREAM EVENT %@ (unhandled) %@", [NSStream stringForEvent:inEventCode], self.remoteWriteStream);
 }
 
 - (void)streamConnectorDidFinish:(CStreamConnector *)inStreamConnector;

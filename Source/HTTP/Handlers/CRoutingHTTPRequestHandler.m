@@ -88,7 +88,7 @@ return(YES);
 - (CHTTPMessage *)errorNotFoundResponseForRequest:(CHTTPMessage *)inRequest error:(NSError **)outError
 {
 #pragma unused (inRequest, outError)
-LOG_(@"[%@ %s] responding with 404", NSStringFromClass([self class]), __PRETTY_FUNCTION__);
+NSLog(@"[%@ %s] responding with 404", NSStringFromClass([self class]), __PRETTY_FUNCTION__);
 CHTTPMessage *theResponse = [CHTTPMessage HTTPMessageResponseWithStatusCode:404 bodyString:@"404 NOT FOUND"];
 return(theResponse);
 }
