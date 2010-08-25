@@ -37,9 +37,9 @@
 		45426A34121FB87A0078E320 /* NSURL_DataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426A00121FB87A0078E320 /* NSURL_DataExtensions.m */; };
 		45426A35121FB87A0078E320 /* NSURL_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426A02121FB87A0078E320 /* NSURL_Extensions.m */; };
 		45426A36121FB87A0078E320 /* NSURLResponse_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426A04121FB87A0078E320 /* NSURLResponse_Extensions.m */; };
-		45426A44121FB8F40078E320 /* NSString_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426A43121FB8F40078E320 /* NSString_AppleDoubleExtensions.m */; };
-		45426A6F121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426A6E121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.m */; };
 		45426AE8121FBD8A0078E320 /* static in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45426AE3121FBD870078E320 /* static */; };
+		45426B2712202E400078E320 /* NSFileManager_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426B2412202E400078E320 /* NSFileManager_AppleDoubleExtensions.m */; };
+		45426B2812202E400078E320 /* NSString_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426B2612202E400078E320 /* NSString_AppleDoubleExtensions.m */; };
 		45889E050F0AC97D0069239C /* CChunkWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45889E040F0AC97D0069239C /* CChunkWriter.m */; };
 		459DF3250F0E58D60028AEEF /* GMAppleDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF3130F0E58D60028AEEF /* GMAppleDouble.m */; };
 		459DF32A0F0E58D60028AEEF /* getgateway.c in Sources */ = {isa = PBXBuildFile; fileRef = 459DF31E0F0E58D60028AEEF /* getgateway.c */; };
@@ -167,11 +167,11 @@
 		45426A03121FB87A0078E320 /* NSURLResponse_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLResponse_Extensions.h; sourceTree = "<group>"; };
 		45426A04121FB87A0078E320 /* NSURLResponse_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLResponse_Extensions.m; sourceTree = "<group>"; };
 		45426A3F121FB89B0078E320 /* CTempFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTempFile.h; sourceTree = "<group>"; };
-		45426A42121FB8F40078E320 /* NSString_AppleDoubleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSString_AppleDoubleExtensions.h; path = ../../../../Users/schwa/Development/Source/Git/public/TouchHTTPD/Source/Support/NSString_AppleDoubleExtensions.h; sourceTree = SOURCE_ROOT; };
-		45426A43121FB8F40078E320 /* NSString_AppleDoubleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSString_AppleDoubleExtensions.m; path = ../../../../Users/schwa/Development/Source/Git/public/TouchHTTPD/Source/Support/NSString_AppleDoubleExtensions.m; sourceTree = SOURCE_ROOT; };
-		45426A6D121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NSFileManager_AppleDoubleExtensions.h; path = ../../../../Users/schwa/Development/Source/Git/public/TouchHTTPD/Source/Support/NSFileManager_AppleDoubleExtensions.h; sourceTree = SOURCE_ROOT; };
-		45426A6E121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = NSFileManager_AppleDoubleExtensions.m; path = ../../../../Users/schwa/Development/Source/Git/public/TouchHTTPD/Source/Support/NSFileManager_AppleDoubleExtensions.m; sourceTree = SOURCE_ROOT; };
 		45426AE3121FBD870078E320 /* static */ = {isa = PBXFileReference; lastKnownFileType = folder; path = static; sourceTree = "<group>"; };
+		45426B2312202E400078E320 /* NSFileManager_AppleDoubleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFileManager_AppleDoubleExtensions.h; sourceTree = "<group>"; };
+		45426B2412202E400078E320 /* NSFileManager_AppleDoubleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSFileManager_AppleDoubleExtensions.m; sourceTree = "<group>"; };
+		45426B2512202E400078E320 /* NSString_AppleDoubleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_AppleDoubleExtensions.h; sourceTree = "<group>"; };
+		45426B2612202E400078E320 /* NSString_AppleDoubleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_AppleDoubleExtensions.m; sourceTree = "<group>"; };
 		454EF4F40DA969B6005E651B /* CHTTPConnection.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTTPConnection.h; sourceTree = "<group>"; };
 		454EF4F50DA969B6005E651B /* CHTTPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTTPConnection.m; sourceTree = "<group>"; };
 		454EF4F60DA969B6005E651B /* CHTTPMessage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTTPMessage.h; sourceTree = "<group>"; };
@@ -325,10 +325,10 @@
 				45F1666D0EEAF9E400002383 /* SKPInputStreamConnector */,
 				45889E030F0AC97D0069239C /* CChunkWriter.h */,
 				45889E040F0AC97D0069239C /* CChunkWriter.m */,
-				45426A6D121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.h */,
-				45426A6E121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.m */,
-				45426A42121FB8F40078E320 /* NSString_AppleDoubleExtensions.h */,
-				45426A43121FB8F40078E320 /* NSString_AppleDoubleExtensions.m */,
+				45426B2312202E400078E320 /* NSFileManager_AppleDoubleExtensions.h */,
+				45426B2412202E400078E320 /* NSFileManager_AppleDoubleExtensions.m */,
+				45426B2512202E400078E320 /* NSString_AppleDoubleExtensions.h */,
+				45426B2612202E400078E320 /* NSString_AppleDoubleExtensions.m */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -371,7 +371,7 @@
 			path = Creation;
 			sourceTree = "<group>";
 		};
-		454269C3121FB87A0078E320 /* TouchFoundation */ = {
+		454269C3121FB87A0078E320 /* Source */ = {
 			isa = PBXGroup;
 			children = (
 				454269C4121FB87A0078E320 /* Base64Transcoder.c */,
@@ -380,8 +380,7 @@
 				454269D5121FB87A0078E320 /* CTempFile.m */,
 				454269DE121FB87A0078E320 /* Extensions */,
 			);
-			name = TouchFoundation;
-			path = TouchFoundation/Common;
+			path = Source;
 			sourceTree = "<group>";
 		};
 		454269DE121FB87A0078E320 /* Extensions */ = {
@@ -442,6 +441,15 @@
 			path = ../../Resources;
 			sourceTree = SOURCE_ROOT;
 		};
+		45426B1212202E050078E320 /* TouchFoundation */ = {
+			isa = PBXGroup;
+			children = (
+				454269C3121FB87A0078E320 /* Source */,
+			);
+			name = TouchFoundation;
+			path = ../../TouchFoundation;
+			sourceTree = "<group>";
+		};
 		454EF4EA0DA969B6005E651B /* Source */ = {
 			isa = PBXGroup;
 			children = (
@@ -482,7 +490,7 @@
 				459DF3130F0E58D60028AEEF /* GMAppleDouble.m */,
 				45F167F20EEAFD3100002383 /* TouchXML */,
 				459DF31C0F0E58D60028AEEF /* libnatpmp-20071213 */,
-				454269C3121FB87A0078E320 /* TouchFoundation */,
+				45426B1212202E050078E320 /* TouchFoundation */,
 			);
 			name = Externals;
 			path = ../../Externals;
@@ -591,7 +599,8 @@
 			children = (
 				4542697C121FB5550078E320 /* Source */,
 			);
-			path = TouchXML;
+			name = TouchXML;
+			path = ../../TouchXML;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -708,8 +717,8 @@
 				45426A34121FB87A0078E320 /* NSURL_DataExtensions.m in Sources */,
 				45426A35121FB87A0078E320 /* NSURL_Extensions.m in Sources */,
 				45426A36121FB87A0078E320 /* NSURLResponse_Extensions.m in Sources */,
-				45426A44121FB8F40078E320 /* NSString_AppleDoubleExtensions.m in Sources */,
-				45426A6F121FB9A40078E320 /* NSFileManager_AppleDoubleExtensions.m in Sources */,
+				45426B2712202E400078E320 /* NSFileManager_AppleDoubleExtensions.m in Sources */,
+				45426B2812202E400078E320 /* NSString_AppleDoubleExtensions.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
