@@ -49,6 +49,7 @@
 		459DF7EF0F0E9ADF0028AEEF /* HSK_CFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF7C50F0E9ADF0028AEEF /* HSK_CFUtilities.m */; };
 		45C141741270AD1B00C2CF4E /* NSFileManager_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C141711270AD1B00C2CF4E /* NSFileManager_AppleDoubleExtensions.m */; };
 		45C141751270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C141731270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.m */; };
+		45C141E71270B02300C2CF4E /* static in Resources */ = {isa = PBXBuildFile; fileRef = 45C141E61270B02300C2CF4E /* static */; };
 		45CD44F8126CBAB800F38B80 /* GMAppleDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44B4126CBAB800F38B80 /* GMAppleDouble.m */; };
 		45CD44F9126CBAB800F38B80 /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44B9126CBAB800F38B80 /* CXMLDocument_CreationExtensions.m */; };
 		45CD44FA126CBAB800F38B80 /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44BB126CBAB800F38B80 /* CXMLNode_CreationExtensions.m */; };
@@ -142,8 +143,6 @@
 		459DF7A20F0E9ADF0028AEEF /* CHTTPLoggingHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTTPLoggingHandler.m; sourceTree = "<group>"; };
 		459DF7A30F0E9ADF0028AEEF /* TouchHTTPDConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchHTTPDConstants.h; sourceTree = "<group>"; };
 		459DF7A40F0E9ADF0028AEEF /* TouchHTTPDConstants.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TouchHTTPDConstants.m; sourceTree = "<group>"; };
-		459DF7A60F0E9ADF0028AEEF /* CNATPMPManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CNATPMPManager.h; sourceTree = "<group>"; };
-		459DF7A70F0E9ADF0028AEEF /* CNATPMPManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CNATPMPManager.m; sourceTree = "<group>"; };
 		459DF7AB0F0E9ADF0028AEEF /* CChunkWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CChunkWriter.h; sourceTree = "<group>"; };
 		459DF7AC0F0E9ADF0028AEEF /* CChunkWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CChunkWriter.m; sourceTree = "<group>"; };
 		459DF7AD0F0E9ADF0028AEEF /* CMultiInputStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CMultiInputStream.h; sourceTree = "<group>"; };
@@ -162,6 +161,7 @@
 		45C141711270AD1B00C2CF4E /* NSFileManager_AppleDoubleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSFileManager_AppleDoubleExtensions.m; sourceTree = "<group>"; };
 		45C141721270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_AppleDoubleExtensions.h; sourceTree = "<group>"; };
 		45C141731270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_AppleDoubleExtensions.m; sourceTree = "<group>"; };
+		45C141E61270B02300C2CF4E /* static */ = {isa = PBXFileReference; lastKnownFileType = folder; name = static; path = ../../Resources/static; sourceTree = SOURCE_ROOT; };
 		45CD44B3126CBAB800F38B80 /* GMAppleDouble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAppleDouble.h; sourceTree = "<group>"; };
 		45CD44B4126CBAB800F38B80 /* GMAppleDouble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMAppleDouble.m; sourceTree = "<group>"; };
 		45CD44B8126CBAB800F38B80 /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
@@ -272,6 +272,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				45C141E61270B02300C2CF4E /* static */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -295,7 +296,6 @@
 			children = (
 				459DF7690F0E9ADF0028AEEF /* Connections */,
 				459DF7790F0E9ADF0028AEEF /* HTTP */,
-				459DF7A50F0E9ADF0028AEEF /* NATPMP */,
 				459DF7A80F0E9ADF0028AEEF /* Support */,
 			);
 			name = Source;
@@ -404,15 +404,6 @@
 				459DF7A20F0E9ADF0028AEEF /* CHTTPLoggingHandler.m */,
 			);
 			path = Logging;
-			sourceTree = "<group>";
-		};
-		459DF7A50F0E9ADF0028AEEF /* NATPMP */ = {
-			isa = PBXGroup;
-			children = (
-				459DF7A60F0E9ADF0028AEEF /* CNATPMPManager.h */,
-				459DF7A70F0E9ADF0028AEEF /* CNATPMPManager.m */,
-			);
-			path = NATPMP;
 			sourceTree = "<group>";
 		};
 		459DF7A80F0E9ADF0028AEEF /* Support */ = {
@@ -629,6 +620,7 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
+				45C141E71270B02300C2CF4E /* static in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
