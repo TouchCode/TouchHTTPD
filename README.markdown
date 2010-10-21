@@ -1,22 +1,16 @@
-Copyright (c) 2008 Jonathan Wight
+= TouchHTTPD =
 
-Permission is hereby granted, free of charge, to any person
-obtaining a copy of this software and associated documentation
-files (the "Software"), to deal in the Software without
-restriction, including without limitation the rights to use,
-copy, modify, merge, publish, distribute, sublicense, and/or sell
-copies of the Software, and to permit persons to whom the
-Software is furnished to do so, subject to the following
-conditions:
+== Requirements ==
 
-The above copyright notice and this permission notice shall be
-included in all copies or substantial portions of the Software.
+TouchHTTPD requires TouchFoundation and TouchXML (*).
 
-THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-OTHER DEALINGS IN THE SOFTWARE.
+(* TouchHTTPD uses TouchXML for presenting of errors. This functionality is optional and can be removed. The WebDAV handler also uses XML and (for obvious reasons this is not optional).
+
+== How to build ==
+
+You need to check out TouchFoundation and TouchXML into the same parent directory as TouchHTTPD:
+
+	<parent directory>
+		TouchFoundation
+		TouchHTTPD
+		TouchXML
