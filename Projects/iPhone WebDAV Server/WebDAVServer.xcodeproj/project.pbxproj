@@ -49,7 +49,9 @@
 		459DF7EF0F0E9ADF0028AEEF /* HSK_CFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF7C50F0E9ADF0028AEEF /* HSK_CFUtilities.m */; };
 		45C141741270AD1B00C2CF4E /* NSFileManager_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C141711270AD1B00C2CF4E /* NSFileManager_AppleDoubleExtensions.m */; };
 		45C141751270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C141731270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.m */; };
-		45C141E71270B02300C2CF4E /* static in Resources */ = {isa = PBXBuildFile; fileRef = 45C141E61270B02300C2CF4E /* static */; };
+		45C142731270BC9100C2CF4E /* entries.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 45C142701270BC9100C2CF4E /* entries.xsl */; };
+		45C142741270BC9100C2CF4E /* NSError.css in Resources */ = {isa = PBXBuildFile; fileRef = 45C142711270BC9100C2CF4E /* NSError.css */; };
+		45C142751270BC9100C2CF4E /* NSError.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 45C142721270BC9100C2CF4E /* NSError.xsl */; };
 		45CD44F8126CBAB800F38B80 /* GMAppleDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44B4126CBAB800F38B80 /* GMAppleDouble.m */; };
 		45CD44F9126CBAB800F38B80 /* CXMLDocument_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44B9126CBAB800F38B80 /* CXMLDocument_CreationExtensions.m */; };
 		45CD44FA126CBAB800F38B80 /* CXMLNode_CreationExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44BB126CBAB800F38B80 /* CXMLNode_CreationExtensions.m */; };
@@ -161,7 +163,9 @@
 		45C141711270AD1B00C2CF4E /* NSFileManager_AppleDoubleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSFileManager_AppleDoubleExtensions.m; sourceTree = "<group>"; };
 		45C141721270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_AppleDoubleExtensions.h; sourceTree = "<group>"; };
 		45C141731270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSString_AppleDoubleExtensions.m; sourceTree = "<group>"; };
-		45C141E61270B02300C2CF4E /* static */ = {isa = PBXFileReference; lastKnownFileType = folder; name = static; path = ../../Resources/static; sourceTree = SOURCE_ROOT; };
+		45C142701270BC9100C2CF4E /* entries.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = entries.xsl; sourceTree = "<group>"; };
+		45C142711270BC9100C2CF4E /* NSError.css */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.css; path = NSError.css; sourceTree = "<group>"; };
+		45C142721270BC9100C2CF4E /* NSError.xsl */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.xml; path = NSError.xsl; sourceTree = "<group>"; };
 		45CD44B3126CBAB800F38B80 /* GMAppleDouble.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GMAppleDouble.h; sourceTree = "<group>"; };
 		45CD44B4126CBAB800F38B80 /* GMAppleDouble.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GMAppleDouble.m; sourceTree = "<group>"; };
 		45CD44B8126CBAB800F38B80 /* CXMLDocument_CreationExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLDocument_CreationExtensions.h; sourceTree = "<group>"; };
@@ -272,7 +276,7 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				45C141E61270B02300C2CF4E /* static */,
+				45C1426F1270BC9100C2CF4E /* static */,
 				2899E55F0DE3E45000AC0155 /* RootViewController.xib */,
 				28AD735F0D9D9599002E5188 /* MainWindow.xib */,
 				8D1107310486CEB800E47090 /* Info.plist */,
@@ -438,6 +442,17 @@
 			);
 			path = SKPInputStreamConnector;
 			sourceTree = "<group>";
+		};
+		45C1426F1270BC9100C2CF4E /* static */ = {
+			isa = PBXGroup;
+			children = (
+				45C142701270BC9100C2CF4E /* entries.xsl */,
+				45C142711270BC9100C2CF4E /* NSError.css */,
+				45C142721270BC9100C2CF4E /* NSError.xsl */,
+			);
+			name = static;
+			path = ../../Resources/static;
+			sourceTree = SOURCE_ROOT;
 		};
 		45CD44B2126CBAB800F38B80 /* Externals */ = {
 			isa = PBXGroup;
@@ -620,7 +635,9 @@
 			files = (
 				28AD73600D9D9599002E5188 /* MainWindow.xib in Resources */,
 				2899E5600DE3E45000AC0155 /* RootViewController.xib in Resources */,
-				45C141E71270B02300C2CF4E /* static in Resources */,
+				45C142731270BC9100C2CF4E /* entries.xsl in Resources */,
+				45C142741270BC9100C2CF4E /* NSError.css in Resources */,
+				45C142751270BC9100C2CF4E /* NSError.xsl in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
