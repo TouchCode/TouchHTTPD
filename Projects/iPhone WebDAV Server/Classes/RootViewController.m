@@ -160,10 +160,10 @@ else if (self.WebDAVSwitch.on == NO)
     NSMutableArray *addrs = [NSMutableArray array];
     
     struct ifaddrs *ll;
-    struct ifaddrs *llOrigin;
+//    struct ifaddrs *llOrigin;
     getifaddrs(&ll);
     
-    llOrigin = ll;
+//    llOrigin = ll;
     
     while (ll)
     {

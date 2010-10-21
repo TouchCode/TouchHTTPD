@@ -8,8 +8,21 @@
 	#define LOGGING 1
 	
 	#if LOGGING
-	#define LOG_ NSLog
+        #define LOG_ NSLog
 	#else
-	#define LOG_
+        #define LOG_
 	#endif
+    
+    #ifndef __has_feature      // Optional.
+        #define __has_feature(x) 0 // Compatibility with non-clang compilers.
+    #endif
+
+    #ifndef NS_RETURNS_NOT_RETAINED
+        #if __has_feature(attribute_ns_returns_not_retained)
+            #define NS_RETURNS_NOT_RETAINED __attribute__((ns_returns_not_retained))
+        #else
+            #define NS_RETURNS_NOT_RETAINED
+        #endif
+    #endif
+
 #endif

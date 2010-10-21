@@ -51,7 +51,7 @@
 - (CHTTPMessage *)responseForOptionsRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
 - (CHTTPMessage *)responseForDeleteRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
 - (CHTTPMessage *)responseForMoveRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
-- (CHTTPMessage *)responseForCopyRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
+- (CHTTPMessage *)responseForCopyRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError NS_RETURNS_NOT_RETAINED;
 - (CHTTPMessage *)responseForPropFindRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
 - (CHTTPMessage *)responseForMkColRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
 - (CHTTPMessage *)responseForPropPatchRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
