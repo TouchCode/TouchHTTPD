@@ -95,7 +95,9 @@ if ([[inDocument nodesForXPath:@"/D:propfind/D:allprop" namespaceMappings:theNam
 	theAllPropFlag = YES;
 
 NSMutableArray *theNotHandledProperties = [NSMutableArray array];
-NSDictionary *theFileAttributes = [self.fileManager fileAttributesAtPath:theAbsolutePath traverseLink:NO];
+NSDictionary *theFileAttributes = [self.fileManager attributesOfItemAtPath:theAbsolutePath error:&theError];
+
+
 if (theFileAttributes == NULL)
 	{
 	if (outError)

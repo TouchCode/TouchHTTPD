@@ -37,7 +37,7 @@
 
 @implementation CHTTPStaticResourcesHandler
 
-- (void) dealloc
+- (void)dealloc
 {
 self.rootDirectory = NULL;
 //	

@@ -77,6 +77,13 @@ self.bodyWriter = NULL;
 
 #pragma mark -
 
+- (NSString *)description
+    {
+    return([NSString stringWithFormat:@"%@ (%@)", [super description], self.requestURL]);
+    }
+
+#pragma mark -
+
 - (NSData *)headerData
 {
 NSData *theHeaderData = [(NSData *)CFHTTPMessageCopySerializedMessage(self.message) autorelease];
@@ -243,7 +250,8 @@ else
 		{
 		CTempFile *theTempFile = self.body;
 		[theTempFile.fileHandle synchronizeFile];
-		NSDictionary *theAttributes = [[NSFileManager defaultManager] fileAttributesAtPath:theTempFile.path traverseLink:NO];
+        NSError *theError = NULL;
+		NSDictionary *theAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:theTempFile.path error:&theError];
 
 		return([theAttributes fileSize] == theContentLength);
 		}

@@ -29,7 +29,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface CMultiInputStream : NSInputStream {
+@interface CMultiInputStream : NSInputStream <NSStreamDelegate> {
 	id delegate;
 	NSRunLoop *runLoop;
 	NSString *mode;

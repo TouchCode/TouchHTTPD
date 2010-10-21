@@ -79,7 +79,8 @@ return(theAbsolutePath);
 // http://bitworking.org/news/150/REST-Tip-Deep-etags-give-you-more-benefits
 NSString *thePath = [self absolutePathForRelativePath:inPath];
 
-NSDictionary *theAttributes = [self.fileManager fileAttributesAtPath:thePath traverseLink:NO];
+NSError *theError = NULL;
+NSDictionary *theAttributes = [self.fileManager attributesOfItemAtPath:thePath error:&theError];
 
 
 // JIWTODO - this should really be MD5ed or SHA1ed.
@@ -230,7 +231,8 @@ if (self.supportAppleDouble == YES && [thePath pathIsAppleDouble] == YES)
 	NSData *theAppleDoubleData = [self.fileManager appleDoubleDataForPath:thePath error:outError];
 	if (theAppleDoubleData == NULL)
 		return(NULL);
-	NSDictionary *theDataForkAttributes = [self.fileManager fileAttributesAtPath:thePath traverseLink:NO];
+    NSError *theError = NULL;
+	NSDictionary *theDataForkAttributes = [self.fileManager attributesOfItemAtPath:thePath error:&theError];
 	NSDictionary *theAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
 		NSFileTypeRegular, NSFileType,
 		[NSNumber numberWithInteger:theAppleDoubleData.length], NSFileSize,
@@ -241,7 +243,9 @@ if (self.supportAppleDouble == YES && [thePath pathIsAppleDouble] == YES)
 	}
 else
 	{
-	return([self.fileManager fileAttributesAtPath:thePath traverseLink:NO]);
+    NSError *theError = NULL;
+	NSDictionary *theAttributes = [self.fileManager attributesOfItemAtPath:thePath error:&theError];
+    return(theAttributes);
 	}
 }
 

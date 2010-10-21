@@ -31,7 +31,7 @@
 
 @protocol CStreamConnectorDelegate;
 
-@interface CStreamConnector : NSObject {
+@interface CStreamConnector : NSObject <NSStreamDelegate> {
 	NSInputStream *inputStream;
 	NSOutputStream *outputStream;
 	id <CStreamConnectorDelegate> delegate;
