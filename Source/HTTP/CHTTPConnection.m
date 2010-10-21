@@ -161,7 +161,7 @@ if (theResponse == NULL)
 		}
 	}
 
-NSLog(@"**** responseForRequest: %@ %@ %@ -> %d", inRequest.requestMethod, inRequest.requestURL, [inRequest headerForKey:@"Content-Length"], theResponse.responseStatusCode);
+NSLog(@"**** responseForRequest: %@ -> %@", inRequest, theResponse);
 
 return(theResponse);
 }

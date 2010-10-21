@@ -79,7 +79,7 @@ self.bodyWriter = NULL;
 
 - (NSString *)description
     {
-    return([NSString stringWithFormat:@"%@ (%@)", [super description], self.requestURL]);
+    return([NSString stringWithFormat:@"%@ (Request URL: %@, Response Status Code: %d)", [super description], self.requestURL, self.responseStatusCode]);
     }
 
 #pragma mark -
