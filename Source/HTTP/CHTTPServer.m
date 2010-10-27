@@ -76,6 +76,7 @@ self.SSLCertificates = NULL;
 if (self.socketListener == NULL)
 	{
 	CTCPSocketListener *theSocketListener = [[[CTCPSocketListener alloc] init] autorelease];
+	theSocketListener.broadcasting = YES;
 	theSocketListener.type = @"_http._tcp.";
 	theSocketListener.port = 8080;
 	theSocketListener.connectionCreationDelegate = self;
