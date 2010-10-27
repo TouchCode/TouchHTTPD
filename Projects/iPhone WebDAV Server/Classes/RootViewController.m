@@ -108,6 +108,15 @@ if (self.HTTPServer == NULL)
 	CHTTPLoggingHandler *theLoggingHandler = [[[CHTTPLoggingHandler alloc] init] autorelease];
 	[theHTTPServer.defaultRequestHandlers addObject:theLoggingHandler];
 
+	// by default your server will be published via Bonjour,
+	// to change this behaviour, just uncomment this line: 
+	// theHTTPServer.socketListener.broadcasting = NO;
+		
+	// by default your server as broadcasted as simple HTTP service,
+	// if you want your server to be discovert by WebDAV clients (like Transmit or Cyberduck),
+	// uncomment this line:
+	// theHTTPServer.socketListener.type = "_webdav._tcp.";
+		
 	[theHTTPServer.socketListener start:NULL];
 
 	theHTTPServer.socketListener.delegate = self;
