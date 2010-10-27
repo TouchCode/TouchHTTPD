@@ -26,6 +26,9 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
+//
+//	Some parts of this code is contributed by Aleksejs Mjaliks
+//
 
 #import <Foundation/Foundation.h>
 #if TARGET_OS_MAC == 1 && TARGET_OS_IPHONE == 0
@@ -52,6 +55,8 @@
     NSNetService *netService;
 	NSMutableArray *mutableConnections;
 	BOOL listening;
+	// flag, indicates is Bonjour broadcast is on
+	BOOL broadcasting;
 }
 
 @property (readwrite, assign) id <CTCPSocketListenerDelegate> delegate;
@@ -65,6 +70,7 @@
 @property (readonly, retain) NSNetService *netService;
 @property (readonly, retain) NSArray *connections;
 @property (readonly, assign) BOOL listening;
+@property (readwrite, assign) BOOL broadcasting;
 
 - (BOOL)start:(NSError **)outError;
 - (void)stop;

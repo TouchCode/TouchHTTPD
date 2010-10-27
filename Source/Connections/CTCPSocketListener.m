@@ -26,6 +26,9 @@
 //  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
+//
+//	Some parts of this code is contributed by Aleksejs Mjaliks
+//
 
 #import "CTCPSocketListener.h"
 
@@ -59,6 +62,7 @@ static void TCPSocketListenerAcceptCallBack(CFSocketRef socket, CFSocketCallBack
 @synthesize type;
 @synthesize mutableConnections;
 @synthesize listening;
+@synthesize broadcasting;
 
 - (id)init
 {
@@ -198,6 +202,23 @@ if (netService != inNetService)
 return(self.connections);
 }
 
+- (void)setBroadcasting:(BOOL)newBroadcasting {
+	if (broadcasting != newBroadcasting) {
+		// continue only, if state need to be changed
+		
+		broadcasting = newBroadcasting;
+		
+		if (self.listening && self.type != nil) {
+			if (self.broadcasting) {
+				[self.netService publish];
+			} else {
+				[self.netService stop];
+				self.netService = nil;
+			}
+		}
+	}
+}
+
 #pragma mark -
 
 - (BOOL)start:(NSError **)outError
@@ -213,8 +234,9 @@ if ([self openIPV4Socket:outError] == NO)
 //	return(NO);
 //	}
 
-if (self.type != NULL)
+if (self.broadcasting && self.type != NULL)
 	{
+	// if broadcasting is enabled and service type is set, then publish Bonjour service
 	[self.netService publish];
 	}
 
