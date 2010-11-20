@@ -29,7 +29,7 @@
 
 #import "CHTTPMessage.h"
 
-#import "CTempFile.h"
+#import "CTemporaryFile.h"
 #import "CChunkWriter.h"
 
 @interface CHTTPMessage ()
@@ -100,10 +100,10 @@ NSAssert(NO, @"Not implemented yet.");
 {
 if ([self.body isKindOfClass:[NSData class]])
 	return(self.body);
-else if ([self.body isKindOfClass:[CTempFile class]])
+else if ([self.body isKindOfClass:[CTemporaryFile class]])
 	{
-	CTempFile *theTempFile = (CTempFile *)self.body;
-	return([NSData dataWithContentsOfFile:theTempFile.path]);
+	CTemporaryFile *theTempFile = (CTemporaryFile *)self.body;
+	return([NSData dataWithContentsOfURL:theTempFile.URL]);
 	}
 
 return(NULL);
@@ -180,7 +180,7 @@ if (self.isHeaderComplete == NO)
 		// Clear the CFHTTPMessage's body - we keep track of the body ourself
 		CFHTTPMessageSetBody(self.message, NULL);
 
-		CTempFile *theTempFile = [CTempFile tempFile];;
+		CTemporaryFile *theTempFile = [CTemporaryFile tempFile];;
 		self.body = theTempFile;
 
 		self.bodyWriter = theTempFile.fileHandle;
@@ -246,12 +246,12 @@ else
 
 	// JIWTODO this is all horribly hacky. Horrible horrible horrible.
 
-	if ([self.body isKindOfClass:[CTempFile class]])
+	if ([self.body isKindOfClass:[CTemporaryFile class]])
 		{
-		CTempFile *theTempFile = self.body;
+		CTemporaryFile *theTempFile = self.body;
 		[theTempFile.fileHandle synchronizeFile];
         NSError *theError = NULL;
-		NSDictionary *theAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:theTempFile.path error:&theError];
+		NSDictionary *theAttributes = [[NSFileManager defaultManager] attributesOfItemAtPath:theTempFile.URL.path error:&theError];
 
 		return([theAttributes fileSize] == theContentLength);
 		}

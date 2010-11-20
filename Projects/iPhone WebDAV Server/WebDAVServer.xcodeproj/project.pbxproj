@@ -65,7 +65,6 @@
 		45CD4502126CBAB800F38B80 /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44CB126CBAB800F38B80 /* CXMLNode_PrivateExtensions.m */; };
 		45CD4503126CBAB800F38B80 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44CD126CBAB800F38B80 /* CXMLNode_XPathExtensions.m */; };
 		45CD4507126CBAB800F38B80 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44D7126CBAB800F38B80 /* Base64Transcoder.c */; };
-		45CD4508126CBAB800F38B80 /* CTempFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44DA126CBAB800F38B80 /* CTempFile.m */; };
 		45CD4509126CBAB800F38B80 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44DF126CBAB800F38B80 /* ISO8601DateFormatter.m */; };
 		45CD450A126CBAB800F38B80 /* NSDate_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44E1126CBAB800F38B80 /* NSDate_Extensions.m */; };
 		45CD450B126CBAB800F38B80 /* NSDate_InternetDateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44E3126CBAB800F38B80 /* NSDate_InternetDateExtensions.m */; };
@@ -79,6 +78,7 @@
 		45CD4513126CBAB800F38B80 /* NSURL_DataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44F3126CBAB800F38B80 /* NSURL_DataExtensions.m */; };
 		45CD4514126CBAB800F38B80 /* NSURL_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44F5126CBAB800F38B80 /* NSURL_Extensions.m */; };
 		45CD4515126CBAB800F38B80 /* NSURLResponse_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44F7126CBAB800F38B80 /* NSURLResponse_Extensions.m */; };
+		45FFF5F5129369B7006944A2 /* CTemporaryFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FFF5F4129369B7006944A2 /* CTemporaryFile.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -193,8 +193,6 @@
 		45CD44CE126CBAB800F38B80 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
 		45CD44D7126CBAB800F38B80 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
 		45CD44D8126CBAB800F38B80 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
-		45CD44D9126CBAB800F38B80 /* CTempFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTempFile.h; sourceTree = "<group>"; };
-		45CD44DA126CBAB800F38B80 /* CTempFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTempFile.m; sourceTree = "<group>"; };
 		45CD44DE126CBAB800F38B80 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
 		45CD44DF126CBAB800F38B80 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
 		45CD44E0126CBAB800F38B80 /* NSDate_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDate_Extensions.h; sourceTree = "<group>"; };
@@ -221,6 +219,8 @@
 		45CD44F5126CBAB800F38B80 /* NSURL_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURL_Extensions.m; sourceTree = "<group>"; };
 		45CD44F6126CBAB800F38B80 /* NSURLResponse_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLResponse_Extensions.h; sourceTree = "<group>"; };
 		45CD44F7126CBAB800F38B80 /* NSURLResponse_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLResponse_Extensions.m; sourceTree = "<group>"; };
+		45FFF5F3129369B7006944A2 /* CTemporaryFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTemporaryFile.h; sourceTree = "<group>"; };
+		45FFF5F4129369B7006944A2 /* CTemporaryFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTemporaryFile.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -527,8 +527,8 @@
 			children = (
 				45CD44D7126CBAB800F38B80 /* Base64Transcoder.c */,
 				45CD44D8126CBAB800F38B80 /* Base64Transcoder.h */,
-				45CD44D9126CBAB800F38B80 /* CTempFile.h */,
-				45CD44DA126CBAB800F38B80 /* CTempFile.m */,
+				45FFF5F3129369B7006944A2 /* CTemporaryFile.h */,
+				45FFF5F4129369B7006944A2 /* CTemporaryFile.m */,
 				45CD44DB126CBAB800F38B80 /* Extensions */,
 			);
 			path = Source;
@@ -695,7 +695,6 @@
 				45CD4502126CBAB800F38B80 /* CXMLNode_PrivateExtensions.m in Sources */,
 				45CD4503126CBAB800F38B80 /* CXMLNode_XPathExtensions.m in Sources */,
 				45CD4507126CBAB800F38B80 /* Base64Transcoder.c in Sources */,
-				45CD4508126CBAB800F38B80 /* CTempFile.m in Sources */,
 				45CD4509126CBAB800F38B80 /* ISO8601DateFormatter.m in Sources */,
 				45CD450A126CBAB800F38B80 /* NSDate_Extensions.m in Sources */,
 				45CD450B126CBAB800F38B80 /* NSDate_InternetDateExtensions.m in Sources */,
@@ -711,6 +710,7 @@
 				45CD4515126CBAB800F38B80 /* NSURLResponse_Extensions.m in Sources */,
 				45C141741270AD1B00C2CF4E /* NSFileManager_AppleDoubleExtensions.m in Sources */,
 				45C141751270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.m in Sources */,
+				45FFF5F5129369B7006944A2 /* CTemporaryFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

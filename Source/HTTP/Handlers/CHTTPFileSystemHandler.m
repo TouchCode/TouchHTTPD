@@ -38,7 +38,7 @@
 #import "NSError_HTTPDExtensions.h"
 #import "TouchXML.h"
 #import "NSFileManager_Extensions.h"
-#import "CTempFile.h"
+#import "CTemporaryFile.h"
 #import "CDefaultFileSystem.h"
 #import "NSString_Extensions.h"
 #import "NSDate_InternetDateExtensions.h"
@@ -253,12 +253,12 @@ if (theFileExistsFlag)
 	// JIWTODO error handling.
 	}
 
-NSAssert([inRequest.body isKindOfClass:[CTempFile class]], @"Request body is not a CTempFile");
+NSAssert([inRequest.body isKindOfClass:[CTemporaryFile class]], @"Request body is not a CTemporaryFile");
 
-CTempFile *theTempFile = inRequest.body; 
+CTemporaryFile *theTempFile = inRequest.body; 
 
 // JIWTODO this needs to be put in fileSystem
-theResult = [self.fileSystem moveLocalFileSystemItemAtPath:theTempFile.path toPath:thePath error:&theError];
+theResult = [self.fileSystem moveLocalFileSystemItemAtPath:theTempFile.URL.path toPath:thePath error:&theError];
 if (theResult == NO)
 	{
 	NSLog(@"500: moveLocalFileSystemItemAtPath failed: %@", theError);
