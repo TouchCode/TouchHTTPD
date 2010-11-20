@@ -471,9 +471,8 @@
 			children = (
 				45CD44B6126CBAB800F38B80 /* Source */,
 			);
-			name = TouchXML;
-			path = ../../../TouchXML;
-			sourceTree = SOURCE_ROOT;
+			path = TouchXML;
+			sourceTree = "<group>";
 		};
 		45CD44B6126CBAB800F38B80 /* Source */ = {
 			isa = PBXGroup;
@@ -518,9 +517,8 @@
 			children = (
 				45CD44D6126CBAB800F38B80 /* Source */,
 			);
-			name = TouchFoundation;
-			path = ../../../TouchFoundation;
-			sourceTree = SOURCE_ROOT;
+			path = TouchFoundation;
+			sourceTree = "<group>";
 		};
 		45CD44D6126CBAB800F38B80 /* Source */ = {
 			isa = PBXGroup;
