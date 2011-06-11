@@ -27,6 +27,14 @@
 //  OTHER DEALINGS IN THE SOFTWARE.
 //
 
+#ifndef NS_RETURNS_NOT_RETAINED
+	#if __has_feature(attribute_ns_returns_not_retained)
+		#define NS_RETURNS_NOT_RETAINED __attribute__((ns_returns_not_retained))
+	#else
+		#define NS_RETURNS_NOT_RETAINED
+	#endif
+#endif
+
 #import "CWebDavHTTPHandler.h"
 
 #import "CHTTPMessage.h"

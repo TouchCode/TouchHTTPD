@@ -55,8 +55,6 @@
     NSNetService *netService;
 	NSMutableArray *mutableConnections;
 	BOOL listening;
-	// flag, indicates is Bonjour broadcast is on
-	BOOL broadcasting;
 }
 
 @property (readwrite, assign) id <CTCPSocketListenerDelegate> delegate;
@@ -70,7 +68,12 @@
 @property (readonly, retain) NSNetService *netService;
 @property (readonly, retain) NSArray *connections;
 @property (readonly, assign) BOOL listening;
-@property (readwrite, assign) BOOL broadcasting;
+
+// flag, indicates is Bonjour broadcast is on
+@property (readwrite, assign, getter = broadcasting, setter = setBroadcasting:) BOOL broadcasting;
+
+- (BOOL)broadcasting;
+- (void)setBroadcasting:(BOOL)newBroadcasting;
 
 - (BOOL)start:(NSError **)outError;
 - (void)stop;

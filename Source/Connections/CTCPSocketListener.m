@@ -62,7 +62,7 @@ static void TCPSocketListenerAcceptCallBack(CFSocketRef socket, CFSocketCallBack
 @synthesize type;
 @synthesize mutableConnections;
 @synthesize listening;
-@synthesize broadcasting;
+@synthesize broadcasting = _broadcasting;
 
 - (id)init
 {
@@ -202,14 +202,18 @@ if (netService != inNetService)
 return(self.connections);
 }
 
+- (BOOL)broadcasting {
+	return _broadcasting;
+}
+
 - (void)setBroadcasting:(BOOL)newBroadcasting {
-	if (broadcasting != newBroadcasting) {
+	if (_broadcasting != newBroadcasting) {
 		// continue only, if state need to be changed
 		
-		broadcasting = newBroadcasting;
+		_broadcasting = newBroadcasting;
 		
 		if (self.listening && self.type != nil) {
-			if (self.broadcasting) {
+			if (_broadcasting) {
 				[self.netService publish];
 			} else {
 				[self.netService stop];
@@ -234,7 +238,7 @@ if ([self openIPV4Socket:outError] == NO)
 //	return(NO);
 //	}
 
-if (self.broadcasting && self.type != NULL)
+if (_broadcasting && self.type != NULL)
 	{
 	// if broadcasting is enabled and service type is set, then publish Bonjour service
 	[self.netService publish];
@@ -487,6 +491,6 @@ if (inCallbackType == kCFSocketAcceptCallBack)
 	}
 else
 	{
-	NSLog(@"TCPSocketListenerAcceptCallBack(): Unhandled callback type %d", inCallbackType);
+	NSLog(@"TCPSocketListenerAcceptCallBack(): Unhandled callback type %lu", inCallbackType);
 	}
 }

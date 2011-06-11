@@ -85,6 +85,8 @@ for (GMAppleDoubleEntry *theEntry in [theAppleDouble entries])
 		case DoubleEntryResourceFork:
 			theAttributeName = @"com.apple.ResourceFork";
 			break;
+		default:
+			break;
 		}
 		
 	if (theAttributeName != NULL)
