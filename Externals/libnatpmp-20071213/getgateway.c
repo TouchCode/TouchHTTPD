@@ -21,7 +21,7 @@
 #include <stdlib.h>
 #include <sys/sysctl.h>
 #include <sys/socket.h>
-#include <net/route.h>
+#include "route.h"
 #endif
 #include "getgateway.h"
 
