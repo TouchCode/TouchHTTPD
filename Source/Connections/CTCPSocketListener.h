@@ -44,8 +44,8 @@
 @protocol CTCPSocketListenerDelegate;
 
 @interface CTCPSocketListener : NSObject <CTransportDelegate> {
-	id <CTCPSocketListenerDelegate> delegate;
-    id <CTCPConnectionCreationDelegate> connectionCreationDelegate;
+	id <CTCPSocketListenerDelegate> __unsafe_unretained delegate;
+    id <CTCPConnectionCreationDelegate> __unsafe_unretained connectionCreationDelegate;
     uint16_t port;
     NSString *domain;
     NSString *name;

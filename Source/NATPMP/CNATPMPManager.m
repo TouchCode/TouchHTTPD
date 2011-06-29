@@ -49,7 +49,6 @@ return(self);
 {
 closenatpmp(&natpmp);
 //
-[super dealloc];
 }
 
 - (NSData *)externalAddress:(NSError **)outError;

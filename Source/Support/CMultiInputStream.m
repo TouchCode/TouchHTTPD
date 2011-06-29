@@ -62,14 +62,8 @@ return(self);
 
 - (void)dealloc
 {
-self.delegate = NULL;
-self.runLoop = NULL;
-self.mode = NULL;
-self.streams = NULL;
 self.currentStream = NULL;
-self.enumerator = NULL;
 //
-[super dealloc];
 }
 
 #pragma mark -
@@ -89,8 +83,7 @@ return(currentStream);
 {
 if (currentStream != inCurrentStream)
 	{
-	[currentStream autorelease];
-	currentStream = [inCurrentStream retain];
+	currentStream = inCurrentStream;
     }
 }
 

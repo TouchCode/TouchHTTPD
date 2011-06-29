@@ -55,13 +55,6 @@ if ((self = [super init]) != NULL)
 return(self);
 }
 
-- (void)dealloc
-{
-self.locksByToken = NULL;
-self.locksByResource = NULL;
-//
-[super dealloc];
-}
 
 #pragma mark -
 
@@ -83,12 +76,10 @@ return([self.locksByResource objectForKey:inResource]);
 
 - (void)removeLock:(CWebDAVLock *)inLock
 {
-[inLock retain];
 
 [self.locksByToken removeObjectForKey:inLock.token];
 [self.locksByResource removeObjectForKey:inLock.resource];
 
-[inLock release];
 }
 
 @end

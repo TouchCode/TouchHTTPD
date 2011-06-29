@@ -32,7 +32,7 @@
 @protocol CHTTPBasicAuthHandlerDelegate;
 
 @interface CHTTPBasicAuthHandler : NSObject <CHTTPRequestHandler> {
-	id <CHTTPBasicAuthHandlerDelegate> delegate;
+	id <CHTTPBasicAuthHandlerDelegate> __unsafe_unretained delegate;
 	NSString *realm;
 }
 

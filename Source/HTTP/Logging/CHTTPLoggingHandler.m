@@ -59,7 +59,6 @@ if ((self = [super init]) != NULL)
 		if (theResult == NO)
 			{
 			NSLog(@"Could not create log directory: %@", theError);
-			[self dealloc];
 			self = NULL;
 			}
 		}
@@ -72,7 +71,6 @@ if ((self = [super init]) != NULL)
 		if (theResult == NO)
 			{
 			NSLog(@"Could not create log file: %@", theError);
-			[self dealloc];
 			self = NULL;
 			}
 		}
@@ -89,12 +87,6 @@ if ((self = [self init]) != NULL)
 return(self);
 }
 
-- (void)dealloc
-{
-self.logFile = NULL;
-//
-[super dealloc];
-}
 
 #pragma mark -
 
@@ -113,8 +105,7 @@ return(fileHandle);
 {
 if (fileHandle != inFileHandle)
 	{
-	[fileHandle release];
-	fileHandle = [inFileHandle retain];
+	fileHandle = inFileHandle;
     }
 }
 

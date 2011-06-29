@@ -70,7 +70,6 @@ return(self);
 - (void)dealloc
 {
 self.streamConnector.delegate = NULL;
-self.streamConnector = NULL;
 
 CFRelease(self.remoteReadStream);
 self.remoteReadStream = NULL;
@@ -78,7 +77,6 @@ self.remoteReadStream = NULL;
 CFRelease(self.remoteWriteStream);
 self.remoteWriteStream = NULL;
 
-[super dealloc];
 }
 
 - (CTransport *)transport
@@ -100,7 +98,7 @@ if (self.isOpen == NO)
 
 	CFStreamClientContext theContext = {
 		.version = 0,
-		.info = self,
+		.info = (void*)objc_unretainedPointer(self),
 		.retain = NULL,
 		.release = NULL,
 		};
@@ -155,7 +153,6 @@ return(theResult);
 if (self.isOpen == YES)
 	{
 	// We need to retain ourselves in case the act of closing causes a dealloc.
-	[[self retain] autorelease];
 	
 	[self.delegate connectionWillClose:self];
 
@@ -209,7 +206,7 @@ self.streamConnector = NULL;
 
 static void RemoteReadStreamClientCallBack(CFReadStreamRef stream, CFStreamEventType type, void *clientCallBackInfo)
 {
-NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
+@autoreleasepool {
 
 CTransport *theTransport = (__bridge CTransport *)clientCallBackInfo;
 
@@ -241,7 +238,7 @@ else if (type == kCFStreamEventHasBytesAvailable)
 		[theTransport dataReceived:theData];
 	}
 	
-[thePool release];
+}
 }
 
 static void RemoteWriteStreamClientCallBack(CFWriteStreamRef stream, CFStreamEventType type, void *clientCallBackInfo)

@@ -54,7 +54,7 @@
 
 + (id)streamConnectorWithInputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream;
 {
-return([[[self alloc] initWithInputStream:inInputStream outputStream:inOutputStream] autorelease]);
+return([[self alloc] initWithInputStream:inInputStream outputStream:inOutputStream]);
 }
 
 - (id)initWithInputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream
@@ -78,12 +78,8 @@ if (self.inputStream.delegate == self)
 if (self.outputStream.delegate == self)
 	self.outputStream.delegate = NULL;
 
-self.inputStream = NULL;
-self.outputStream = NULL;
 self.delegate = NULL;
-self.buffer = NULL;
 //
-[super dealloc];
 }
 
 #pragma mark -

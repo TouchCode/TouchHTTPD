@@ -38,7 +38,7 @@
 @protocol CHTTPRequestHandler;
 
 @interface CHTTPConnection : CWireProtocol {
-	CHTTPServer *server; // Never retained.
+	CHTTPServer *__unsafe_unretained server; // Never retained.
 	NSMutableArray *requestHandlers;
 	CHTTPMessage *currentRequest;
 }

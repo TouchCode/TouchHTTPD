@@ -73,18 +73,11 @@ return(self);
 if ((self = [self init]) != NULL)
 	{
 	self.rootPath = inRootPath;
-	self.fileSystem = [[[CDefaultFileSystem alloc] initWithRootDirectory:self.rootPath] autorelease];
+	self.fileSystem = [[CDefaultFileSystem alloc] initWithRootDirectory:self.rootPath];
 	}
 return(self);
 }
 
-- (void)dealloc
-{
-self.rootPath = NULL;
-self.fileSystem = NULL;
-//
-[super dealloc];
-}
 
 #pragma mark -
 

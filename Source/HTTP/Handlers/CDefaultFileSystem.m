@@ -55,13 +55,6 @@ if ((self = [self init]) != NULL)
 return(self);
 }
 
-- (void)dealloc
-{
-self.fileManager = NULL;
-self.rootDirectory = NULL;
-//
-[super dealloc];
-}
 
 #pragma mark -
 

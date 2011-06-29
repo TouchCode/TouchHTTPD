@@ -37,7 +37,7 @@
 	BOOL moreChunksComing;
 	NSInteger remainingChunkLength;
 	NSMutableData *buffer;
-	id <CChunkWriterDelegate> delegate;
+	id <CChunkWriterDelegate> __unsafe_unretained delegate;
 }
 
 @property (readwrite, retain) NSFileHandle *outputFile;

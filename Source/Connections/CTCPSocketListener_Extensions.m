@@ -39,17 +39,17 @@ if (self.listening == NO)
 		return(NO);
 	}
 
-NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
+@autoreleasepool {
 
 BOOL theFlag = self.listening;
 while (theFlag)
 	{
 	@try
 		{
-		NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
+		@autoreleasepool {
 		[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
 		theFlag = self.listening;
-		[thePool drain];
+		}
 		}
 	@catch (NSException *exception)
 		{
@@ -61,7 +61,7 @@ while (theFlag)
 		}
 	}
 
-[thePool drain];
+}
 
 return(YES);
 }

@@ -41,7 +41,7 @@
 
 - (id)initWithAddress:(NSData *)inAddress inputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream
 {
-if ((self = [self initWithInputStream:(CFReadStreamRef)inInputStream outputStream:(CFWriteStreamRef)inOutputStream]) != NULL)
+if ((self = [self initWithInputStream:(CFReadStreamRef)objc_unretainedPointer(inInputStream) outputStream:(CFWriteStreamRef)objc_unretainedPointer(inOutputStream)]) != NULL)
 	{
 	self.address = inAddress;
 	}
@@ -53,8 +53,6 @@ return(self);
 [self close];
 
 self.delegate = NULL;
-self.address = NULL;
 
-[super dealloc];
 }
 @end

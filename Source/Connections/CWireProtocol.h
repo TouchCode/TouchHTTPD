@@ -32,7 +32,7 @@
 @class CTransport;
 
 @interface CWireProtocol : NSObject {
-	CWireProtocol *lowerLink; // Weak
+	CWireProtocol *__unsafe_unretained lowerLink; // Weak
 	CWireProtocol *upperLink;
 }
 

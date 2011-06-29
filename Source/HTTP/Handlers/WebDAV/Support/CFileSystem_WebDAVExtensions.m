@@ -188,9 +188,9 @@ if (theNotHandledProperties.count > 0)
 	thePropStatElement = [theResponseElement subelement:@"propstat"];	
 	[thePropStatElement subelement:@"status"].stringValue = @"HTTP/1.1 404 Not Found";
 	thePropElement = [thePropStatElement subelement:@"prop"];
-	for (CXMLElement *theProperty in theNotHandledProperties)
+	for (__strong CXMLElement *theProperty in theNotHandledProperties)
 		{
-		theProperty = [[theProperty copy] autorelease];		
+		theProperty = [theProperty copy];		
 		[thePropElement addChild:theProperty];
 		}
 	}

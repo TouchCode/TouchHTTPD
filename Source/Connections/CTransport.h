@@ -37,7 +37,7 @@
 	CFReadStreamRef remoteReadStream;
 	CFWriteStreamRef remoteWriteStream;
 
-	id <CTransportDelegate> delegate; // Not retained.
+	id <CTransportDelegate> __unsafe_unretained delegate; // Not retained.
 	BOOL isOpen;
 	
 	CStreamConnector *streamConnector;

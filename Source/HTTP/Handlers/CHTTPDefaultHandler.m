@@ -67,12 +67,6 @@ if ((self = [self init]) != NULL)
 return(self);
 }
 
-- (void)dealloc
-{
-self.defaultHeaders = NULL;
-//
-[super dealloc];
-}
 
 #pragma mark -
 

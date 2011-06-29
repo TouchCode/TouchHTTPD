@@ -46,7 +46,6 @@
 self.lowerLink = NULL;
 self.upperLink = NULL;
 //
-[super dealloc];
 }
 
 #pragma mark -
@@ -64,13 +63,12 @@ if (upperLink != inUpperLink)
 		{
 		upperLink.lowerLink = NULL;
 		//
-		[upperLink release];
 		upperLink = NULL;
 		}
 
 	if (inUpperLink != NULL)
 		{
-		upperLink = [inUpperLink retain];
+		upperLink = inUpperLink;
 		upperLink.lowerLink = self;
 		}
     }

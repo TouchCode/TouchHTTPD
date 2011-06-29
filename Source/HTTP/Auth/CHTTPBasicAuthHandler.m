@@ -50,9 +50,7 @@ return(self);
 - (void)dealloc
 {
 self.delegate = NULL;
-self.realm = NULL;
 //
-[super dealloc];
 }
 
 #pragma mark -

@@ -34,7 +34,7 @@
 @interface CStreamConnector : NSObject <NSStreamDelegate> {
 	NSInputStream *inputStream;
 	NSOutputStream *outputStream;
-	id <CStreamConnectorDelegate> delegate;
+	id <CStreamConnectorDelegate> __unsafe_unretained delegate;
 	NSInteger maximumBufferLength;
 	NSMutableData *buffer;
 	BOOL connected;

@@ -36,12 +36,6 @@
 
 @synthesize router;
 
-- (void)dealloc
-{
-self.router = NULL;
-//
-[super dealloc];
-}
 
 #pragma mark -
 

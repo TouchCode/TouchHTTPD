@@ -102,11 +102,11 @@ return(NULL);
 
 + (CHTTPMessage *)HTTPMessageResponseWithStatusCode:(NSInteger)inStatusCode
 {
-CHTTPMessage *theHTTPMessage = [[[self alloc] init] autorelease];
+CHTTPMessage *theHTTPMessage = [[self alloc] init];
 
 NSString *theStatusDescription = [[self class] statusDescriptionForStatusCode:inStatusCode];
 
-theHTTPMessage.message = CFHTTPMessageCreateResponse(kCFAllocatorDefault, inStatusCode, (CFStringRef)theStatusDescription, (CFStringRef)kHTTPVersion1_1);
+theHTTPMessage.message = CFHTTPMessageCreateResponse(kCFAllocatorDefault, inStatusCode, (CFStringRef)objc_unretainedPointer(theStatusDescription), (CFStringRef)kHTTPVersion1_1);
 [theHTTPMessage setHeader:@"0" forKey:@"Content-Length"];
 return(theHTTPMessage);
 }
@@ -185,7 +185,7 @@ self.contentLength = inBodyData.length;
 
 - (NSString *)bodyString
 {
-return([[[NSString alloc] initWithData:self.bodyData encoding:NSUTF8StringEncoding] autorelease]);
+return([[NSString alloc] initWithData:self.bodyData encoding:NSUTF8StringEncoding]);
 }
 
 @end

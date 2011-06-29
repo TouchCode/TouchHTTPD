@@ -71,13 +71,6 @@ if ((self = [super init]) != NULL)
 return(self);
 }
 
-- (void)dealloc
-{
-self.outputFile = NULL;
-self.buffer = NULL;
-//
-[super dealloc];
-}
 
 - (void)writeData:(NSData *)inData;
 {
@@ -131,7 +124,6 @@ while (START < END)
 		{
 		NSData *theChunk = [[NSData alloc] initWithBytesNoCopy:(void *)P length:theAvailableLength freeWhenDone:NO];
 		[self.outputFile writeData:theChunk];
-		[theChunk release];
 		}
 	self.remainingChunkLength = theChunkLength - theAvailableLength;
 	
