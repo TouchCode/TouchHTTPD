@@ -28,8 +28,9 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "CHTTPMessage.h"
+#import "CHTTPConnection.h"
 
-@class CHTTPMessage;
 @class CHTTPConnection;
 
 @protocol CHTTPRequestHandler

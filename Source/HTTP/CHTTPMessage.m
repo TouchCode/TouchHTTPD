@@ -286,7 +286,7 @@ NSMutableData *theData = [NSMutableData data];
 CFDataRef theHeaderData = CFHTTPMessageCopySerializedMessage(self.message);
 if (theHeaderData)
 	{
-	[theData appendData:(NSData *)theHeaderData];
+	[theData appendData:(__bridge NSData *)theHeaderData];
 	CFRelease(theHeaderData);
 	}
 

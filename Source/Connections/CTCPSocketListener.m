@@ -466,7 +466,7 @@ static void TCPSocketListenerAcceptCallBack(CFSocketRef inSocket, CFSocketCallBa
 {
 #pragma unused (inSocket, inAddress)
 
-CTCPSocketListener *theTCPSocketListener = (CTCPSocketListener *)ioInfo;
+CTCPSocketListener *theTCPSocketListener = (__bridge CTCPSocketListener *)ioInfo;
 if (inCallbackType == kCFSocketAcceptCallBack)
 	{
 	// for an AcceptCallBack, the data parameter is a pointer to a CFSocketNativeHandle
@@ -479,7 +479,7 @@ if (inCallbackType == kCFSocketAcceptCallBack)
 		thePeerAddress = [NSData dataWithBytes:theSocketName length:theSocketNameLength];
 		}
 
-	if ([theTCPSocketListener shouldHandleNewConnectionFromAddress:(NSData *)inAddress] == YES)
+	if ([theTCPSocketListener shouldHandleNewConnectionFromAddress:(__bridge NSData *)inAddress] == YES)
 		{
 		NSError *theError = NULL;
 		BOOL theResult = [theTCPSocketListener handleNewConnectionFromAddress:thePeerAddress nativeHandle:theNativeSocketHandle error:&theError];

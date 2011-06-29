@@ -178,11 +178,11 @@ if (self.isOpen == YES)
 
 - (void)sendStream:(NSInputStream *)inInputStream
 {
-self.streamConnector = [CStreamConnector streamConnectorWithInputStream:inInputStream outputStream:(NSOutputStream *)self.remoteWriteStream];
+self.streamConnector = [CStreamConnector streamConnectorWithInputStream:inInputStream outputStream:(__bridge NSOutputStream *)self.remoteWriteStream];
 self.streamConnector.delegate = self;
 [self.streamConnector connect];
 
-((NSOutputStream *)self.remoteWriteStream).delegate = self.streamConnector;
+((__bridge NSOutputStream *)self.remoteWriteStream).delegate = self.streamConnector;
 
 inInputStream.delegate = self.streamConnector;
 [inInputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
@@ -211,7 +211,7 @@ static void RemoteReadStreamClientCallBack(CFReadStreamRef stream, CFStreamEvent
 {
 NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
 
-CTransport *theTransport = clientCallBackInfo;
+CTransport *theTransport = (__bridge CTransport *)clientCallBackInfo;
 
 if (type == kCFStreamEventEndEncountered)
 	{

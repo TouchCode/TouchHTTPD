@@ -28,10 +28,14 @@
 //
 
 #import "CWireProtocol.h"
+#import "CHTTPServer.h"
+#import "CHTTPMessage.h"
+#import "CHTTPRequestHandler.h"
 
 @class CHTTPServer;
 @class CHTTPMessage;
-@class CHTTPRequestHandler;
+
+@protocol CHTTPRequestHandler;
 
 @interface CHTTPConnection : CWireProtocol {
 	CHTTPServer *server; // Never retained.

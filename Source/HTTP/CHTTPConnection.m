@@ -29,8 +29,6 @@
 
 #import "CHTTPConnection.h"
 
-#import "CHTTPMessage.h"
-#import "CHTTPRequestHandler.h"
 #import "CHTTPMessage_ConvenienceExtensions.h"
 #import "TouchHTTPDConstants.h"
 #import "NSError_HTTPDExtensions.h"
@@ -71,47 +69,40 @@ self.currentRequest = NULL;
 
 #pragma mark -
 
-- (void)dataReceived:(NSData *)inData
-{
 // JIWTODO -- Try not to modify self until needed.
+- (void)dataReceived:(NSData *)inData {
 
-NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
-
-@try
-	{	
-	if (self.currentRequest == NULL)
-		{
-		self.currentRequest = [CHTTPMessage HTTPMessageRequest];
-		}
-
-	[self.currentRequest appendData:inData];
-
-	if ([self.currentRequest isMessageComplete])
-		{
-		CHTTPMessage *theRequest = [[self.currentRequest retain] autorelease];
-		self.currentRequest = NULL;
-
-		CHTTPMessage *theResponse = [self responseForRequest:theRequest];
-
-		[self sendResponse:theResponse];
-
-		NSString *theConnectionHeader = [theRequest headerForKey:@"Connection"];
-		if (theRequest.HTTPVersion == kHTTPVersion1_0 || [theConnectionHeader isEqualToString:@"Close"])
-			{
-			[self close];
+	@autoreleasepool {
+		@try {	
+			if (self.currentRequest == NULL) {
+				self.currentRequest = [CHTTPMessage HTTPMessageRequest];
+			}
+			
+			[self.currentRequest appendData:inData];
+			
+			if ([self.currentRequest isMessageComplete]) {
+				CHTTPMessage *theRequest = [[self.currentRequest retain] autorelease];
+				self.currentRequest = NULL;
+				
+				CHTTPMessage *theResponse = [self responseForRequest:theRequest];
+				
+				[self sendResponse:theResponse];
+				
+				NSString *theConnectionHeader = [theRequest headerForKey:@"Connection"];
+				
+				if (theRequest.HTTPVersion == kHTTPVersion1_0 || [theConnectionHeader isEqualToString:@"Close"]) {
+					[self close];
+				}
 			}
 		}
+		
+		@catch (NSException *e) {
+			NSLog(@"Exception caught: %@", e);
+			self.currentRequest = NULL;
+			[self close];
+		}
 	}
-@catch (NSException *e)
-	{
-	NSLog(@"Exception caught: %@", e);
-	self.currentRequest = NULL;
-	[self close];
-	}
-@finally
-	{
-	[thePool release];
-	}
+
 }
 
 #pragma mark -
@@ -123,7 +114,7 @@ NSError *theError = NULL;
 
 @try
 	{
-	for (CHTTPRequestHandler *theHandler in self.requestHandlers)
+	for (id<CHTTPRequestHandler> theHandler in self.requestHandlers)
 		{
 		[theHandler handleRequest:inRequest forConnection:self response:&theResponse error:&theError];
 		}

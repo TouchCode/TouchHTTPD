@@ -90,7 +90,7 @@ if (self.socketListener == NULL)
 // XYZZY
 Class theConnectionClass = [CTCPConnection class];
 
-CTCPConnection *theTCPConnection = [[[theConnectionClass alloc] initWithAddress:inAddress inputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream] autorelease];
+CTCPConnection *theTCPConnection = [[[theConnectionClass alloc] initWithAddress:inAddress inputStream:(__bridge NSInputStream *)inInputStream outputStream:(__bridge NSOutputStream *)inOutputStream] autorelease];
 theTCPConnection.delegate = inSocketListener;
 
 CWireProtocol *theLowerLink = theTCPConnection;

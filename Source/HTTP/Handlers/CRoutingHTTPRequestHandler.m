@@ -65,7 +65,7 @@ CHTTPMessage *theResponse = NULL;
 		theSelector = @selector(errorNotFoundResponseForRequest:error:);
 		}
 
-	NSError **theErrorArgument = &theError;
+	__strong NSError **theErrorArgument = &theError;
 
 	NSInvocation *theInvocation = [NSInvocation invocationWithMethodSignature:[theTarget methodSignatureForSelector:theSelector]];
 	[theInvocation setSelector:theSelector];
