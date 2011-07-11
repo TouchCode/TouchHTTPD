@@ -58,25 +58,25 @@ static void RemoteWriteStreamClientCallBack(CFWriteStreamRef stream, CFStreamEve
 {
 if ((self = [self init]) != NULL)
 	{	
-	self.remoteReadStream = inInputStream;
-	CFRetain(self.remoteReadStream);
+	remoteReadStream = inInputStream;
+	CFRetain(remoteReadStream);
 
-	self.remoteWriteStream = inOutputStream;
-	CFRetain(self.remoteWriteStream);
+	remoteWriteStream = inOutputStream;
+	CFRetain(remoteWriteStream);
 	}
 return(self);
 }
 
 - (void)dealloc
 {
-self.streamConnector.delegate = NULL;
-self.streamConnector = NULL;
+streamConnector.delegate = NULL;
+streamConnector = NULL;
 
-CFRelease(self.remoteReadStream);
-self.remoteReadStream = NULL;
+CFRelease(remoteReadStream);
+remoteReadStream = NULL;
 
-CFRelease(self.remoteWriteStream);
-self.remoteWriteStream = NULL;
+CFRelease(remoteWriteStream);
+remoteWriteStream = NULL;
 
 [super dealloc];
 }

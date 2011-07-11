@@ -488,6 +488,6 @@ if (inCallbackType == kCFSocketAcceptCallBack)
 	}
 else
 	{
-	NSLog(@"TCPSocketListenerAcceptCallBack(): Unhandled callback type %d", inCallbackType);
+	NSLog(@"TCPSocketListenerAcceptCallBack(): Unhandled callback type %d", (int)inCallbackType);
 	}
 }

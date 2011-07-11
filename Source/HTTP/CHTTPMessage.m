@@ -65,12 +65,17 @@ return(theHTTPMessage);
 {
 if (self.message)
 	{
-	CFRelease(self.message);
-	self.message = NULL;
+	CFRelease(message);
+	message = NULL;
 	}
-self.body = NULL;
-self.error = NULL;
-self.bodyWriter = NULL;
+[body release];
+body = NULL;
+
+[error release];
+error = NULL;
+
+[bodyWriter release];
+bodyWriter = NULL;
 //
 [super dealloc];
 }

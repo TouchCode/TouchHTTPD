@@ -70,7 +70,7 @@
 @property (readonly, retain) NSNetService *netService;
 @property (readonly, retain) NSArray *connections;
 @property (readonly, assign) BOOL listening;
-@property (readwrite, assign) BOOL broadcasting;
+@property (readwrite, nonatomic, assign) BOOL broadcasting;
 
 - (BOOL)start:(NSError **)outError;
 - (void)stop;
