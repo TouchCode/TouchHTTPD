@@ -1,6 +1,6 @@
 [submodule "Externals/TouchXML"]
 	path = Externals/TouchXML
-	url = git@github.com:schwa/TouchXML.git
+	url = git@github.com:TouchCode/TouchXML.git
 [submodule "Externals/TouchFoundation"]
 	path = Externals/TouchFoundation
-	url = git@github.com:schwa/TouchFoundation.git
+	url = git@github.com:TouchCode/TouchFoundation.git
