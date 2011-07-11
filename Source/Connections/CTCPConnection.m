@@ -28,8 +28,9 @@
 //
 
 #import "CTCPConnection.h"
-
 #import "NSStream_Extensions.h"
+#import <sys/socket.h>
+
 
 @interface CTCPConnection ()
 @property (readwrite, retain) NSData *address;
@@ -37,7 +38,7 @@
 
 @implementation CTCPConnection
 
-@synthesize address;
+@synthesize address, nativeHandle;
 
 - (id)initWithAddress:(NSData *)inAddress inputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream
 {
@@ -57,4 +58,15 @@ self.address = NULL;
 
 [super dealloc];
 }
+
+- (void)close
+{
+if (nativeHandle > 0)
+	{
+	shutdown (nativeHandle, SHUT_RDWR);
+	nativeHandle = 0;
+	}
+[super close];
+}
+
 @end

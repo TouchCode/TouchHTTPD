@@ -169,7 +169,7 @@ if (self.isHeaderComplete == NO)
 		if ([self.HTTPVersion isEqualToString:kHTTPVersion1_1])
 			{
 			NSString *theTransferEncoding = [self headerForKey:@"Transfer-Encoding"];
-			if ([theTransferEncoding isEqualToString:@"chunked"])
+				if (theTransferEncoding && [theTransferEncoding caseInsensitiveCompare: @"chunked"] == NSOrderedSame)
 				{
 				self.chunked = YES;
 				}

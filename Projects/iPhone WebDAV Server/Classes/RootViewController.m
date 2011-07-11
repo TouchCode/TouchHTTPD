@@ -121,7 +121,7 @@ if (self.HTTPServer == NULL)
 
 	theHTTPServer.socketListener.delegate = self;
 
-	NSURL *theURL = [NSURL URLWithString:[NSString stringWithFormat:@"webdav://%@:%d", [[[self class] localAddrs] objectAtIndex:0], theHTTPServer.socketListener.port]];
+	NSURL *theURL = [NSURL URLWithString:[NSString stringWithFormat:@"webdav://%@:%d", [[[self class] localAddrs] lastObject], theHTTPServer.socketListener.port]];
 
 	self.addressLabel.text = [NSString stringWithFormat:@"URL: %@", theURL.absoluteString];
 

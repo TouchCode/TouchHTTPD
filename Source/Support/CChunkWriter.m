@@ -103,29 +103,29 @@ while (START < END)
 				}		
 			}
 		theChunkLength = strtol(START, NULL, 16);
-		}
 
-	if (*P++ != '\r')
-		{
-		// JIWTODO error!
-		NSLog(@"CHUNKING ERROR #2");
-		}		
+		if (*P++ != '\r')
+			{
+			// JIWTODO error!
+			NSLog(@"CHUNKING ERROR #2");
+			}		
+			
+		if (*P++ != '\n')
+			{
+			// JIWTODO error!
+			NSLog(@"CHUNKING ERROR #2.5");
+			}		
+
+		if (theChunkLength == 0)
+			{
+			// We are done!
+			self.remainingChunkLength = -1;
+			[self.delegate chunkWriterDidReachEOF:self];
+			NSLog(@"CHUNK WRITER ENDED");
+			return;
+			}
+		}
 		
-	if (*P++ != '\n')
-		{
-		// JIWTODO error!
-		NSLog(@"CHUNKING ERROR #2.5");
-		}		
-
-	if (theChunkLength == 0)
-		{
-		// We are done!
-		self.remainingChunkLength = -1;
-		[self.delegate chunkWriterDidReachEOF:self];
-		NSLog(@"CHUNK WRITER ENDED");
-		return;
-		}
-
 	NSInteger theAvailableLength = MIN(END - P, theChunkLength);
 	if (theAvailableLength > 0)
 		{
@@ -137,22 +137,24 @@ while (START < END)
 	
 	P += theAvailableLength;
 	
-	if (*P++ != '\r')
+	if (0 == self.remainingChunkLength)
 		{
-		// JIWTODO error!
-		NSLog(@"CHUNKING ERROR #10");
-		}		
-		
-	if (*P++ != '\n')
-		{
-		// JIWTODO error!
-		NSLog(@"CHUNKING ERROR #10.5");
-		}		
+		if (*P++ != '\r')
+			{
+			// JIWTODO error!
+			NSLog(@"CHUNKING ERROR #10");
+			}		
+			
+		if (*P++ != '\n')
+			{
+			// JIWTODO error!
+			NSLog(@"CHUNKING ERROR #10.5");
+			}		
+		}
 		
 	START = P;
 
 	}
-	
 }
 
 @end

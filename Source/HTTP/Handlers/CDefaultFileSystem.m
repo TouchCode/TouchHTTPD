@@ -50,7 +50,7 @@ if ((self = [self init]) != NULL)
 	self.fileManager = [NSFileManager defaultManager];
 	self.rootDirectory = inRootDirectory;
 	self.supportAppleDouble = NO;
-	self.showDotFiles = NO;
+	self.showDotFiles = YES;
 	}
 return(self);
 }

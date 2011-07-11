@@ -96,9 +96,9 @@ NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
 		[self sendResponse:theResponse];
 
 		NSString *theConnectionHeader = [theRequest headerForKey:@"Connection"];
-		if (theRequest.HTTPVersion == kHTTPVersion1_0 || [theConnectionHeader isEqualToString:@"Close"])
+		if (theRequest.HTTPVersion == kHTTPVersion1_0 || (theConnectionHeader && [theConnectionHeader caseInsensitiveCompare: @"Close"] == NSOrderedSame))
 			{
-			[self close];
+			[self performSelector: @selector (close) withObject: nil afterDelay: 2.0];
 			}
 		}
 	}

@@ -36,7 +36,8 @@
 @interface CTransport : CWireProtocol <CStreamConnectorDelegate> {
 	CFReadStreamRef remoteReadStream;
 	CFWriteStreamRef remoteWriteStream;
-
+	
+	
 	id <CTransportDelegate> delegate; // Not retained.
 	BOOL isOpen;
 	

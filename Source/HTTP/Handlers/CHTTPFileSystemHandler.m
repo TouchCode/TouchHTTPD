@@ -257,6 +257,8 @@ NSAssert([inRequest.body isKindOfClass:[CTemporaryFile class]], @"Request body i
 
 CTemporaryFile *theTempFile = inRequest.body; 
 
+[theTempFile close];		// flush changes to disk before moving to place
+
 // JIWTODO this needs to be put in fileSystem
 theResult = [self.fileSystem moveLocalFileSystemItemAtPath:theTempFile.URL.path toPath:thePath error:&theError];
 if (theResult == NO)

@@ -339,6 +339,7 @@ CFReadStreamSetProperty(theInputStream, kCFStreamPropertyShouldCloseNativeSocket
 CFWriteStreamSetProperty(theOutputStream, kCFStreamPropertyShouldCloseNativeSocket, kCFBooleanTrue);
 
 CTCPConnection *theConnection = [self createTCPConnectionWithAddress:inAddress inputStream:theInputStream outputStream:theOutputStream];
+theConnection.nativeHandle = inNativeHandle;
 
 if (theConnection == NULL)
 	{
