@@ -61,10 +61,10 @@ return([[[self alloc] initWithInputStream:inInputStream outputStream:inOutputStr
 {
 if ((self = [self init]) != NULL)
 	{
-	self.inputStream = inInputStream;
-	self.outputStream = inOutputStream;
-	self.maximumBufferLength = 16 * 1024; // 16K is proving to be a good size buffer. 
-	self.buffer = [NSMutableData dataWithCapacity:self.maximumBufferLength];
+	inputStream = [inInputStream retain];
+	outputStream = [inOutputStream retain];
+	maximumBufferLength = 16 * 1024; // 16K is proving to be a good size buffer. 
+	buffer = [[NSMutableData alloc] initWithCapacity:maximumBufferLength];
 	}
 return(self);
 }
@@ -78,10 +78,14 @@ if (self.inputStream.delegate == self)
 if (self.outputStream.delegate == self)
 	self.outputStream.delegate = NULL;
 
-self.inputStream = NULL;
-self.outputStream = NULL;
-self.delegate = NULL;
-self.buffer = NULL;
+[inputStream release];
+inputStream = NULL;
+
+[outputStream release];
+outputStream = NULL;
+
+[buffer release];
+buffer = NULL;
 //
 [super dealloc];
 }

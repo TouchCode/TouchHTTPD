@@ -47,8 +47,7 @@
 {
 if ((self = [super init]) != NULL)
 	{
-	if (self.logFile == NULL)
-		self.logFile = [@"~/Library/Logs/TouchHTTPD.log" stringByExpandingTildeInPath];
+    logFile = [[@"~/Library/Logs/TouchHTTPD.log" stringByExpandingTildeInPath] retain];
 
 	NSString *theDirectory = [self.logFile stringByDeletingLastPathComponent];
 	BOOL theFileExistsFlag = [[NSFileManager defaultManager] fileExistsAtPath:theDirectory];
@@ -84,14 +83,16 @@ return(self);
 {
 if ((self = [self init]) != NULL)
 	{
-	self.logFile = inLogFile;
+    [logFile release];
+	logFile = [inLogFile retain];
 	}
 return(self);
 }
 
 - (void)dealloc
 {
-self.logFile = NULL;
+[logFile release];
+logFile = NULL;
 //
 [super dealloc];
 }

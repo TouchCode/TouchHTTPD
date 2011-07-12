@@ -31,7 +31,6 @@
 #import "NSStream_Extensions.h"
 #import <sys/socket.h>
 
-
 @interface CTCPConnection ()
 @property (readwrite, retain) NSData *address;
 @end
@@ -44,7 +43,7 @@
 {
 if ((self = [self initWithInputStream:(CFReadStreamRef)inInputStream outputStream:(CFWriteStreamRef)inOutputStream]) != NULL)
 	{
-	self.address = inAddress;
+	address = [inAddress retain];
 	}
 return(self);
 }
@@ -53,8 +52,8 @@ return(self);
 {
 [self close];
 
-self.delegate = NULL;
-self.address = NULL;
+[address release];
+address = NULL;
 
 [super dealloc];
 }

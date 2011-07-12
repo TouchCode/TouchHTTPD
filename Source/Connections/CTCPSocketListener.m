@@ -68,7 +68,7 @@ static void TCPSocketListenerAcceptCallBack(CFSocketRef socket, CFSocketCallBack
 {
 if ((self = [super init]) != NULL)
 	{
-	self.mutableConnections = [NSMutableArray array];
+	mutableConnections = [[NSMutableArray alloc] init];
 	}
 return(self);
 }
@@ -77,16 +77,30 @@ return(self);
 {
 [self stop];
 //
-self.delegate = NULL;
-self.connectionCreationDelegate = NULL;
+[netService release];
+netService = NULL;
 
-self.netService = NULL;
-self.IPV4Socket = NULL;
-self.IPV6Socket = NULL;
+if (IPV4Socket)
+    {
+    CFSocketInvalidate(IPV4Socket);
+    CFRelease(IPV4Socket);
+    IPV4Socket = NULL;
+    }
+if (IPV6Socket)
+    {
+    CFSocketInvalidate(IPV6Socket);
+    CFRelease(IPV6Socket);
+    IPV6Socket = NULL;
+    }
 //
-self.domain = NULL;
-self.name = NULL;
-self.type = NULL;
+[domain release];
+domain = NULL;
+
+[name release];
+name = NULL;
+
+[type release];
+type = NULL;
 //
 [super dealloc];
 }
@@ -367,6 +381,12 @@ return(theResult);
 
 - (BOOL)openIPV4Socket:(NSError **)outError
 {
+if (IPV4Socket)
+    {
+    CFRelease(IPV4Socket);
+    IPV4Socket = NULL;
+    }
+
 CFSocketContext socketCtxt = { 0, self, NULL, NULL, NULL };
 CFSocketRef theSocket = CFSocketCreate(kCFAllocatorDefault, PF_INET, SOCK_STREAM, IPPROTO_TCP, kCFSocketAcceptCallBack, (CFSocketCallBack)&TCPSocketListenerAcceptCallBack, &socketCtxt);
 if (theSocket == NULL)
@@ -407,15 +427,19 @@ CFRunLoopSourceRef theRunLoopSource = CFSocketCreateRunLoopSource(kCFAllocatorDe
 CFRunLoopAddSource(theRunLoop, theRunLoopSource, kCFRunLoopCommonModes);
 CFRelease(theRunLoopSource);
 
-self.IPV4Socket = theSocket;
-
-CFRelease(theSocket);
+IPV4Socket = theSocket;
 
 return(YES);
 }
 
 - (BOOL)openIPV6Socket:(NSError **)outError
 {
+if (IPV6Socket)
+    {
+    CFRelease(IPV6Socket);
+    IPV6Socket = NULL;
+    }
+
 CFSocketContext socketCtxt = { 0, self, NULL, NULL, NULL };
 CFSocketRef theSocket = CFSocketCreate(kCFAllocatorDefault, PF_INET, SOCK_STREAM, IPPROTO_TCP, kCFSocketAcceptCallBack, (CFSocketCallBack)&TCPSocketListenerAcceptCallBack, &socketCtxt);
 if (theSocket == NULL)
@@ -448,9 +472,7 @@ CFRunLoopSourceRef theRunLoopSource = CFSocketCreateRunLoopSource(kCFAllocatorDe
 CFRunLoopAddSource(theRunLoop, theRunLoopSource, kCFRunLoopCommonModes);
 CFRelease(theRunLoopSource);
 
-self.IPV6Socket = theSocket;
-
-CFRelease(IPV6Socket);
+IPV6Socket = theSocket;
 
 return(YES);
 }

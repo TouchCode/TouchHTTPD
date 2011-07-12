@@ -49,16 +49,18 @@
 {
 if ((self = [super init]) != NULL)
 	{
-	self.locksByToken = [NSMutableDictionary dictionary];
-	self.locksByResource = [NSMutableDictionary dictionary];
+	locksByToken = [[NSMutableDictionary alloc] init];
+	locksByResource = [[NSMutableDictionary alloc] init];
 	}
 return(self);
 }
 
 - (void)dealloc
 {
-self.locksByToken = NULL;
-self.locksByResource = NULL;
+[locksByToken release];
+locksByToken = NULL;
+[locksByResource release];
+locksByResource = NULL;
 //
 [super dealloc];
 }

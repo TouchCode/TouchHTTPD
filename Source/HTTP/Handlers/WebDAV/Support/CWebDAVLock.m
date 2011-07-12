@@ -150,10 +150,17 @@ return(self);
 
 - (void)dealloc
 {
-self.resource = NULL;
-self.token = NULL;
-self.timeout = NULL;
-self.owner = NULL;
+[resource release];
+resource = NULL;
+
+[token release];
+token = NULL;
+
+[timeout release];
+timeout = NULL;
+
+[owner release];
+owner = NULL;
 //	
 [super dealloc];
 }

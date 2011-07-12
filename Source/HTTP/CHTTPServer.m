@@ -53,18 +53,25 @@
 {
 if ((self = [super init]) != NULL)
 	{
-	self.URLScheme = @"http";
-	self.defaultRequestHandlers = [NSMutableArray array];
+	URLScheme = [@"http" retain];
+	defaultRequestHandlers = [[NSMutableArray alloc] init];
 	}
 return(self);
 }
 
 - (void)dealloc
 {
-self.URLScheme = NULL;
-self.socketListener = NULL;
-self.defaultRequestHandlers = NULL;
-self.SSLCertificates = NULL;
+[URLScheme release];
+URLScheme = NULL;
+
+[socketListener release];
+socketListener = NULL;
+
+[defaultRequestHandlers release];
+defaultRequestHandlers = NULL;
+
+[SSLCertificates release];
+SSLCertificates = NULL;
 //
 [super dealloc];
 }

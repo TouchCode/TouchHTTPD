@@ -69,15 +69,16 @@
 {
 if ((self = [super init]) != NULL)
 	{
-	self.lockDatabase = [[[CWebDAVLockDatabase alloc] init] autorelease];
-	self.handlesPut = YES;
+	lockDatabase = [[CWebDAVLockDatabase alloc] init];
+	handlesPut = YES;
 	}
 return(self);
 }
 
 - (void)dealloc
 {
-self.lockDatabase = NULL;
+[lockDatabase release];
+lockDatabase = NULL;
 //
 [super dealloc];
 }

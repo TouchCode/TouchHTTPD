@@ -63,11 +63,12 @@ return(theHTTPMessage);
 
 - (void)dealloc
 {
-if (self.message)
+if (message)
 	{
 	CFRelease(message);
 	message = NULL;
 	}
+
 [body release];
 body = NULL;
 

@@ -48,16 +48,24 @@ static OSStatus MySSLWriteFunc(SSLConnectionRef connection, const void *data, si
 {
 if ((self = [super init]) != NULL)
 	{
-	self.inputBuffer = [NSMutableData data];
+	inputBuffer = [[NSMutableData alloc] init];
 	}
 return(self);
 }
 
 - (void)dealloc
 {
-self.certificates = NULL;
-self.context = NULL;
-self.inputBuffer = NULL;
+[certificates release];
+certificates = NULL;
+
+if (context)
+    {
+    SSLDisposeContext(context);
+    context = NULL;
+    }
+
+[inputBuffer release];
+inputBuffer = NULL;
 
 [super dealloc];
 }

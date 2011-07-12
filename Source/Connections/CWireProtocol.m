@@ -43,11 +43,20 @@
 
 - (void)dealloc
 {
-self.lowerLink = NULL;
-self.upperLink = NULL;
+lowerLink = NULL;
+
+upperLink.lowerLink = NULL;
+[upperLink release];
+upperLink = NULL;
 //
 [super dealloc];
 }
+
+- (NSString *)description
+    {
+    return([NSString stringWithFormat:@"%@ (upper: %@)", [super description], self.upperLink]);
+    }
+
 
 #pragma mark -
 
@@ -86,7 +95,9 @@ return(self.lowerLink.transport);
 - (void)close
 {
 if (self.lowerLink)
+    {
 	[self.lowerLink close];
+    }
 }
 
 - (void)dataReceived:(NSData *)inData

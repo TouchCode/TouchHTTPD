@@ -38,7 +38,8 @@
 
 - (void)dealloc
 {
-self.router = NULL;
+[router release];
+router = NULL;
 //
 [super dealloc];
 }

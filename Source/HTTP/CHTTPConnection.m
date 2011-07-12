@@ -53,18 +53,20 @@
 {
 if ((self = [self init]) != NULL)
 	{
-	self.server = inServer;
-	self.requestHandlers = [NSMutableArray array];
-	self.currentRequest = NULL;
+	server = inServer;
+	requestHandlers = [[NSMutableArray alloc] init];
+	currentRequest = NULL;
 	}
 return(self);
 }
 
 - (void)dealloc
 {
-self.server = NULL;
-self.requestHandlers = NULL;
-self.currentRequest = NULL;
+[requestHandlers release];
+requestHandlers = NULL;
+
+[currentRequest release];
+currentRequest = NULL;
 //
 [super dealloc];
 }
@@ -150,18 +152,14 @@ if (theResponse == NULL)
 		{
 		if (theError != NULL)
 			{
-			NSLog(@"500: NULL response (%@).", theError);
 			theResponse = [CHTTPMessage HTTPMessageResponseWithStatusCode:kHTTPStatusCode_InternalServerError];
 			}
 		else
 			{
-			NSLog(@"500: NULL response.");
 			theResponse = [CHTTPMessage HTTPMessageResponseWithStatusCode:kHTTPStatusCode_InternalServerError];
 			}
 		}
 	}
-
-NSLog(@"**** responseForRequest: %@ -> %@", inRequest, theResponse);
 
 return(theResponse);
 }

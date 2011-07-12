@@ -63,7 +63,7 @@
 {
 if ((self = [super init]) != NULL)
 	{
-	self.handlesPut = NO;
+	handlesPut = NO;
 	}
 return(self);
 }
@@ -72,16 +72,19 @@ return(self);
 {
 if ((self = [self init]) != NULL)
 	{
-	self.rootPath = inRootPath;
-	self.fileSystem = [[[CDefaultFileSystem alloc] initWithRootDirectory:self.rootPath] autorelease];
+	rootPath = [inRootPath retain];
+	fileSystem = [[CDefaultFileSystem alloc] initWithRootDirectory:self.rootPath];
 	}
 return(self);
 }
 
 - (void)dealloc
 {
-self.rootPath = NULL;
-self.fileSystem = NULL;
+[rootPath release];
+rootPath = NULL;
+
+[fileSystem release];
+fileSystem = NULL;
 //
 [super dealloc];
 }

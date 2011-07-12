@@ -65,16 +65,19 @@ theWriter.outputFile = [NSFileHandle fileHandleWithStandardOutput];
 {
 if ((self = [super init]) != NULL)
 	{
-	self.moreChunksComing = YES;
-	self.remainingChunkLength = 0;
+	moreChunksComing = YES;
+	remainingChunkLength = 0;
 	}
 return(self);
 }
 
 - (void)dealloc
 {
-self.outputFile = NULL;
-self.buffer = NULL;
+[outputFile release];
+outputFile = NULL;
+
+[buffer release];
+buffer = NULL;
 //
 [super dealloc];
 }

@@ -44,6 +44,6 @@
 
 #pragma mark -
 
-@protocol CHTTPRequestRouter
+@protocol CHTTPRequestRouter <NSObject>
 - (BOOL)routeConnection:(CRoutingHTTPRequestHandler *)inConnection request:(CHTTPMessage *)inRequest toTarget:(id *)outTarget selector:(SEL *)outSelector error:(NSError **)outError;
 @end

@@ -36,9 +36,9 @@
 	CWireProtocol *upperLink;
 }
 
-@property (readwrite, assign) CWireProtocol *lowerLink;
-@property (readwrite, retain) CWireProtocol *upperLink;
-@property (readonly, assign) CTransport *transport;
+@property (readwrite, nonatomic, assign) CWireProtocol *lowerLink;
+@property (readwrite, nonatomic, retain) CWireProtocol *upperLink;
+@property (readonly, nonatomic, assign) CTransport *transport;
 
 - (void)close;
 

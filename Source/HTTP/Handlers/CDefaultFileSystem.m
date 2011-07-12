@@ -47,18 +47,21 @@
 {
 if ((self = [self init]) != NULL)
 	{
-	self.fileManager = [NSFileManager defaultManager];
-	self.rootDirectory = inRootDirectory;
-	self.supportAppleDouble = NO;
-	self.showDotFiles = YES;
+	fileManager = [[NSFileManager alloc] init];
+	rootDirectory = [inRootDirectory retain];
+	supportAppleDouble = NO;
+	showDotFiles = YES;
 	}
 return(self);
 }
 
 - (void)dealloc
 {
-self.fileManager = NULL;
-self.rootDirectory = NULL;
+[fileManager release];
+fileManager = NULL;
+
+[rootDirectory release];
+rootDirectory = NULL;
 //
 [super dealloc];
 }

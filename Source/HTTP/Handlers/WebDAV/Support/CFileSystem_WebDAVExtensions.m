@@ -183,7 +183,7 @@ for (CXMLElement *theProperty in theNodes)
 
 if (theNotHandledProperties.count > 0)
 	{
-	LOG_(@"NOT HANDLED PROPERTIES: %@", [[theNotHandledProperties valueForKey:@"name"] componentsJoinedByString:@","]);
+//	LOG_(@"NOT HANDLED PROPERTIES: %@", [[theNotHandledProperties valueForKey:@"name"] componentsJoinedByString:@","]);
 	
 	thePropStatElement = [theResponseElement subelement:@"propstat"];	
 	[thePropStatElement subelement:@"status"].stringValue = @"HTTP/1.1 404 Not Found";
