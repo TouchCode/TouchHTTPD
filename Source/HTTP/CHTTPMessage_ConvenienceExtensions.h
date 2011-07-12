@@ -31,8 +31,8 @@
 
 @interface CHTTPMessage (CHTTPMessage_ConvenienceExtensions)
 
-@property (readwrite, retain) NSString *contentType;
-@property (readwrite, assign) NSInteger contentLength;
+@property (readwrite, nonatomic, retain) NSString *contentType;
+@property (readwrite, nonatomic, assign) NSInteger contentLength;
 
 + (NSString *)statusDescriptionForStatusCode:(NSInteger)inStatusCode;
 

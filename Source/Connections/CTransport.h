@@ -44,12 +44,12 @@
 	CStreamConnector *streamConnector;
 }
 
-@property (readonly, assign) CFReadStreamRef remoteReadStream;
-@property (readonly, assign) CFWriteStreamRef remoteWriteStream;
-@property (readwrite, assign) id <CTransportDelegate> delegate; // Not retained.
-@property (readonly, assign) BOOL isOpen;
+@property (readonly, nonatomic, assign) CFReadStreamRef remoteReadStream;
+@property (readonly, nonatomic, assign) CFWriteStreamRef remoteWriteStream;
+@property (readwrite, nonatomic, assign) id <CTransportDelegate> delegate; // Not retained.
+@property (readonly, nonatomic, assign) BOOL isOpen;
 
-- (id)initWithInputStream:(CFReadStreamRef)inInputStream outputStream:(CFWriteStreamRef)inOutputStream;
+- (id)initWithInputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream;
 
 - (BOOL)open:(NSError **)outError;
 - (void)close;

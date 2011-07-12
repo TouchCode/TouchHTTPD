@@ -39,8 +39,8 @@
 	CHTTPMessage *currentRequest;
 }
 
-@property (readonly, assign) CHTTPServer *server;
-@property (readwrite, retain) NSMutableArray *requestHandlers;
+@property (readonly, nonatomic, assign) CHTTPServer *server;
+@property (readwrite, nonatomic, retain) NSMutableArray *requestHandlers;
 
 - (id)initWithServer:(CHTTPServer *)inServer;
 

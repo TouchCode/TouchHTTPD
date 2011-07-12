@@ -39,11 +39,11 @@
 	NSArray *SSLCertificates;
 }
 
-@property (readwrite, retain) NSString *URLScheme;
-@property (readwrite, retain) CTCPSocketListener *socketListener;
-@property (readwrite, retain) NSMutableArray *defaultRequestHandlers;
-@property (readwrite, assign) BOOL useHTTPS;
-@property (readwrite, retain) NSArray *SSLCertificates;
+@property (readwrite, nonatomic, retain) NSString *URLScheme;
+@property (readwrite, nonatomic, retain) CTCPSocketListener *socketListener;
+@property (readwrite, nonatomic, retain) NSMutableArray *defaultRequestHandlers;
+@property (readwrite, nonatomic, assign) BOOL useHTTPS;
+@property (readwrite, nonatomic, retain) NSArray *SSLCertificates;
 
 - (void)createDefaultSocketListener;
 

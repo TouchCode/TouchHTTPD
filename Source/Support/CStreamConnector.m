@@ -32,8 +32,8 @@
 #import "NSStream_Extensions.h"
 
 @interface CStreamConnector ()
-@property (readwrite, retain) NSMutableData *buffer;
-@property (readwrite, assign) BOOL connected;
+@property (readwrite, nonatomic, retain) NSMutableData *buffer;
+@property (readwrite, nonatomic, assign) BOOL connected;
 
 - (void)disconnect;
 - (void)read;

@@ -36,8 +36,8 @@
 	CFSocketNativeHandle nativeHandle;
 }
 
-@property (readonly, retain) NSData *address;
-@property (nonatomic, readwrite) CFSocketNativeHandle nativeHandle;
+@property (readonly, nonatomic, retain) NSData *address;
+@property (readwrite, nonatomic, assign) CFSocketNativeHandle nativeHandle;
 
 - (id)initWithAddress:(NSData *)inAddress inputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream;
 

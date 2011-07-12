@@ -36,8 +36,8 @@
 	NSString *realm;
 }
 
-@property (readwrite, assign) id <CHTTPBasicAuthHandlerDelegate> delegate;
-@property (readwrite, copy) NSString *realm;
+@property (readwrite, nonatomic, assign) id <CHTTPBasicAuthHandlerDelegate> delegate;
+@property (readwrite, nonatomic, copy) NSString *realm;
 
 @end
 

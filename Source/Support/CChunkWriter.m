@@ -30,9 +30,9 @@
 #import "CChunkWriter.h"
 
 @interface CChunkWriter ()
-@property (readwrite, assign) BOOL moreChunksComing;
-@property (readwrite, assign) NSInteger remainingChunkLength;
-@property (readwrite, retain) NSMutableData *buffer;
+@property (readwrite, nonatomic, assign) BOOL moreChunksComing;
+@property (readwrite, nonatomic, assign) NSInteger remainingChunkLength;
+@property (readwrite, nonatomic, retain) NSMutableData *buffer;
 @end
 
 @implementation CChunkWriter

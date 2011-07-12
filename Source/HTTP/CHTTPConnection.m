@@ -37,8 +37,8 @@
 #import "CMultiInputStream.h"
 
 @interface CHTTPConnection ()
-@property (readwrite, assign) CHTTPServer *server;
-@property (readwrite, retain) CHTTPMessage *currentRequest;
+@property (readwrite, nonatomic, assign) CHTTPServer *server;
+@property (readwrite, nonatomic, retain) CHTTPMessage *currentRequest;
 @end
 
 #pragma mark -
@@ -100,7 +100,7 @@ NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
 		NSString *theConnectionHeader = [theRequest headerForKey:@"Connection"];
 		if (theRequest.HTTPVersion == kHTTPVersion1_0 || (theConnectionHeader && [theConnectionHeader caseInsensitiveCompare: @"Close"] == NSOrderedSame))
 			{
-			[self performSelector: @selector (close) withObject: nil afterDelay: 2.0];
+			[self performSelector:@selector(close) withObject: nil afterDelay: 2.0];
 			}
 		}
 	}
@@ -137,7 +137,7 @@ NSError *theError = NULL;
 	NSDictionary *theUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:
 		e, @"NSUnderlyingException",
 		NULL];
-	NSError *theError = [NSError errorWithDomain:kHTTPErrorDomain code:kHTTPStatusCode_InternalServerError userInfo:theUserInfo];
+	theError = [NSError errorWithDomain:kHTTPErrorDomain code:kHTTPStatusCode_InternalServerError userInfo:theUserInfo];
 	
 	theError = [NSError errorWithDomain:kHTTPErrorDomain code:kHTTPStatusCode_InternalServerError underlyingError:theError request:inRequest format:@"Exception caught."];
 	

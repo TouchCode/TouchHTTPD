@@ -32,7 +32,7 @@
 #import <sys/socket.h>
 
 @interface CTCPConnection ()
-@property (readwrite, retain) NSData *address;
+@property (readwrite, nonatomic, retain) NSData *address;
 @end
 
 @implementation CTCPConnection
@@ -41,7 +41,7 @@
 
 - (id)initWithAddress:(NSData *)inAddress inputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream
 {
-if ((self = [self initWithInputStream:(CFReadStreamRef)inInputStream outputStream:(CFWriteStreamRef)inOutputStream]) != NULL)
+if ((self = [self initWithInputStream:inInputStream outputStream:inOutputStream]) != NULL)
 	{
 	address = [inAddress retain];
 	}

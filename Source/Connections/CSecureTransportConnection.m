@@ -34,8 +34,8 @@ static OSStatus MySSLWriteFunc(SSLConnectionRef connection, const void *data, si
 
 @interface CSecureTransportConnection ()
 
-@property (readwrite, assign) SSLContextRef context;
-@property (readwrite, retain) NSMutableData *inputBuffer;
+@property (readwrite, nonatomic, assign) SSLContextRef context;
+@property (readwrite, nonatomic, retain) NSMutableData *inputBuffer;
 
 @end
 

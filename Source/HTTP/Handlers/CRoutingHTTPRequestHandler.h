@@ -38,7 +38,7 @@
 	id <CHTTPRequestRouter> router;
 }
 
-@property (readwrite, retain) id <CHTTPRequestRouter> router;
+@property (readwrite, nonatomic, retain) id <CHTTPRequestRouter> router;
 
 @end
 

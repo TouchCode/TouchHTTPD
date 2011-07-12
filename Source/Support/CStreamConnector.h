@@ -41,11 +41,11 @@
 	BOOL expectingMoreInputFlag;
 }
 
-@property (readwrite, retain) NSInputStream *inputStream;
-@property (readwrite, retain) NSOutputStream *outputStream;
-@property (readwrite, assign) id <CStreamConnectorDelegate> delegate;
-@property (readwrite, assign) NSInteger maximumBufferLength;
-@property (readonly, assign) BOOL connected;
+@property (readwrite, nonatomic, retain) NSInputStream *inputStream;
+@property (readwrite, nonatomic, retain) NSOutputStream *outputStream;
+@property (readwrite, nonatomic, assign) id <CStreamConnectorDelegate> delegate;
+@property (readwrite, nonatomic, assign) NSInteger maximumBufferLength;
+@property (readonly, nonatomic, assign) BOOL connected;
 
 + (id)streamConnectorWithInputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream;
 

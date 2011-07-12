@@ -46,7 +46,7 @@
 #import "NSDate_InternetDateExtensions.h"
 
 @interface CHTTPFileSystemHandler ()
-@property (readwrite, retain) NSString *rootPath;
+@property (readwrite, nonatomic, retain) NSString *rootPath;
 
 - (CHTTPMessage *)responseForGetRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
 - (CHTTPMessage *)responseForHeadRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
@@ -224,8 +224,12 @@ if ([self.fileSystem fileExistsAtPath:thePath isDirectory:&theIsDirectoryFlag] =
 		[theResponse setHeader:[[theFileAttributes fileModificationDate] RFC822String] forKey:@"Last-Modified"];
 
 
-		NSInteger theFileSize = theFileAttributes.fileSize;
-		theResponse.contentLength = theFileSize;
+		unsigned long long theFileSize = theFileAttributes.fileSize;
+        if (theFileSize > NSIntegerMax)
+            {
+            NSAssert(NO, @"Overflow");
+            }
+		theResponse.contentLength = (NSInteger)theFileSize;
 
 		NSInputStream *theStream = [self.fileSystem inputStreamForFileAtPath:thePath error:&theError];
 		theResponse.body = theStream;
@@ -266,7 +270,7 @@ BOOL theIsDirectoryFlag = NO;
 BOOL theFileExistsFlag = [self.fileSystem fileExistsAtPath:thePath isDirectory:&theIsDirectoryFlag];
 if (theFileExistsFlag && theIsDirectoryFlag)
 	{
-	NSError *theError = [NSError errorWithDomain:kHTTPErrorDomain code:kHTTPStatusCode_MethodNotAllowed underlyingError:NULL request:inRequest];
+	theError = [NSError errorWithDomain:kHTTPErrorDomain code:kHTTPStatusCode_MethodNotAllowed underlyingError:NULL request:inRequest];
 	theResponse = [CHTTPMessage HTTPMessageResponseWithError:theError];
 	return(theResponse);
 	}

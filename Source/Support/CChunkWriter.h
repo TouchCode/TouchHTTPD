@@ -40,11 +40,11 @@
 	id <CChunkWriterDelegate> delegate;
 }
 
-@property (readwrite, retain) NSFileHandle *outputFile;
-@property (readonly, assign) BOOL moreChunksComing;
-@property (readonly, assign) NSInteger remainingChunkLength;
-@property (readonly, retain) NSMutableData *buffer; // JIWTODO not currently used
-@property (readwrite, assign) id <CChunkWriterDelegate> delegate;
+@property (readwrite, nonatomic, retain) NSFileHandle *outputFile;
+@property (readonly, nonatomic, assign) BOOL moreChunksComing;
+@property (readonly, nonatomic, assign) NSInteger remainingChunkLength;
+@property (readonly, nonatomic, retain) NSMutableData *buffer; // JIWTODO not currently used
+@property (readwrite, nonatomic, assign) id <CChunkWriterDelegate> delegate;
 
 - (void)writeData:(NSData *)inData;
 

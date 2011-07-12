@@ -34,7 +34,7 @@
 #import "NSDate_InternetDateExtensions.h"
 
 @interface CHTTPDefaultHandler ()
-@property (readwrite, retain) NSDictionary *defaultHeaders;
+@property (readwrite, nonatomic, retain) NSDictionary *defaultHeaders;
 @end
 
 #pragma mark -

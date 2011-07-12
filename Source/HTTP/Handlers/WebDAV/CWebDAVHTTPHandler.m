@@ -46,7 +46,7 @@
 
 @interface CWebDavHTTPHandler ()
 
-@property (readwrite, retain) CWebDAVLockDatabase *lockDatabase;
+@property (readwrite, nonatomic, retain) CWebDAVLockDatabase *lockDatabase;
 
 - (CHTTPMessage *)responseForOptionsRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
 - (CHTTPMessage *)responseForDeleteRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
@@ -435,7 +435,7 @@ if (theDepth > 0 || theDepth == -1)
 		{
 		thePath = [theRootPath stringByAppendingPathComponent:thePath];
 
-		CXMLElement *theResponseElement = [(CDefaultFileSystem *)self.fileSystem webDavPropResponseElementForHandler:self forPath:thePath properties:theDocument error:&theError];
+		theResponseElement = [(CDefaultFileSystem *)self.fileSystem webDavPropResponseElementForHandler:self forPath:thePath properties:theDocument error:&theError];
 		if (theResponseElement == NULL)
 			{
 			LOG_(@"WARNING: Could not get response element for %@", thePath);

@@ -38,8 +38,8 @@
 	NSEnumerator *enumerator;
 }
 
-@property (readwrite, retain) id delegate;
-@property (readonly, retain) NSArray *streams;
+@property (readwrite, nonatomic, retain) id delegate;
+@property (readonly, nonatomic, retain) NSArray *streams;
 
 - (id)initWithStreams:(NSArray *)inStreams;
 

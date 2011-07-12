@@ -43,7 +43,7 @@
 	NSMutableData *inputBuffer;
 }
 
-@property (readwrite, retain) NSArray *certificates;
-@property (readonly, assign) SSLContextRef context;
+@property (readwrite, nonatomic, retain) NSArray *certificates;
+@property (readonly, nonatomic, assign) SSLContextRef context;
 
 @end

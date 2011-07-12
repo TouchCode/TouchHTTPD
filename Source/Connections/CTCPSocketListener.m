@@ -42,11 +42,11 @@ static void TCPSocketListenerAcceptCallBack(CFSocketRef socket, CFSocketCallBack
 
 @interface CTCPSocketListener ()
 
-@property (readwrite, assign) CFSocketRef IPV4Socket;
-@property (readwrite, assign) CFSocketRef IPV6Socket;
-@property (readwrite, retain) NSNetService *netService;
-@property (readwrite, retain) NSMutableArray *mutableConnections;
-@property (readwrite, assign) BOOL listening;
+@property (readwrite, nonatomic, assign) CFSocketRef IPV4Socket;
+@property (readwrite, nonatomic, assign) CFSocketRef IPV6Socket;
+@property (readwrite, nonatomic, retain) NSNetService *netService;
+@property (readwrite, nonatomic, retain) NSMutableArray *mutableConnections;
+@property (readwrite, nonatomic, assign) BOOL listening;
 
 - (BOOL)handleNewConnectionFromAddress:(NSData *)inAddress nativeHandle:(CFSocketNativeHandle)inNativeHandle error:(NSError **)outError;
 - (BOOL)openIPV4Socket:(NSError **)outError;
@@ -277,7 +277,7 @@ if (self.listening == YES)
 
 #pragma mark -
 
-- (CTCPConnection *)createTCPConnectionWithAddress:(NSData *)inAddress inputStream:(CFReadStreamRef)inInputStream outputStream:(CFWriteStreamRef)inOutputStream;
+- (CTCPConnection *)createTCPConnectionWithAddress:(NSData *)inAddress inputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream;
 {
 CTCPConnection *theConnection = NULL;
 
@@ -352,7 +352,7 @@ if (!theInputStream || !theOutputStream)
 CFReadStreamSetProperty(theInputStream, kCFStreamPropertyShouldCloseNativeSocket, kCFBooleanTrue);
 CFWriteStreamSetProperty(theOutputStream, kCFStreamPropertyShouldCloseNativeSocket, kCFBooleanTrue);
 
-CTCPConnection *theConnection = [self createTCPConnectionWithAddress:inAddress inputStream:theInputStream outputStream:theOutputStream];
+CTCPConnection *theConnection = [self createTCPConnectionWithAddress:inAddress inputStream:(NSInputStream *)theInputStream outputStream:(NSOutputStream *)theOutputStream];
 theConnection.nativeHandle = inNativeHandle;
 
 if (theConnection == NULL)

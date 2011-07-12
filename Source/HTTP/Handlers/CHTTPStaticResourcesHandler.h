@@ -34,6 +34,6 @@
 	NSString *rootDirectory;
 }
 
-@property (readwrite, retain) NSString *rootDirectory;
+@property (readwrite, nonatomic, retain) NSString *rootDirectory;
 
 @end

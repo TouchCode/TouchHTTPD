@@ -33,8 +33,8 @@
 
 @interface CWebDAVLockDatabase ()
 
-@property (readwrite, retain) NSMutableDictionary *locksByToken;
-@property (readwrite, retain) NSMutableDictionary *locksByResource;
+@property (readwrite, nonatomic, retain) NSMutableDictionary *locksByToken;
+@property (readwrite, nonatomic, retain) NSMutableDictionary *locksByResource;
 
 @end
 

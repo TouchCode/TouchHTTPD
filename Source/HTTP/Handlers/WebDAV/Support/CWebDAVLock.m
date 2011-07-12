@@ -36,13 +36,13 @@
 #import "TouchHTTPDConstants.h"
 
 @interface CWebDAVLock ()
-@property (readwrite, retain) NSURL *resource;
-@property (readwrite, retain) NSString *token;
-@property (readwrite, assign) NSInteger depth;
-@property (readwrite, retain) NSDate *timeout;
-@property (readwrite, assign) EWebDavLockScope scope;
-@property (readwrite, assign) EWebDavLockType type;
-@property (readwrite, retain) NSString *owner;
+@property (readwrite, nonatomic, retain) NSURL *resource;
+@property (readwrite, nonatomic, retain) NSString *token;
+@property (readwrite, nonatomic, assign) NSInteger depth;
+@property (readwrite, nonatomic, retain) NSDate *timeout;
+@property (readwrite, nonatomic, assign) EWebDavLockScope scope;
+@property (readwrite, nonatomic, assign) EWebDavLockType type;
+@property (readwrite, nonatomic, retain) NSString *owner;
 @end
 
 #pragma mark -

@@ -33,7 +33,7 @@
 #import "CChunkWriter.h"
 
 @interface CHTTPMessage ()
-@property (readwrite, assign, nonatomic) BOOL chunked;
+@property (readwrite, nonatomic, assign, nonatomic) BOOL chunked;
 @end
 
 #pragma mark -
@@ -164,7 +164,7 @@ if (inData.length == 0)
 if (self.isHeaderComplete == NO)
 	{
 	NSAssert(self.message != NULL, @"Message is NULL.");
-	BOOL theResult = CFHTTPMessageAppendBytes(self.message, inData.bytes, inData.length);
+	Boolean theResult = CFHTTPMessageAppendBytes(self.message, inData.bytes, inData.length);
 	if (theResult == NO)
 		{
 		[NSException raise:NSGenericException format:@"CFHTTPMessageAppendBytes() failed with (%@, %d bytes '%@').", self, inData.length, inData];
@@ -211,7 +211,7 @@ else
 
 - (BOOL)isHeaderComplete
 {
-return(CFHTTPMessageIsHeaderComplete(self.message));
+return((BOOL)CFHTTPMessageIsHeaderComplete(self.message));
 }
 
 - (BOOL)requestHasBody

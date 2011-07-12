@@ -54,13 +54,13 @@ typedef enum {
 	NSString *owner;
 }
 
-@property (readonly, retain) NSURL *resource;
-@property (readonly, retain) NSString *token;
-@property (readonly, assign) NSInteger depth;
-@property (readonly, retain) NSDate *timeout;
-@property (readonly, assign) EWebDavLockScope scope;
-@property (readonly, assign) EWebDavLockType type;
-@property (readonly, retain) NSString *owner;
+@property (readonly, nonatomic, retain) NSURL *resource;
+@property (readonly, nonatomic, retain) NSString *token;
+@property (readonly, nonatomic, assign) NSInteger depth;
+@property (readonly, nonatomic, retain) NSDate *timeout;
+@property (readonly, nonatomic, assign) EWebDavLockScope scope;
+@property (readonly, nonatomic, assign) EWebDavLockType type;
+@property (readonly, nonatomic, retain) NSString *owner;
 
 + (CWebDAVLock *)WebDavLockWithHTTPRequest:(CHTTPMessage *)inRequest error:(NSError **)outError;
 

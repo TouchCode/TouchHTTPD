@@ -36,10 +36,10 @@
 	BOOL showDotFiles;
 }
 
-@property (readwrite, retain) NSFileManager *fileManager;
-@property (readwrite, retain) NSString *rootDirectory;
-@property (readwrite, assign) BOOL supportAppleDouble;
-@property (readwrite, assign) BOOL showDotFiles;
+@property (readwrite, nonatomic, retain) NSFileManager *fileManager;
+@property (readwrite, nonatomic, retain) NSString *rootDirectory;
+@property (readwrite, nonatomic, assign) BOOL supportAppleDouble;
+@property (readwrite, nonatomic, assign) BOOL showDotFiles;
 
 - (id)initWithRootDirectory:(NSString *)inRootDirectory;
 

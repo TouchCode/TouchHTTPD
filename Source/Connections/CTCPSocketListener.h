@@ -59,17 +59,17 @@
 	BOOL broadcasting;
 }
 
-@property (readwrite, assign) id <CTCPSocketListenerDelegate> delegate;
-@property (readwrite, assign) id <CTCPConnectionCreationDelegate> connectionCreationDelegate;
-@property (readwrite, assign) uint16_t port;
-@property (readwrite, retain) NSString *domain;
-@property (readwrite, retain) NSString *name;
-@property (readwrite, retain) NSString *type;
-@property (readonly, assign) CFSocketRef IPV4Socket;
-@property (readonly, assign) CFSocketRef IPV6Socket;
-@property (readonly, retain) NSNetService *netService;
-@property (readonly, retain) NSArray *connections;
-@property (readonly, assign) BOOL listening;
+@property (readwrite, nonatomic, assign) id <CTCPSocketListenerDelegate> delegate;
+@property (readwrite, nonatomic, assign) id <CTCPConnectionCreationDelegate> connectionCreationDelegate;
+@property (readwrite, nonatomic, assign) uint16_t port;
+@property (readwrite, nonatomic, retain) NSString *domain;
+@property (readwrite, nonatomic, retain) NSString *name;
+@property (readwrite, nonatomic, retain) NSString *type;
+@property (readonly, nonatomic, assign) CFSocketRef IPV4Socket;
+@property (readonly, nonatomic, assign) CFSocketRef IPV6Socket;
+@property (readonly, nonatomic, retain) NSNetService *netService;
+@property (readonly, nonatomic, retain) NSArray *connections;
+@property (readonly, nonatomic, assign) BOOL listening;
 @property (readwrite, nonatomic, assign) BOOL broadcasting;
 
 - (BOOL)start:(NSError **)outError;
@@ -77,7 +77,7 @@
 
 - (BOOL)shouldHandleNewConnectionFromAddress:(NSData *)inAddress;
 
-- (CTCPConnection *)createTCPConnectionWithAddress:(NSData *)inAddress inputStream:(CFReadStreamRef)inInputStream outputStream:(CFWriteStreamRef)inOutputStream;
+- (CTCPConnection *)createTCPConnectionWithAddress:(NSData *)inAddress inputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream;
 
 @end
 
@@ -96,6 +96,6 @@
 @protocol CTCPConnectionCreationDelegate <NSObject>
 
 @required
-- (CTCPConnection *)TCPSocketListener:(CTCPSocketListener *)inSocketListener createTCPConnectionWithAddress:(NSData *)inAddress inputStream:(CFReadStreamRef)inInputStream outputStream:(CFWriteStreamRef)inOutputStream;
+- (CTCPConnection *)TCPSocketListener:(CTCPSocketListener *)inSocketListener createTCPConnectionWithAddress:(NSData *)inAddress inputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream;
 
 @end

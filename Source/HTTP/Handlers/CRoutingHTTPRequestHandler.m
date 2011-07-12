@@ -32,6 +32,12 @@
 #import "CHTTPMessage.h"
 #import "CHTTPMessage_ConvenienceExtensions.h"
 
+@interface CRoutingHTTPRequestHandler ()
+- (CHTTPMessage *)errorNotFoundResponseForRequest:(CHTTPMessage *)inRequest error:(NSError **)outError;
+@end
+
+#pragma mark -
+
 @implementation CRoutingHTTPRequestHandler
 
 @synthesize router;

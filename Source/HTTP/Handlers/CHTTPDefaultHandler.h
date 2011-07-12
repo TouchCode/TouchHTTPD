@@ -33,7 +33,7 @@
 	NSDictionary *defaultHeaders;
 }
 
-@property (readonly, retain) NSDictionary *defaultHeaders;
+@property (readonly, nonatomic, retain) NSDictionary *defaultHeaders;
 
 - (id)init;
 - (id)initWithDefaultHeaders:(NSDictionary *)inDefaultHeaders;

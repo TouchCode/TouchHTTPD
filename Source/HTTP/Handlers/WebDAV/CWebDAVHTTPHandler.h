@@ -35,7 +35,7 @@
 	CWebDAVLockDatabase *lockDatabase;
 }
 
-@property (readonly, retain) CWebDAVLockDatabase *lockDatabase;
+@property (readonly, nonatomic, retain) CWebDAVLockDatabase *lockDatabase;
 
 - (NSString *)DAVClass;
 - (NSArray *)allowedMethods;

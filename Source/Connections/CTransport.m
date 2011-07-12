@@ -36,10 +36,10 @@ static void RemoteReadStreamClientCallBack(CFReadStreamRef stream, CFStreamEvent
 static void RemoteWriteStreamClientCallBack(CFWriteStreamRef stream, CFStreamEventType type, void *clientCallBackInfo);
 
 @interface CTransport ()
-@property (readwrite, assign) CFReadStreamRef remoteReadStream;
-@property (readwrite, assign) CFWriteStreamRef remoteWriteStream;
-@property (readwrite, assign) BOOL isOpen;
-@property (readwrite, retain) CStreamConnector *streamConnector;
+@property (readwrite, nonatomic, assign) CFReadStreamRef remoteReadStream;
+@property (readwrite, nonatomic, assign) CFWriteStreamRef remoteWriteStream;
+@property (readwrite, nonatomic, assign) BOOL isOpen;
+@property (readwrite, nonatomic, retain) CStreamConnector *streamConnector;
 //- (void)inputStreamHandleEvent:(NSStreamEvent)inEventCode;
 //- (void)outputStreamHandleEvent:(NSStreamEvent)inEventCode;
 @end
@@ -54,14 +54,14 @@ static void RemoteWriteStreamClientCallBack(CFWriteStreamRef stream, CFStreamEve
 @synthesize isOpen;
 @synthesize streamConnector;
 
-- (id)initWithInputStream:(CFReadStreamRef)inInputStream outputStream:(CFWriteStreamRef)inOutputStream
+- (id)initWithInputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream
 {
 if ((self = [self init]) != NULL)
 	{	
-	remoteReadStream = inInputStream;
+	remoteReadStream = (CFReadStreamRef)inInputStream;
 	CFRetain(remoteReadStream);
 
-	remoteWriteStream = inOutputStream;
+	remoteWriteStream = (CFWriteStreamRef)inOutputStream;
 	CFRetain(remoteWriteStream);
 	}
 return(self);

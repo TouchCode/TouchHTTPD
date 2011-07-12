@@ -46,10 +46,10 @@ while (theFlag)
 	{
 	@try
 		{
-		NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
+		NSAutoreleasePool *theInnerPool = [[NSAutoreleasePool alloc] init];
 		[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
 		theFlag = self.listening;
-		[thePool drain];
+		[theInnerPool drain];
 		}
 	@catch (NSException *exception)
 		{

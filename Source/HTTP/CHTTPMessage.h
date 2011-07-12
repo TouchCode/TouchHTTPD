@@ -50,13 +50,13 @@
 	id bodyWriter;
 }
 
-@property (readwrite, assign) CFHTTPMessageRef message;
-@property (readwrite, retain) NSData *headerData;
-@property (readwrite, retain) id body;
-@property (readwrite, retain) NSData *bodyData; // JIWTODO deprecated
-@property (readwrite, retain) NSStream *bodyStream; // JIWTODO deprecated
-@property (readwrite, retain) NSError *error;
-@property (readwrite, retain) id bodyWriter;	
+@property (readwrite, nonatomic, assign) CFHTTPMessageRef message;
+@property (readwrite, nonatomic, retain) NSData *headerData;
+@property (readwrite, nonatomic, retain) id body;
+@property (readwrite, nonatomic, retain) NSData *bodyData; // JIWTODO deprecated
+@property (readwrite, nonatomic, retain) NSStream *bodyStream; // JIWTODO deprecated
+@property (readwrite, nonatomic, retain) NSError *error;
+@property (readwrite, nonatomic, retain) id bodyWriter;	
 
 + (CHTTPMessage *)HTTPMessageRequest;
 + (CHTTPMessage *)HTTPMessageResponseWithStatusCode:(NSInteger)inStatusCode statusDescription:(NSString *)inStatusDescription httpVersion:(NSString *)inHTTPVersion;

@@ -37,9 +37,9 @@
 	BOOL handlesPut;
 }
 
-@property (readonly, retain) NSString *rootPath;
-@property (readwrite, retain) id <CFileSystem> fileSystem;
-@property (readwrite, assign) BOOL handlesPut;
+@property (readonly, nonatomic, retain) NSString *rootPath;
+@property (readwrite, nonatomic, retain) id <CFileSystem> fileSystem;
+@property (readwrite, nonatomic, assign) BOOL handlesPut;
 
 - (id)initWithRootPath:(NSString *)inRootPath;
 
