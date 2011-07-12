@@ -32,7 +32,6 @@
 		459DF7D60F0E9ADF0028AEEF /* CHTTPDefaultHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF78D0F0E9ADF0028AEEF /* CHTTPDefaultHandler.m */; };
 		459DF7D70F0E9ADF0028AEEF /* CHTTPFileSystemHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF78F0F0E9ADF0028AEEF /* CHTTPFileSystemHandler.m */; };
 		459DF7D80F0E9ADF0028AEEF /* CHTTPStaticResourcesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF7910F0E9ADF0028AEEF /* CHTTPStaticResourcesHandler.m */; };
-		459DF7D90F0E9ADF0028AEEF /* CRoutingHTTPRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF7930F0E9ADF0028AEEF /* CRoutingHTTPRequestHandler.m */; };
 		459DF7DA0F0E9ADF0028AEEF /* CWebDAVHTTPHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF7960F0E9ADF0028AEEF /* CWebDAVHTTPHandler.m */; };
 		459DF7DB0F0E9ADF0028AEEF /* CFileSystem_WebDAVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF7990F0E9ADF0028AEEF /* CFileSystem_WebDAVExtensions.m */; };
 		459DF7DC0F0E9ADF0028AEEF /* CHTTPMessage_WebDAVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF79B0F0E9ADF0028AEEF /* CHTTPMessage_WebDAVExtensions.m */; };
@@ -130,8 +129,6 @@
 		459DF78F0F0E9ADF0028AEEF /* CHTTPFileSystemHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTTPFileSystemHandler.m; sourceTree = "<group>"; };
 		459DF7900F0E9ADF0028AEEF /* CHTTPStaticResourcesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTTPStaticResourcesHandler.h; sourceTree = "<group>"; };
 		459DF7910F0E9ADF0028AEEF /* CHTTPStaticResourcesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTTPStaticResourcesHandler.m; sourceTree = "<group>"; };
-		459DF7920F0E9ADF0028AEEF /* CRoutingHTTPRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRoutingHTTPRequestHandler.h; sourceTree = "<group>"; };
-		459DF7930F0E9ADF0028AEEF /* CRoutingHTTPRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRoutingHTTPRequestHandler.m; sourceTree = "<group>"; };
 		459DF7950F0E9ADF0028AEEF /* CWebDAVHTTPHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWebDAVHTTPHandler.h; sourceTree = "<group>"; };
 		459DF7960F0E9ADF0028AEEF /* CWebDAVHTTPHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; lineEnding = 0; path = CWebDAVHTTPHandler.m; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.objc; };
 		459DF7980F0E9ADF0028AEEF /* CFileSystem_WebDAVExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFileSystem_WebDAVExtensions.h; sourceTree = "<group>"; };
@@ -265,7 +262,6 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				45E0D8E313CCCCE40028E5DB /* MobileCoreServices.framework */,
 				454AD27C0F4F394B00ABF6B7 /* Prefix.pch */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				459DF7680F0E9ADF0028AEEF /* Source */,
@@ -291,6 +287,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				45E0D8E313CCCCE40028E5DB /* MobileCoreServices.framework */,
 				458080560EC4D3B1006890F3 /* CFNetwork.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
@@ -373,8 +370,6 @@
 				459DF78F0F0E9ADF0028AEEF /* CHTTPFileSystemHandler.m */,
 				459DF7900F0E9ADF0028AEEF /* CHTTPStaticResourcesHandler.h */,
 				459DF7910F0E9ADF0028AEEF /* CHTTPStaticResourcesHandler.m */,
-				459DF7920F0E9ADF0028AEEF /* CRoutingHTTPRequestHandler.h */,
-				459DF7930F0E9ADF0028AEEF /* CRoutingHTTPRequestHandler.m */,
 				459DF7940F0E9ADF0028AEEF /* WebDAV */,
 			);
 			path = Handlers;
@@ -672,7 +667,6 @@
 				459DF7D60F0E9ADF0028AEEF /* CHTTPDefaultHandler.m in Sources */,
 				459DF7D70F0E9ADF0028AEEF /* CHTTPFileSystemHandler.m in Sources */,
 				459DF7D80F0E9ADF0028AEEF /* CHTTPStaticResourcesHandler.m in Sources */,
-				459DF7D90F0E9ADF0028AEEF /* CRoutingHTTPRequestHandler.m in Sources */,
 				459DF7DA0F0E9ADF0028AEEF /* CWebDAVHTTPHandler.m in Sources */,
 				459DF7DB0F0E9ADF0028AEEF /* CFileSystem_WebDAVExtensions.m in Sources */,
 				459DF7DC0F0E9ADF0028AEEF /* CHTTPMessage_WebDAVExtensions.m in Sources */,
@@ -726,6 +720,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ARC_MIGRATION = donothing;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -745,6 +740,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ARC_MIGRATION = donothing;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ../Prefix.pch;
@@ -762,6 +758,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ARC_MIGRATION = donothing;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = NO;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = NO;
@@ -788,6 +785,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				CLANG_ARC_MIGRATION = donothing;
 				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_IMPLICIT_SIGN_CONVERSION = NO;
 				CLANG_WARN_OBJC_IMPLICIT_ATOMIC_PROPERTIES = NO;
