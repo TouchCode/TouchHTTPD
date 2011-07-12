@@ -124,39 +124,27 @@ while (START < END)
 			// We are done!
 			self.remainingChunkLength = -1;
 			[self.delegate chunkWriterDidReachEOF:self];
-			NSLog(@"CHUNK WRITER ENDED");
+//			NSLog(@"CHUNK WRITER ENDED");
 			return;
 			}
+
+			theChunkLength += 2;		// calculate \n\r suffix too
 		}
 		
 	NSInteger theAvailableLength = MIN(END - P, theChunkLength);
-	if (theAvailableLength > 0)
+	self.remainingChunkLength = theChunkLength - theAvailableLength;
+
+	// do not write terminating \n\r if this is a tail of current chunk
+	NSInteger writeLength = (0 == self.remainingChunkLength) ? theAvailableLength - 2 : theAvailableLength;
+	if (writeLength > 0)
 		{
-		NSData *theChunk = [[NSData alloc] initWithBytesNoCopy:(void *)P length:theAvailableLength freeWhenDone:NO];
+		NSData *theChunk = [[NSData alloc] initWithBytesNoCopy:(void *)P length: writeLength freeWhenDone:NO];
 		[self.outputFile writeData:theChunk];
 		[theChunk release];
 		}
-	self.remainingChunkLength = theChunkLength - theAvailableLength;
-	
-	P += theAvailableLength;
-	
-	if (0 == self.remainingChunkLength)
-		{
-		if (*P++ != '\r')
-			{
-			// JIWTODO error!
-			NSLog(@"CHUNKING ERROR #10");
-			}		
-			
-		if (*P++ != '\n')
-			{
-			// JIWTODO error!
-			NSLog(@"CHUNKING ERROR #10.5");
-			}		
-		}
-		
-	START = P;
 
+	P += theAvailableLength;
+	START = P;
 	}
 }
 
