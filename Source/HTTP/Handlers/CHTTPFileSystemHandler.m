@@ -188,15 +188,15 @@ if ([self.fileSystem fileExistsAtPath:thePath isDirectory:&theIsDirectoryFlag] =
 				[theEntry subelement:@"kind"].stringValue = @"file";
                 }
                 
-            CFStringRef thePreferredIdentifier = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (CFStringRef)[theChildPath pathExtension], NULL);
+            CFStringRef thePreferredIdentifier = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)[theChildPath pathExtension], NULL);
             if (thePreferredIdentifier)
                 {
-                [theEntry subelement:@"identifier"].stringValue = (NSString *)thePreferredIdentifier;
+                [theEntry subelement:@"identifier"].stringValue = (__bridge NSString *)thePreferredIdentifier;
 
                 CFStringRef theMIMEType = UTTypeCopyPreferredTagWithClass(thePreferredIdentifier, kUTTagClassMIMEType);
                 if (theMIMEType)
                     {
-                    [theEntry subelement:@"MIMEType"].stringValue = (NSString *)theMIMEType;
+                    [theEntry subelement:@"MIMEType"].stringValue = (__bridge NSString *)theMIMEType;
                     CFRelease(theMIMEType);
                     }
 

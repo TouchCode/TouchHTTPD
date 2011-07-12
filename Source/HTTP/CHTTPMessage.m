@@ -56,7 +56,7 @@ return(theHTTPMessage);
 + (CHTTPMessage *)HTTPMessageResponseWithStatusCode:(NSInteger)inStatusCode statusDescription:(NSString *)inStatusDescription httpVersion:(NSString *)inHTTPVersion;
 {
 CHTTPMessage *theHTTPMessage = [[[self alloc] init] autorelease];
-theHTTPMessage.message = CFHTTPMessageCreateResponse(kCFAllocatorDefault, inStatusCode, (CFStringRef)inStatusDescription, (CFStringRef)inHTTPVersion);
+theHTTPMessage.message = CFHTTPMessageCreateResponse(kCFAllocatorDefault, inStatusCode, (__bridge CFStringRef)inStatusDescription, (__bridge CFStringRef)inHTTPVersion);
 [theHTTPMessage setHeader:@"0" forKey:@"Content-Length"];
 return(theHTTPMessage);
 }
@@ -275,12 +275,12 @@ return(NO);
 
 - (NSString *)headerForKey:(NSString *)inKey
 {
-return([(NSString *)CFHTTPMessageCopyHeaderFieldValue(self.message, (CFStringRef)inKey) autorelease]);
+return([(NSString *)CFHTTPMessageCopyHeaderFieldValue(self.message, (__bridge CFStringRef)inKey) autorelease]);
 }
 
 - (void)setHeader:(NSString *)inHeader forKey:(NSString *)inKey
 {
-CFHTTPMessageSetHeaderFieldValue(self.message, (CFStringRef)inKey, (CFStringRef)inHeader);
+CFHTTPMessageSetHeaderFieldValue(self.message, (__bridge CFStringRef)inKey, (__bridge CFStringRef)inHeader);
 }
 
 #pragma mark -
@@ -292,7 +292,7 @@ NSMutableData *theData = [NSMutableData data];
 CFDataRef theHeaderData = CFHTTPMessageCopySerializedMessage(self.message);
 if (theHeaderData)
 	{
-	[theData appendData:(NSData *)theHeaderData];
+	[theData appendData:(__bridge NSData *)theHeaderData];
 	CFRelease(theHeaderData);
 	}
 

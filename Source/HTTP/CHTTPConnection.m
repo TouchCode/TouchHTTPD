@@ -77,8 +77,6 @@ currentRequest = NULL;
 {
 // JIWTODO -- Try not to modify self until needed.
 
-NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
-
 @try
 	{	
 	if (self.currentRequest == NULL)
@@ -112,7 +110,6 @@ NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
 	}
 @finally
 	{
-	[thePool release];
 	}
 }
 
@@ -125,7 +122,7 @@ NSError *theError = NULL;
 
 @try
 	{
-	for (CHTTPRequestHandler *theHandler in self.requestHandlers)
+	for (id <CHTTPRequestHandler> theHandler in self.requestHandlers)
 		{
 		[theHandler handleRequest:inRequest forConnection:self response:&theResponse error:&theError];
 		}

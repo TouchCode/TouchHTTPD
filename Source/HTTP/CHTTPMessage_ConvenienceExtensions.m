@@ -106,7 +106,7 @@ CHTTPMessage *theHTTPMessage = [[[self alloc] init] autorelease];
 
 NSString *theStatusDescription = [[self class] statusDescriptionForStatusCode:inStatusCode];
 
-theHTTPMessage.message = CFHTTPMessageCreateResponse(kCFAllocatorDefault, inStatusCode, (CFStringRef)theStatusDescription, (CFStringRef)kHTTPVersion1_1);
+theHTTPMessage.message = CFHTTPMessageCreateResponse(kCFAllocatorDefault, inStatusCode, (__bridge CFStringRef)theStatusDescription, (__bridge CFStringRef)kHTTPVersion1_1);
 [theHTTPMessage setHeader:@"0" forKey:@"Content-Length"];
 return(theHTTPMessage);
 }
