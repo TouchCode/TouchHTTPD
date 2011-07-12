@@ -78,6 +78,7 @@
 		45CD4513126CBAB800F38B80 /* NSURL_DataExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44F3126CBAB800F38B80 /* NSURL_DataExtensions.m */; };
 		45CD4514126CBAB800F38B80 /* NSURL_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44F5126CBAB800F38B80 /* NSURL_Extensions.m */; };
 		45CD4515126CBAB800F38B80 /* NSURLResponse_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45CD44F7126CBAB800F38B80 /* NSURLResponse_Extensions.m */; };
+		45E0D8E413CCCCE40028E5DB /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 45E0D8E313CCCCE40028E5DB /* MobileCoreServices.framework */; };
 		45FFF5F5129369B7006944A2 /* CTemporaryFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 45FFF5F4129369B7006944A2 /* CTemporaryFile.m */; };
 /* End PBXBuildFile section */
 
@@ -219,6 +220,7 @@
 		45CD44F5126CBAB800F38B80 /* NSURL_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURL_Extensions.m; sourceTree = "<group>"; };
 		45CD44F6126CBAB800F38B80 /* NSURLResponse_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSURLResponse_Extensions.h; sourceTree = "<group>"; };
 		45CD44F7126CBAB800F38B80 /* NSURLResponse_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSURLResponse_Extensions.m; sourceTree = "<group>"; };
+		45E0D8E313CCCCE40028E5DB /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
 		45FFF5F3129369B7006944A2 /* CTemporaryFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTemporaryFile.h; sourceTree = "<group>"; };
 		45FFF5F4129369B7006944A2 /* CTemporaryFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTemporaryFile.m; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -229,6 +231,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				45E0D8E413CCCCE40028E5DB /* MobileCoreServices.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				2892E4100DC94CBA00A64D0F /* CoreGraphics.framework in Frameworks */,
@@ -262,6 +265,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				45E0D8E313CCCCE40028E5DB /* MobileCoreServices.framework */,
 				454AD27C0F4F394B00ABF6B7 /* Prefix.pch */,
 				080E96DDFE201D6D7F000001 /* Classes */,
 				459DF7680F0E9ADF0028AEEF /* Source */,
@@ -743,8 +747,13 @@
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = WebDAVServer_Prefix.pch;
+				GCC_PREFIX_HEADER = ../Prefix.pch;
+				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INFOPLIST_FILE = Info.plist;
+				OTHER_LDFLAGS = (
+					"-lsqlite3",
+					"-lxml2",
+				);
 				PRODUCT_NAME = WebDAVServer;
 			};
 			name = Release;
