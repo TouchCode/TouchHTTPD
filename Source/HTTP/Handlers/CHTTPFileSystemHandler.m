@@ -29,6 +29,8 @@
 
 #import "CHTTPFileSystemHandler.h"
 
+#import <MobileCoreServices/MobileCoreServices.h>
+
 #import "CHTTPMessage.h"
 #import "CHTTPMessage_ConvenienceExtensions.h"
 #import "CHTTPConnection.h"
@@ -178,9 +180,28 @@ if ([self.fileSystem fileExistsAtPath:thePath isDirectory:&theIsDirectoryFlag] =
 			[theEntry subelement:@"path"].stringValue = theFullPath;
 			[theEntry subelement:@"href"].stringValue = theChildPath;
 			if (theIsDirectoryFlag)
+                {
 				[theEntry subelement:@"kind"].stringValue = @"directory";
+                }
 			else
+                {
 				[theEntry subelement:@"kind"].stringValue = @"file";
+                }
+                
+            CFStringRef thePreferredIdentifier = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (CFStringRef)[theChildPath pathExtension], NULL);
+            if (thePreferredIdentifier)
+                {
+                [theEntry subelement:@"identifier"].stringValue = (NSString *)thePreferredIdentifier;
+
+                CFStringRef theMIMEType = UTTypeCopyPreferredTagWithClass(thePreferredIdentifier, kUTTagClassMIMEType);
+                if (theMIMEType)
+                    {
+                    [theEntry subelement:@"MIMEType"].stringValue = (NSString *)theMIMEType;
+                    CFRelease(theMIMEType);
+                    }
+
+                CFRelease(thePreferredIdentifier);
+                }
 			}
 		
 		CXMLDocument *theDocument = [CXMLNode documentWithRootElement:theRootElement];
