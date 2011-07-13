@@ -60,17 +60,6 @@ if ((self = [self init]) != NULL)
 return(self);
 }
 
-- (void)dealloc
-{
-[requestHandlers release];
-requestHandlers = NULL;
-
-[currentRequest release];
-currentRequest = NULL;
-//
-[super dealloc];
-}
-
 #pragma mark -
 
 - (void)dataReceived:(NSData *)inData
@@ -88,7 +77,7 @@ currentRequest = NULL;
 
 	if ([self.currentRequest isMessageComplete])
 		{
-		CHTTPMessage *theRequest = [[self.currentRequest retain] autorelease];
+		CHTTPMessage *theRequest = self.currentRequest;
 		self.currentRequest = NULL;
 
 		CHTTPMessage *theResponse = [self responseForRequest:theRequest];
@@ -177,7 +166,7 @@ if (inResponse.body)
 		NSAssert(NO, @"Unknown body");
 	}
 
-CMultiInputStream *theMultistream = [[[CMultiInputStream alloc] initWithStreams:theStreams] autorelease];
+CMultiInputStream *theMultistream = [[CMultiInputStream alloc] initWithStreams:theStreams];
 [self sendStream:theMultistream];
 }
 

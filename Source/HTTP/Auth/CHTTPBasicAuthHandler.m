@@ -42,17 +42,9 @@
 {
 if ((self = [super init]) != nil)
 	{
-	realm = [@"Default Realm" retain];
+	realm = @"Default Realm";
 	}
 return(self);
-}
-
-- (void)dealloc
-{
-[realm release];
-realm = NULL;
-//
-[super dealloc];
 }
 
 #pragma mark -

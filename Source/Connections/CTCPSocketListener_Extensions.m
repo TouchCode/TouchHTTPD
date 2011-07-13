@@ -39,29 +39,28 @@ if (self.listening == NO)
 		return(NO);
 	}
 
-NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
-
-BOOL theFlag = self.listening;
-while (theFlag)
-	{
-	@try
-		{
-		NSAutoreleasePool *theInnerPool = [[NSAutoreleasePool alloc] init];
-		[[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
-		theFlag = self.listening;
-		[theInnerPool drain];
-		}
-	@catch (NSException *exception)
-		{
-		if (inIgnoreExceptions == NO)
-			{
-			NSLog(@"Exception caught, exiting runloop: %@", exception);
-			theFlag = NO;
-			}
-		}
-	}
-
-[thePool drain];
+@autoreleasepool
+    {
+    BOOL theFlag = self.listening;
+    while (theFlag)
+        {
+        @try
+            {
+            @autoreleasepool {
+            [[NSRunLoop currentRunLoop] runUntilDate:[NSDate dateWithTimeIntervalSinceNow:1.0]];
+            theFlag = self.listening;
+            }
+            }
+        @catch (NSException *exception)
+            {
+            if (inIgnoreExceptions == NO)
+                {
+                NSLog(@"Exception caught, exiting runloop: %@", exception);
+                theFlag = NO;
+                }
+            }
+        }
+    }
 
 return(YES);
 }

@@ -109,7 +109,7 @@ if ([theContentType isEqualToString:@"text/xml"] == NO && [theContentType isEqua
 NSData *theData = [self bodyData];
 if (theData != NULL && theData.length > 0)
 	{
-	CXMLDocument *theDocument = [[[CXMLDocument alloc] initWithData:[self bodyData] options:0 error:outError] autorelease];
+	CXMLDocument *theDocument = [[CXMLDocument alloc] initWithData:[self bodyData] options:0 error:outError];
 	return(theDocument);
 	}
 	

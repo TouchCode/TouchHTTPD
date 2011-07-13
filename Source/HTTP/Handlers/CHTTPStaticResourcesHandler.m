@@ -39,21 +39,13 @@
 
 @synthesize rootDirectory;
 
-- (void)dealloc
-{
-[rootDirectory release];
-rootDirectory = NULL;
-//	
-[super dealloc];
-}
-
 - (NSString *)rootDirectory
 {
 if (rootDirectory == NULL)
 	{
 	NSBundle *theBundle = [NSBundle mainBundle];
 	NSString *theResourceDirectory = [theBundle resourcePath];
-	rootDirectory = [[theResourceDirectory stringByStandardizingPath] retain];
+	rootDirectory = [theResourceDirectory stringByStandardizingPath];
 	}
 return rootDirectory; 
 }
@@ -62,11 +54,9 @@ return rootDirectory;
 {
 if (rootDirectory != inRootDirectory)
 	{
-	[rootDirectory autorelease];
-	rootDirectory = [inRootDirectory retain];
+	rootDirectory = inRootDirectory;
     }
 }
-
 
 - (BOOL)handleRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection response:(CHTTPMessage **)ioResponse error:(NSError **)outError
 {

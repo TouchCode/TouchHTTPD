@@ -58,15 +58,6 @@
 @synthesize addressLabel = outletAddressLabel;
 @synthesize connectionsLabel = outletConnectionsLabel;
 
-- (void)dealloc
-{
-self.HTTPServer = NULL;
-self.WebDAVSwitch = NULL;
-self.addressLabel = NULL;
-self.connectionsLabel = NULL;
-//
-[super dealloc];
-}
 
 #pragma mark -
 
@@ -87,7 +78,7 @@ self.connectionsLabel = NULL;
 {
 if (self.HTTPServer == NULL)
 	{
-	CHTTPServer *theHTTPServer = [[[CHTTPServer alloc] init] autorelease];
+	CHTTPServer *theHTTPServer = [[CHTTPServer alloc] init];
 	[theHTTPServer createDefaultSocketListener];
 
 //	CHTTPBasicAuthHandler *theAuthHandler = [[[CHTTPBasicAuthHandler alloc] init] autorelease];
@@ -96,16 +87,16 @@ if (self.HTTPServer == NULL)
 
 	NSString *theRoot = [@"~/Documents" stringByExpandingTildeInPath];
 
-	CWebDavHTTPHandler *theRequestHandler = [[[CWebDavHTTPHandler alloc] initWithRootPath:theRoot] autorelease];
+	CWebDavHTTPHandler *theRequestHandler = [[CWebDavHTTPHandler alloc] initWithRootPath:theRoot];
 	[theHTTPServer.defaultRequestHandlers addObject:theRequestHandler];
 
-	CHTTPDefaultHandler *theDefaultHandler = [[[CHTTPDefaultHandler alloc] init] autorelease];
+	CHTTPDefaultHandler *theDefaultHandler = [[CHTTPDefaultHandler alloc] init];
 	[theHTTPServer.defaultRequestHandlers addObject:theDefaultHandler];
 
-	CHTTPStaticResourcesHandler *theStaticResourceHandler = [[[CHTTPStaticResourcesHandler alloc] init] autorelease];
+	CHTTPStaticResourcesHandler *theStaticResourceHandler = [[CHTTPStaticResourcesHandler alloc] init];
 	[theHTTPServer.defaultRequestHandlers addObject:theStaticResourceHandler];
 
-	CHTTPLoggingHandler *theLoggingHandler = [[[CHTTPLoggingHandler alloc] init] autorelease];
+	CHTTPLoggingHandler *theLoggingHandler = [[CHTTPLoggingHandler alloc] init];
 	[theHTTPServer.defaultRequestHandlers addObject:theLoggingHandler];
 
 	// by default your server will be published via Bonjour,
@@ -135,15 +126,11 @@ if (self.HTTPServer == NULL)
 {
 if (self.HTTPServer != NULL)
 	{
-	NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
-	
 	self.addressLabel.text = @"";
 
 	self.HTTPServer = NULL;
 	
 	self.WebDAVSwitch.on = NO;
-	
-	[thePool drain];
 	}
 }
 
@@ -184,7 +171,7 @@ else if (self.WebDAVSwitch.on == NO)
             
             if ( (ll->ifa_flags & (IFF_UP | IFF_RUNNING)) && !(ll->ifa_flags & IFF_LOOPBACK) )
             {
-                [addrs addObject:[[[NSString alloc] initWithBytes:dottedQuadBuf length:strlen(dottedQuadBuf) encoding:NSUTF8StringEncoding] autorelease]];
+                [addrs addObject:[[NSString alloc] initWithBytes:dottedQuadBuf length:strlen(dottedQuadBuf) encoding:NSUTF8StringEncoding]];
             }
         }
         
@@ -193,7 +180,7 @@ else if (self.WebDAVSwitch.on == NO)
     
     freeifaddrs(ll);
     
-    return [[addrs copy] autorelease];
+    return [addrs copy];
 }
 
 - (BOOL)HTTPAuthHandler:(CHTTPBasicAuthHandler *)inHandler shouldAuthenticateCredentials:(NSData *)inData

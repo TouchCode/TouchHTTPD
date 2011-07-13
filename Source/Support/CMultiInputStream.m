@@ -55,31 +55,20 @@
 {
 if ((self = [super init]) != NULL)
 	{
-	streams = [inStreams retain];
-	enumerator = [[self.streams objectEnumerator] retain];
+	streams = inStreams;
+	enumerator = [self.streams objectEnumerator];
 	}
 return(self);
 }
 
 - (void)dealloc
 {
-delegate = NULL;
-[runLoop release];
-runLoop = NULL;
 
-[mode  release];
-mode = NULL;
 
-[streams release];
-streams = NULL;
 
-[currentStream release];
 currentStream = NULL;
 
-[enumerator release];
-enumerator = NULL;
 //
-[super dealloc];
 }
 
 #pragma mark -
@@ -99,8 +88,7 @@ return(currentStream);
 {
 if (currentStream != inCurrentStream)
 	{
-	[currentStream autorelease];
-	currentStream = [inCurrentStream retain];
+	currentStream = inCurrentStream;
     }
 }
 

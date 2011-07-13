@@ -43,7 +43,7 @@
 {
 if ((self = [self initWithInputStream:inInputStream outputStream:inOutputStream]) != NULL)
 	{
-	address = [inAddress retain];
+	address = inAddress;
 	}
 return(self);
 }
@@ -51,11 +51,6 @@ return(self);
 - (void)dealloc
 {
 [self close];
-
-[address release];
-address = NULL;
-
-[super dealloc];
 }
 
 - (void)close

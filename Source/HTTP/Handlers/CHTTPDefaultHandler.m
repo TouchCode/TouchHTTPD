@@ -52,7 +52,7 @@ if ((self = [super init]) != NULL)
 		NSDictionary *theDefaultHeaders = [NSDictionary dictionaryWithObjectsAndKeys:
 			@"TouchHTTPD/0.0.1 (Unix) (Mac OS X)", @"Server",
 			NULL];
-		defaultHeaders = [theDefaultHeaders retain];
+		defaultHeaders = theDefaultHeaders;
 		}
 	}
 return(self);
@@ -62,17 +62,9 @@ return(self);
 {
 if ((self = [self init]) != NULL)
 	{
-	defaultHeaders = [inDefaultHeaders retain];
+	defaultHeaders = inDefaultHeaders;
 	}
 return(self);
-}
-
-- (void)dealloc
-{
-[defaultHeaders release];
-defaultHeaders = NULL;
-//
-[super dealloc];
 }
 
 #pragma mark -

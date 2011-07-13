@@ -48,7 +48,7 @@
 {
 if ((self = [super init]) != NULL)
 	{
-    logFile = [[@"~/Library/Logs/TouchHTTPD.log" stringByExpandingTildeInPath] retain];
+    logFile = [@"~/Library/Logs/TouchHTTPD.log" stringByExpandingTildeInPath];
 
 	NSString *theDirectory = [self.logFile stringByDeletingLastPathComponent];
 	BOOL theFileExistsFlag = [[NSFileManager defaultManager] fileExistsAtPath:theDirectory];
@@ -59,7 +59,6 @@ if ((self = [super init]) != NULL)
 		if (theResult == NO)
 			{
 			NSLog(@"Could not create log directory: %@", theError);
-			[self dealloc];
 			self = NULL;
 			}
 		}
@@ -72,7 +71,6 @@ if ((self = [super init]) != NULL)
 		if (theResult == NO)
 			{
 			NSLog(@"Could not create log file: %@", theError);
-			[self dealloc];
 			self = NULL;
 			}
 		}
@@ -84,18 +82,9 @@ return(self);
 {
 if ((self = [self init]) != NULL)
 	{
-    [logFile release];
-	logFile = [inLogFile retain];
+	logFile = inLogFile;
 	}
 return(self);
-}
-
-- (void)dealloc
-{
-[logFile release];
-logFile = NULL;
-//
-[super dealloc];
 }
 
 #pragma mark -
@@ -115,8 +104,7 @@ return(fileHandle);
 {
 if (fileHandle != inFileHandle)
 	{
-	[fileHandle release];
-	fileHandle = [inFileHandle retain];
+	fileHandle = inFileHandle;
     }
 }
 

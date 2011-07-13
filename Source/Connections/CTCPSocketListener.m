@@ -82,9 +82,6 @@ return(self);
 {
 [self stop];
 //
-[netService release];
-netService = NULL;
-
 if (IPV4Socket)
     {
     CFSocketInvalidate(IPV4Socket);
@@ -97,17 +94,6 @@ if (IPV6Socket)
     CFRelease(IPV6Socket);
     IPV6Socket = NULL;
     }
-//
-[domain release];
-domain = NULL;
-
-[name release];
-name = NULL;
-
-[type release];
-type = NULL;
-//
-[super dealloc];
 }
 
 #pragma mark -
@@ -174,7 +160,7 @@ if (IPV6Socket != inIPV6Socket)
 {
 if (netService == NULL)
 	{
-	self.netService = [[[NSNetService alloc] initWithDomain:self.domain type:self.type name:self.name port:port] autorelease];
+	self.netService = [[NSNetService alloc] initWithDomain:self.domain type:self.type name:self.name port:port];
 	}
 return(netService);
 }
@@ -385,7 +371,7 @@ if (self.port == 0)
 	{
 	// now that the binding was successful, we get the port number
 	// -- we will need it for the v6 endpoint and for the NSNetService
-	NSData *addr = [(NSData *)CFSocketCopyAddress(theSocket) autorelease];
+	NSData *addr = (__bridge_transfer NSData *)CFSocketCopyAddress(theSocket);
 	memcpy(&addr4, [addr bytes], [addr length]);
 	self.port = ntohs(addr4.sin_port);
 	}

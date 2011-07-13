@@ -57,27 +57,22 @@ typedef struct {
 
 + (GMAppleDoubleEntry *)entryWithID:(GMAppleDoubleEntryID)entryID 
                                data:(NSData *)data {
-  return [[[GMAppleDoubleEntry alloc] 
-           initWithEntryID:entryID data:data] autorelease];
+  return [[GMAppleDoubleEntry alloc] 
+           initWithEntryID:entryID data:data];
 }
 
 - (id)initWithEntryID:(GMAppleDoubleEntryID)entryID
                  data:(NSData *)data {
   if ((self = [super init])) {
     if (entryID == DoubleEntryInvalid || data == nil) {
-      [self release];
       return nil;
     }
     entryID_ = entryID;
-    data_ = [data retain];
+    data_ = data;
   }
   return self;
 }
 
-- (void)dealloc {
-  [data_ release];
-  [super dealloc];
-}
 
 - (GMAppleDoubleEntryID)entryID {
   return entryID_;
@@ -91,11 +86,11 @@ typedef struct {
 @implementation GMAppleDouble
 
 + (GMAppleDouble *)appleDouble {
-  return [[[GMAppleDouble alloc] init] autorelease];
+  return [[GMAppleDouble alloc] init];
 }
 
 + (GMAppleDouble *)appleDoubleWithData:(NSData *)data {
-  GMAppleDouble* appleDouble = [[[GMAppleDouble alloc] init] autorelease];
+  GMAppleDouble* appleDouble = [[GMAppleDouble alloc] init];
   if ([appleDouble addEntriesFromAppleDoubleData:data]) {
     return appleDouble;
   }
@@ -109,10 +104,6 @@ typedef struct {
   return self;  
 }
 
-- (void)dealloc {
-  [entries_ release];
-  [super dealloc];
-}
 
 - (void)addEntry:(GMAppleDoubleEntry *)entry {
   [entries_ addObject:entry];

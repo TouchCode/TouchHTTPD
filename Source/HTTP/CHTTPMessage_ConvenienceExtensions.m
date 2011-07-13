@@ -102,7 +102,7 @@ return(NULL);
 
 + (CHTTPMessage *)HTTPMessageResponseWithStatusCode:(NSInteger)inStatusCode
 {
-CHTTPMessage *theHTTPMessage = [[[self alloc] init] autorelease];
+CHTTPMessage *theHTTPMessage = [[self alloc] init];
 
 NSString *theStatusDescription = [[self class] statusDescriptionForStatusCode:inStatusCode];
 
@@ -185,7 +185,7 @@ self.contentLength = inBodyData.length;
 
 - (NSString *)bodyString
 {
-return([[[NSString alloc] initWithData:self.bodyData encoding:NSUTF8StringEncoding] autorelease]);
+return([[NSString alloc] initWithData:self.bodyData encoding:NSUTF8StringEncoding]);
 }
 
 @end
