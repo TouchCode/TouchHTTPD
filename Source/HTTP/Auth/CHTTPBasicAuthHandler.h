@@ -32,8 +32,6 @@
 @protocol CHTTPBasicAuthHandlerDelegate;
 
 @interface CHTTPBasicAuthHandler : NSObject <CHTTPRequestHandler> {
-	id <CHTTPBasicAuthHandlerDelegate> delegate;
-	NSString *realm;
 }
 
 @property (readwrite, nonatomic, assign) id <CHTTPBasicAuthHandlerDelegate> delegate;

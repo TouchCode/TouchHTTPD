@@ -37,9 +37,12 @@
 
 @implementation CHTTPStaticResourcesHandler
 
+@synthesize rootDirectory;
+
 - (void)dealloc
 {
-self.rootDirectory = NULL;
+[rootDirectory release];
+rootDirectory = NULL;
 //	
 [super dealloc];
 }

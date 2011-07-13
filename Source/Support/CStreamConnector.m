@@ -34,6 +34,7 @@
 @interface CStreamConnector ()
 @property (readwrite, nonatomic, retain) NSMutableData *buffer;
 @property (readwrite, nonatomic, assign) BOOL connected;
+@property (readwrite, nonatomic, assign) BOOL expectingMoreInputFlag;
 
 - (void)disconnect;
 - (void)read;
@@ -49,8 +50,10 @@
 @synthesize outputStream;
 @synthesize delegate;
 @synthesize maximumBufferLength;
+
 @synthesize buffer;
 @synthesize connected;
+@synthesize expectingMoreInputFlag;
 
 + (id)streamConnectorWithInputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream;
 {

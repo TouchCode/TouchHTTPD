@@ -42,6 +42,7 @@
 @implementation CHTTPLoggingHandler
 
 @synthesize logFile;
+@synthesize fileHandle;
 
 - (id)init
 {

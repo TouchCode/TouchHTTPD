@@ -56,6 +56,8 @@ static void TCPSocketListenerAcceptCallBack(CFSocketRef socket, CFSocketCallBack
 
 @implementation CTCPSocketListener
 
+@synthesize domain;
+@synthesize name;
 @synthesize delegate;
 @synthesize connectionCreationDelegate;
 @synthesize port;
@@ -63,6 +65,9 @@ static void TCPSocketListenerAcceptCallBack(CFSocketRef socket, CFSocketCallBack
 @synthesize mutableConnections;
 @synthesize listening;
 @synthesize broadcasting;
+@synthesize IPV4Socket;
+@synthesize IPV6Socket;
+@synthesize netService;
 
 - (id)init
 {
@@ -114,15 +119,6 @@ if (domain == NULL)
 return(domain);
 }
 
-- (void)setDomain:(NSString *)inDomain
-{
-if (domain != inDomain)
-	{
-	[domain autorelease];
-	domain = [inDomain retain];
-    }
-}
-
 - (NSString *)name
 {
 if (name == NULL)
@@ -134,20 +130,6 @@ if (name == NULL)
 		}
 	}
 return(name);
-}
-
-- (void)setName:(NSString *)inName
-{
-if (name != inName)
-	{
-	[name autorelease];
-	name = [inName retain];
-    }
-}
-
-- (CFSocketRef)IPV4Socket
-{
-return(IPV4Socket);
 }
 
 - (void)setIPV4Socket:(CFSocketRef)inIPV4Socket
@@ -167,11 +149,6 @@ if (IPV4Socket != inIPV4Socket)
 		IPV4Socket = inIPV4Socket;
 		}
 	}
-}
-
-- (CFSocketRef)IPV6Socket
-{
-return(IPV6Socket);
 }
 
 - (void)setIPV6Socket:(CFSocketRef)inIPV6Socket
@@ -200,15 +177,6 @@ if (netService == NULL)
 	self.netService = [[[NSNetService alloc] initWithDomain:self.domain type:self.type name:self.name port:port] autorelease];
 	}
 return(netService);
-}
-
-- (void)setNetService:(NSNetService *)inNetService
-{
-if (netService != inNetService)
-	{
-	[netService autorelease];
-	netService = [inNetService retain];
-    }
 }
 
 - (NSArray *)connections

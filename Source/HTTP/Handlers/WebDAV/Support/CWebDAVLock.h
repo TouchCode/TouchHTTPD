@@ -45,13 +45,6 @@ typedef enum {
 @class CXMLElement;
 
 @interface CWebDAVLock : NSObject {
-	NSURL *resource;
-	NSString *token;
-	NSInteger depth;
-	NSDate *timeout;
-	EWebDavLockScope scope;
-	EWebDavLockType type;
-	NSString *owner;
 }
 
 @property (readonly, nonatomic, retain) NSURL *resource;

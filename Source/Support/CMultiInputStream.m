@@ -49,6 +49,7 @@
 @synthesize delegate;
 @synthesize streams;
 @synthesize enumerator;
+@synthesize currentStream;
 
 - (id)initWithStreams:(NSArray *)inStreams
 {

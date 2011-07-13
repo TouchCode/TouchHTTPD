@@ -34,9 +34,6 @@
 @class CHTTPRequestHandler;
 
 @interface CHTTPConnection : CWireProtocol {
-	CHTTPServer *server; // Never retained.
-	NSMutableArray *requestHandlers;
-	CHTTPMessage *currentRequest;
 }
 
 @property (readonly, nonatomic, assign) CHTTPServer *server;

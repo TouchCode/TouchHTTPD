@@ -32,8 +32,6 @@
 @protocol CTransportDelegate;
 
 @interface CTCPConnection : CTransport {
-	NSData *address;
-	CFSocketNativeHandle nativeHandle;
 }
 
 @property (readonly, nonatomic, retain) NSData *address;

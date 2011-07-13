@@ -32,8 +32,6 @@
 @class CWebDAVLock;
 
 @interface CWebDAVLockDatabase : NSObject {
-	NSMutableDictionary *locksByToken;
-	NSMutableDictionary *locksByResource;
 }
 
 - (CWebDAVLock *)lockByToken:(NSString *)inToken;

@@ -33,11 +33,6 @@
 
 // JIWTODO - to clear this up - it really _ought_ to be made into an NSOutputStream subclass. But right now quick & easy > best.
 @interface CChunkWriter : NSObject {
-	NSFileHandle *outputFile;
-	BOOL moreChunksComing;
-	NSInteger remainingChunkLength;
-	NSMutableData *buffer;
-	id <CChunkWriterDelegate> delegate;
 }
 
 @property (readwrite, nonatomic, retain) NSFileHandle *outputFile;

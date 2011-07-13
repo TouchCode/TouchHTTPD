@@ -70,7 +70,7 @@
 if ((self = [super init]) != NULL)
 	{
 	lockDatabase = [[CWebDAVLockDatabase alloc] init];
-	handlesPut = YES;
+	self.handlesPut = YES;
 	}
 return(self);
 }
