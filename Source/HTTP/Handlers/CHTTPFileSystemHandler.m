@@ -29,7 +29,9 @@
 
 #import "CHTTPFileSystemHandler.h"
 
+#ifndef TARGET_OS_MAC
 #import <MobileCoreServices/MobileCoreServices.h>
+#endif
 
 #import "CHTTPMessage.h"
 #import "CHTTPMessage_ConvenienceExtensions.h"
