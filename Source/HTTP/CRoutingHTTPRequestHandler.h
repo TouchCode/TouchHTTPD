@@ -36,7 +36,7 @@
 - (BOOL)routeConnection:(CRoutingHTTPRequestHandler *)inConnection request:(CHTTPMessage *)inRequest toTarget:(id *)outTarget selector:(SEL *)outSelector error:(NSError **)outError;
 @end
 
-@interface CRoutingHTTPRequestHandler : CHTTPRequestHandler {
+@interface CRoutingHTTPRequestHandler : NSObject <CHTTPRequestHandler> {
 	id <CHTTPRequestRouter> router;
 }
 
