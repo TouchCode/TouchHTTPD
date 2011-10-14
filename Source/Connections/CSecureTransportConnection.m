@@ -42,6 +42,8 @@ static OSStatus MySSLWriteFunc(SSLConnectionRef connection, const void *data, si
 @implementation CSecureTransportConnection
 
 @synthesize certificates;
+
+@synthesize context;
 @synthesize inputBuffer;
 
 - (id)init
@@ -54,21 +56,13 @@ return(self);
 }
 
 - (void)dealloc
-{
-[certificates release];
-certificates = NULL;
-
-if (context)
     {
-    SSLDisposeContext(context);
-    context = NULL;
+    if (context)
+        {
+        SSLDisposeContext(context);
+        context = NULL;
+        }
     }
-
-[inputBuffer release];
-inputBuffer = NULL;
-
-[super dealloc];
-}
 
 #pragma mark -
 
@@ -85,11 +79,11 @@ if (context == NULL)
 	if (theStatus != noErr)
 		[NSException raise:NSGenericException format:@"SSLSetIOFuncs failed with %d", theStatus];
 
-	theStatus = SSLSetCertificate(theContext, (CFArrayRef)self.certificates);
+	theStatus = SSLSetCertificate(theContext, (__bridge CFArrayRef)self.certificates);
 	if (theStatus != noErr)
 		[NSException raise:NSGenericException format:@"SSLSetCertificate failed with %d", theStatus];
 
-	theStatus = SSLSetConnection(theContext, self);
+	theStatus = SSLSetConnection(theContext, (__bridge void *)self);
 	if (theStatus != noErr)
 		[NSException raise:NSGenericException format:@"SSLSetConnection failed with %d", theStatus];
 
@@ -160,7 +154,7 @@ else if (theState >= kSSLConnected)
 
 static OSStatus MySSLReadFunc(SSLConnectionRef inConnection, void *data, size_t *dataLength)
 {
-CSecureTransportConnection *theConnection = (CSecureTransportConnection *)inConnection;
+CSecureTransportConnection *theConnection = (__bridge CSecureTransportConnection *)inConnection;
 
 const size_t theBufferLength = theConnection.inputBuffer.length;
 const size_t theActualDataLength = MIN(*dataLength, theBufferLength);
@@ -186,7 +180,7 @@ else
 
 static OSStatus MySSLWriteFunc(SSLConnectionRef inConnection, const void *data, size_t *dataLength)
 {
-CSecureTransportConnection *theConnection = (CSecureTransportConnection *)inConnection;
+CSecureTransportConnection *theConnection = (__bridge CSecureTransportConnection *)inConnection;
 NSData *theData = [NSData dataWithBytesNoCopy:(void *)data length:*dataLength freeWhenDone:NO];
 [theConnection sendData:theData];
 return(noErr);

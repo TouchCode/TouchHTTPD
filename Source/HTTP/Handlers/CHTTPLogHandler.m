@@ -41,10 +41,10 @@ CHTTPMessage *theResponse = *ioResponse;
 
 printf("#### BEGIN HTTP REQUEST/RESPONSE ###################################\n");
 printf("#### REQUEST HEADERS ####\n");
-printf("%s\n", [[[[NSString alloc] initWithData:[inRequest headerData] encoding:NSUTF8StringEncoding] autorelease] UTF8String]);
+printf("%s\n", [[[NSString alloc] initWithData:[inRequest headerData] encoding:NSUTF8StringEncoding] UTF8String]);
 printf("#### REQUEST BODY ####\n");
 if ([inRequest bodyData])
-	printf("%s\n", [[[[NSString alloc] initWithData:[inRequest bodyData] encoding:NSUTF8StringEncoding] autorelease] UTF8String]);
+	printf("%s\n", [[[NSString alloc] initWithData:[inRequest bodyData] encoding:NSUTF8StringEncoding] UTF8String]);
 else
 	{
 	printf("%s\n", [[inRequest.body description] UTF8String]);
@@ -52,10 +52,10 @@ else
 
 
 printf("#### RESPONSE HEADERS ####\n");
-printf("%s\n", [[[[NSString alloc] initWithData:[theResponse headerData] encoding:NSUTF8StringEncoding] autorelease] UTF8String]);
+printf("%s\n", [[[NSString alloc] initWithData:[theResponse headerData] encoding:NSUTF8StringEncoding] UTF8String]);
 printf("#### RESPONSE BODY ####\n");
 if ([theResponse bodyData])
-	printf("%s\n", [[[[NSString alloc] initWithData:[theResponse bodyData] encoding:NSUTF8StringEncoding] autorelease] UTF8String]);
+	printf("%s\n", [[[NSString alloc] initWithData:[theResponse bodyData] encoding:NSUTF8StringEncoding] UTF8String]);
 else
 	{
 	printf("%s\n", [[theResponse.body description] UTF8String]);

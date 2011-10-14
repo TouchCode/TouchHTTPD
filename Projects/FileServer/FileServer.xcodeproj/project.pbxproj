@@ -22,7 +22,6 @@
 		454269A0121FB5550078E320 /* CXMLNode.m in Sources */ = {isa = PBXBuildFile; fileRef = 4542698F121FB5550078E320 /* CXMLNode.m */; };
 		454269A1121FB5550078E320 /* CXMLNode_PrivateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426991121FB5550078E320 /* CXMLNode_PrivateExtensions.m */; };
 		454269A2121FB5550078E320 /* CXMLNode_XPathExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426993121FB5550078E320 /* CXMLNode_XPathExtensions.m */; };
-		45426A18121FB87A0078E320 /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 454269C4121FB87A0078E320 /* Base64Transcoder.c */; };
 		45426A25121FB87A0078E320 /* ISO8601DateFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269E2121FB87A0078E320 /* ISO8601DateFormatter.m */; };
 		45426A26121FB87A0078E320 /* NSDate_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269E4121FB87A0078E320 /* NSDate_Extensions.m */; };
 		45426A27121FB87A0078E320 /* NSDate_InternetDateExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 454269E6121FB87A0078E320 /* NSDate_InternetDateExtensions.m */; };
@@ -39,7 +38,8 @@
 		45426AE8121FBD8A0078E320 /* static in CopyFiles */ = {isa = PBXBuildFile; fileRef = 45426AE3121FBD870078E320 /* static */; };
 		45426B2712202E400078E320 /* NSFileManager_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426B2412202E400078E320 /* NSFileManager_AppleDoubleExtensions.m */; };
 		45426B2812202E400078E320 /* NSString_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45426B2612202E400078E320 /* NSString_AppleDoubleExtensions.m */; };
-		455BAB9612984D8800A8232A /* CTemporaryFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 455BAB9512984D8800A8232A /* CTemporaryFile.m */; };
+		4558D4A814488087003D553D /* Base64Transcoder.c in Sources */ = {isa = PBXBuildFile; fileRef = 4558D48E14488087003D553D /* Base64Transcoder.c */; };
+		4558D4AD14488087003D553D /* CTemporaryFile.m in Sources */ = {isa = PBXBuildFile; fileRef = 4558D49914488087003D553D /* CTemporaryFile.m */; };
 		45889E050F0AC97D0069239C /* CChunkWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 45889E040F0AC97D0069239C /* CChunkWriter.m */; };
 		459DF3250F0E58D60028AEEF /* GMAppleDouble.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF3130F0E58D60028AEEF /* GMAppleDouble.m */; };
 		459DF32A0F0E58D60028AEEF /* getgateway.c in Sources */ = {isa = PBXBuildFile; fileRef = 459DF31E0F0E58D60028AEEF /* getgateway.c */; };
@@ -65,7 +65,6 @@
 		45F167C30EEAFCCB00002383 /* CHTTPDefaultHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F1673C0EEAFC8400002383 /* CHTTPDefaultHandler.m */; };
 		45F167C40EEAFCCB00002383 /* CHTTPFileSystemHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F1673E0EEAFC8400002383 /* CHTTPFileSystemHandler.m */; };
 		45F167C50EEAFCCB00002383 /* CHTTPStaticResourcesHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F167400EEAFC8400002383 /* CHTTPStaticResourcesHandler.m */; };
-		45F167C60EEAFCCB00002383 /* CRoutingHTTPRequestHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F167420EEAFC8400002383 /* CRoutingHTTPRequestHandler.m */; };
 		45F167C70EEAFCCB00002383 /* CWebDAVHTTPHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F167450EEAFC8400002383 /* CWebDAVHTTPHandler.m */; };
 		45F167C80EEAFCCB00002383 /* CFileSystem_WebDAVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F167480EEAFC8400002383 /* CFileSystem_WebDAVExtensions.m */; };
 		45F167C90EEAFCCB00002383 /* CHTTPMessage_WebDAVExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F1674A0EEAFC8400002383 /* CHTTPMessage_WebDAVExtensions.m */; };
@@ -81,7 +80,6 @@
 		45F167D40EEAFCCB00002383 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 450E2D9D0DA9A04C00F1A2FD /* Security.framework */; };
 		45F16E340EEAFDE000002383 /* TouchHTTPDConstants.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F16E2C0EEAFDE000002383 /* TouchHTTPDConstants.m */; };
 		45F16E7A0EEB01FB00002383 /* CTransport.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F16E740EEB01FB00002383 /* CTransport.m */; };
-		45F16F5B0EEB0DD700002383 /* HSK_CFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 45F1666F0EEAF9E400002383 /* HSK_CFUtilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -137,8 +135,6 @@
 		45426992121FB5550078E320 /* CXMLNode_XPathExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CXMLNode_XPathExtensions.h; sourceTree = "<group>"; };
 		45426993121FB5550078E320 /* CXMLNode_XPathExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CXMLNode_XPathExtensions.m; sourceTree = "<group>"; };
 		45426997121FB5550078E320 /* TouchXML.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TouchXML.h; sourceTree = "<group>"; };
-		454269C4121FB87A0078E320 /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
-		454269C5121FB87A0078E320 /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
 		454269E1121FB87A0078E320 /* ISO8601DateFormatter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ISO8601DateFormatter.h; sourceTree = "<group>"; };
 		454269E2121FB87A0078E320 /* ISO8601DateFormatter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ISO8601DateFormatter.m; sourceTree = "<group>"; };
 		454269E3121FB87A0078E320 /* NSDate_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSDate_Extensions.h; sourceTree = "<group>"; };
@@ -180,8 +176,10 @@
 		454EF4FB0DA969B6005E651B /* CHTTPRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTTPRequestHandler.m; sourceTree = "<group>"; };
 		454EF4FC0DA969B6005E651B /* CHTTPServer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTTPServer.h; sourceTree = "<group>"; };
 		454EF4FD0DA969B6005E651B /* CHTTPServer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTTPServer.m; sourceTree = "<group>"; };
-		455BAB9412984D8800A8232A /* CTemporaryFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTemporaryFile.h; sourceTree = "<group>"; };
-		455BAB9512984D8800A8232A /* CTemporaryFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTemporaryFile.m; sourceTree = "<group>"; };
+		4558D48E14488087003D553D /* Base64Transcoder.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = Base64Transcoder.c; sourceTree = "<group>"; };
+		4558D48F14488087003D553D /* Base64Transcoder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Base64Transcoder.h; sourceTree = "<group>"; };
+		4558D49814488087003D553D /* CTemporaryFile.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTemporaryFile.h; sourceTree = "<group>"; };
+		4558D49914488087003D553D /* CTemporaryFile.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTemporaryFile.m; sourceTree = "<group>"; };
 		457C92760D86EDA100FCE32F /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = /System/Library/Frameworks/Carbon.framework; sourceTree = "<absolute>"; };
 		457C945F0D87096200FCE32F /* PubSub.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = PubSub.framework; path = /System/Library/Frameworks/PubSub.framework; sourceTree = "<absolute>"; };
 		458796B90D8789D1004D5E47 /* AppKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppKit.framework; path = /System/Library/Frameworks/AppKit.framework; sourceTree = "<absolute>"; };
@@ -215,8 +213,6 @@
 		45F166400EE9B2F700002383 /* CTCPConnection.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCPConnection.m; sourceTree = "<group>"; };
 		45F166410EE9B2F700002383 /* CTCPSocketListener.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CTCPSocketListener.h; sourceTree = "<group>"; };
 		45F166420EE9B2F700002383 /* CTCPSocketListener.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CTCPSocketListener.m; sourceTree = "<group>"; };
-		45F1666E0EEAF9E400002383 /* HSK_CFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSK_CFUtilities.h; sourceTree = "<group>"; };
-		45F1666F0EEAF9E400002383 /* HSK_CFUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSK_CFUtilities.m; sourceTree = "<group>"; };
 		45F167390EEAFC8400002383 /* CFileSystem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFileSystem.h; sourceTree = "<group>"; };
 		45F1673A0EEAFC8400002383 /* CFileSystem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CFileSystem.m; sourceTree = "<group>"; };
 		45F1673B0EEAFC8400002383 /* CHTTPDefaultHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTTPDefaultHandler.h; sourceTree = "<group>"; };
@@ -225,8 +221,6 @@
 		45F1673E0EEAFC8400002383 /* CHTTPFileSystemHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTTPFileSystemHandler.m; sourceTree = "<group>"; };
 		45F1673F0EEAFC8400002383 /* CHTTPStaticResourcesHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CHTTPStaticResourcesHandler.h; sourceTree = "<group>"; };
 		45F167400EEAFC8400002383 /* CHTTPStaticResourcesHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CHTTPStaticResourcesHandler.m; sourceTree = "<group>"; };
-		45F167410EEAFC8400002383 /* CRoutingHTTPRequestHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CRoutingHTTPRequestHandler.h; sourceTree = "<group>"; };
-		45F167420EEAFC8400002383 /* CRoutingHTTPRequestHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CRoutingHTTPRequestHandler.m; sourceTree = "<group>"; };
 		45F167440EEAFC8400002383 /* CWebDAVHTTPHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CWebDAVHTTPHandler.h; sourceTree = "<group>"; };
 		45F167450EEAFC8400002383 /* CWebDAVHTTPHandler.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CWebDAVHTTPHandler.m; sourceTree = "<group>"; };
 		45F167470EEAFC8400002383 /* CFileSystem_WebDAVExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CFileSystem_WebDAVExtensions.h; sourceTree = "<group>"; };
@@ -322,7 +316,6 @@
 				450CC4B70EFC1FB200202E91 /* CMultiInputStream.m */,
 				45BA71450EEB37E500B0C384 /* NSStream_Extensions.h */,
 				45BA71460EEB37E500B0C384 /* NSStream_Extensions.m */,
-				45F1666D0EEAF9E400002383 /* SKPInputStreamConnector */,
 				45889E030F0AC97D0069239C /* CChunkWriter.h */,
 				45889E040F0AC97D0069239C /* CChunkWriter.m */,
 				45426B2312202E400078E320 /* NSFileManager_AppleDoubleExtensions.h */,
@@ -374,10 +367,7 @@
 		454269C3121FB87A0078E320 /* Source */ = {
 			isa = PBXGroup;
 			children = (
-				454269C4121FB87A0078E320 /* Base64Transcoder.c */,
-				454269C5121FB87A0078E320 /* Base64Transcoder.h */,
-				455BAB9412984D8800A8232A /* CTemporaryFile.h */,
-				455BAB9512984D8800A8232A /* CTemporaryFile.m */,
+				4558D48D14488087003D553D /* Misc */,
 				454269DE121FB87A0078E320 /* Extensions */,
 			);
 			path = Source;
@@ -483,6 +473,17 @@
 			path = HTTP;
 			sourceTree = "<group>";
 		};
+		4558D48D14488087003D553D /* Misc */ = {
+			isa = PBXGroup;
+			children = (
+				4558D48E14488087003D553D /* Base64Transcoder.c */,
+				4558D48F14488087003D553D /* Base64Transcoder.h */,
+				4558D49814488087003D553D /* CTemporaryFile.h */,
+				4558D49914488087003D553D /* CTemporaryFile.m */,
+			);
+			path = Misc;
+			sourceTree = "<group>";
+		};
 		459DF3110F0E58D60028AEEF /* Externals */ = {
 			isa = PBXGroup;
 			children = (
@@ -536,15 +537,6 @@
 			path = Connections;
 			sourceTree = "<group>";
 		};
-		45F1666D0EEAF9E400002383 /* SKPInputStreamConnector */ = {
-			isa = PBXGroup;
-			children = (
-				45F1666E0EEAF9E400002383 /* HSK_CFUtilities.h */,
-				45F1666F0EEAF9E400002383 /* HSK_CFUtilities.m */,
-			);
-			path = SKPInputStreamConnector;
-			sourceTree = "<group>";
-		};
 		45F167380EEAFC8400002383 /* Handlers */ = {
 			isa = PBXGroup;
 			children = (
@@ -558,8 +550,6 @@
 				45F1673E0EEAFC8400002383 /* CHTTPFileSystemHandler.m */,
 				45F1673F0EEAFC8400002383 /* CHTTPStaticResourcesHandler.h */,
 				45F167400EEAFC8400002383 /* CHTTPStaticResourcesHandler.m */,
-				45F167410EEAFC8400002383 /* CRoutingHTTPRequestHandler.h */,
-				45F167420EEAFC8400002383 /* CRoutingHTTPRequestHandler.m */,
 				453F72040F0EB9D800929209 /* CHTTPLogHandler.h */,
 				453F72050F0EB9D800929209 /* CHTTPLogHandler.m */,
 				45F167430EEAFC8400002383 /* WebDAV */,
@@ -670,7 +660,6 @@
 				45F167C30EEAFCCB00002383 /* CHTTPDefaultHandler.m in Sources */,
 				45F167C40EEAFCCB00002383 /* CHTTPFileSystemHandler.m in Sources */,
 				45F167C50EEAFCCB00002383 /* CHTTPStaticResourcesHandler.m in Sources */,
-				45F167C60EEAFCCB00002383 /* CRoutingHTTPRequestHandler.m in Sources */,
 				45F167C70EEAFCCB00002383 /* CWebDAVHTTPHandler.m in Sources */,
 				45F167C80EEAFCCB00002383 /* CFileSystem_WebDAVExtensions.m in Sources */,
 				45F167C90EEAFCCB00002383 /* CHTTPMessage_WebDAVExtensions.m in Sources */,
@@ -678,7 +667,6 @@
 				45F167CB0EEAFCCB00002383 /* CWebDAVLockDatabase.m in Sources */,
 				45F16E340EEAFDE000002383 /* TouchHTTPDConstants.m in Sources */,
 				45F16E7A0EEB01FB00002383 /* CTransport.m in Sources */,
-				45F16F5B0EEB0DD700002383 /* HSK_CFUtilities.m in Sources */,
 				45E2B9A90EEB1230001CB460 /* CStreamConnector.m in Sources */,
 				45BA71470EEB37E500B0C384 /* NSStream_Extensions.m in Sources */,
 				45A8F9E30EED98F000F076A5 /* CTCPSocketListener_Extensions.m in Sources */,
@@ -702,7 +690,6 @@
 				454269A0121FB5550078E320 /* CXMLNode.m in Sources */,
 				454269A1121FB5550078E320 /* CXMLNode_PrivateExtensions.m in Sources */,
 				454269A2121FB5550078E320 /* CXMLNode_XPathExtensions.m in Sources */,
-				45426A18121FB87A0078E320 /* Base64Transcoder.c in Sources */,
 				45426A25121FB87A0078E320 /* ISO8601DateFormatter.m in Sources */,
 				45426A26121FB87A0078E320 /* NSDate_Extensions.m in Sources */,
 				45426A27121FB87A0078E320 /* NSDate_InternetDateExtensions.m in Sources */,
@@ -718,7 +705,8 @@
 				45426A36121FB87A0078E320 /* NSURLResponse_Extensions.m in Sources */,
 				45426B2712202E400078E320 /* NSFileManager_AppleDoubleExtensions.m in Sources */,
 				45426B2812202E400078E320 /* NSString_AppleDoubleExtensions.m in Sources */,
-				455BAB9612984D8800A8232A /* CTemporaryFile.m in Sources */,
+				4558D4A814488087003D553D /* Base64Transcoder.c in Sources */,
+				4558D4AD14488087003D553D /* CTemporaryFile.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -729,13 +717,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -743,11 +733,13 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = "";
 			};
 			name = Release;
 		};
@@ -755,13 +747,15 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_ARC = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
-				SDKROOT = macosx10.5;
+				SDKROOT = "";
 			};
 			name = Coverage;
 		};
@@ -769,6 +763,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = "$(inherited)";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -778,11 +773,13 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ../Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				HEADER_SEARCH_PATHS = /usr/include/libxml2;
 				INSTALL_PATH = /usr/local/bin;
 				OTHER_LDFLAGS = "-lxml2";
 				PRODUCT_NAME = HTTPFileServer;
+				SDKROOT = "";
 			};
 			name = Debug;
 		};
@@ -790,6 +787,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -800,9 +798,11 @@
 				GCC_MODEL_TUNING = G5;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				INSTALL_PATH = /usr/local/bin;
 				PRODUCT_NAME = HelloWorldServer;
+				SDKROOT = "";
 			};
 			name = Release;
 		};
@@ -810,6 +810,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(ARCHS_STANDARD_32_64_BIT)";
 				COPY_PHASE_STRIP = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -823,9 +824,11 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = Source/Prefix.pch;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_UNUSED_PARAMETER = YES;
 				INSTALL_PATH = /usr/local/bin;
 				PRODUCT_NAME = HelloWorldServer;
+				SDKROOT = "";
 			};
 			name = Coverage;
 		};

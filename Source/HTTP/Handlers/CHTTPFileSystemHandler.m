@@ -29,7 +29,9 @@
 
 #import "CHTTPFileSystemHandler.h"
 
+#if TARGET_OS_IPHONE == 1
 #import <MobileCoreServices/MobileCoreServices.h>
+#endif /* TARGET_OS_IPHONE == 1 */
 
 #import "CHTTPMessage.h"
 #import "CHTTPMessage_ConvenienceExtensions.h"
