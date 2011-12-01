@@ -30,7 +30,6 @@
 #import "CHTTPRequestHandler.h"
 
 @interface CHTTPDefaultHandler : NSObject <CHTTPRequestHandler> {
-	NSDictionary *defaultHeaders;
 }
 
 @property (readonly, nonatomic, retain) NSDictionary *defaultHeaders;

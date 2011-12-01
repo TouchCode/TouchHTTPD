@@ -58,10 +58,10 @@ static void RemoteWriteStreamClientCallBack(CFWriteStreamRef stream, CFStreamEve
 {
 if ((self = [self init]) != NULL)
 	{	
-	remoteReadStream = (CFReadStreamRef)inInputStream;
+	remoteReadStream = (__bridge CFReadStreamRef)inInputStream;
 	CFRetain(remoteReadStream);
 
-	remoteWriteStream = (CFWriteStreamRef)inOutputStream;
+	remoteWriteStream = (__bridge CFWriteStreamRef)inOutputStream;
 	CFRetain(remoteWriteStream);
 	}
 return(self);
@@ -70,15 +70,12 @@ return(self);
 - (void)dealloc
 {
 streamConnector.delegate = NULL;
-streamConnector = NULL;
 
 CFRelease(remoteReadStream);
 remoteReadStream = NULL;
 
 CFRelease(remoteWriteStream);
 remoteWriteStream = NULL;
-
-[super dealloc];
 }
 
 - (CTransport *)transport
@@ -100,7 +97,7 @@ if (self.isOpen == NO)
 
 	CFStreamClientContext theContext = {
 		.version = 0,
-		.info = self,
+		.info = (__bridge void *)self,
 		.retain = NULL,
 		.release = NULL,
 		};
@@ -154,9 +151,6 @@ return(theResult);
 {
 if (self.isOpen == YES)
 	{
-	// We need to retain ourselves in case the act of closing causes a dealloc.
-	[[self retain] autorelease];
-	
 	[self.delegate connectionWillClose:self];
 
 	CFReadStreamClose(self.remoteReadStream);
@@ -178,11 +172,11 @@ if (self.isOpen == YES)
 
 - (void)sendStream:(NSInputStream *)inInputStream
 {
-self.streamConnector = [CStreamConnector streamConnectorWithInputStream:inInputStream outputStream:(NSOutputStream *)self.remoteWriteStream];
+self.streamConnector = [CStreamConnector streamConnectorWithInputStream:inInputStream outputStream:(__bridge NSOutputStream *)self.remoteWriteStream];
 self.streamConnector.delegate = self;
 [self.streamConnector connect];
 
-((NSOutputStream *)self.remoteWriteStream).delegate = self.streamConnector;
+((__bridge NSOutputStream *)self.remoteWriteStream).delegate = self.streamConnector;
 
 inInputStream.delegate = self.streamConnector;
 [inInputStream scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
@@ -209,9 +203,9 @@ self.streamConnector = NULL;
 
 static void RemoteReadStreamClientCallBack(CFReadStreamRef stream, CFStreamEventType type, void *clientCallBackInfo)
 {
-NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
+@autoreleasepool {
 
-CTransport *theTransport = clientCallBackInfo;
+CTransport *theTransport = (__bridge CTransport *)clientCallBackInfo;
 
 if (type == kCFStreamEventEndEncountered)
 	{
@@ -241,7 +235,7 @@ else if (type == kCFStreamEventHasBytesAvailable)
 		[theTransport dataReceived:theData];
 	}
 	
-[thePool release];
+}
 }
 
 static void RemoteWriteStreamClientCallBack(CFWriteStreamRef stream, CFStreamEventType type, void *clientCallBackInfo)

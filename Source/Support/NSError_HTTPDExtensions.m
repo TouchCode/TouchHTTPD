@@ -57,7 +57,7 @@ if (inRequest && [inRequest debuggingDescription])
 
 va_list theArgs;
 va_start(theArgs, inFormat);
-NSString *theDescription = [[[NSString alloc] initWithFormat:inFormat arguments:theArgs] autorelease];
+NSString *theDescription = [[NSString alloc] initWithFormat:inFormat arguments:theArgs];
 va_end(theArgs);
 
 [theUserInfo setObject:theDescription forKey:NSLocalizedDescriptionKey];

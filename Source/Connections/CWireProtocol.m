@@ -41,17 +41,6 @@
 @synthesize lowerLink;
 @synthesize upperLink;
 
-- (void)dealloc
-{
-lowerLink = NULL;
-
-upperLink.lowerLink = NULL;
-[upperLink release];
-upperLink = NULL;
-//
-[super dealloc];
-}
-
 - (NSString *)description
     {
     return([NSString stringWithFormat:@"%@ (upper: %@)", [super description], self.upperLink]);
@@ -73,13 +62,12 @@ if (upperLink != inUpperLink)
 		{
 		upperLink.lowerLink = NULL;
 		//
-		[upperLink release];
 		upperLink = NULL;
 		}
 
 	if (inUpperLink != NULL)
 		{
-		upperLink = [inUpperLink retain];
+		upperLink = inUpperLink;
 		upperLink.lowerLink = self;
 		}
     }

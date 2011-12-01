@@ -43,11 +43,6 @@
 #define kHTTPStatusCode_Accepted	202
 
 @interface CHTTPMessage : NSObject <CChunkWriterDelegate> {
-	CFHTTPMessageRef message;
-	id body;
-	NSError *error;
-	BOOL chunked;
-	id bodyWriter;
 }
 
 @property (readwrite, nonatomic, assign) CFHTTPMessageRef message;

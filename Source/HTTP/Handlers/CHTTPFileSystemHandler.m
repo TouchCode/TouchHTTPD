@@ -29,9 +29,9 @@
 
 #import "CHTTPFileSystemHandler.h"
 
-#ifndef TARGET_OS_MAC
+#if TARGET_OS_IPHONE == 1
 #import <MobileCoreServices/MobileCoreServices.h>
-#endif
+#endif /* TARGET_OS_IPHONE == 1 */
 
 #import "CHTTPMessage.h"
 #import "CHTTPMessage_ConvenienceExtensions.h"
@@ -76,21 +76,10 @@ return(self);
 {
 if ((self = [self init]) != NULL)
 	{
-	rootPath = [inRootPath retain];
+	rootPath = inRootPath;
 	fileSystem = [[CDefaultFileSystem alloc] initWithRootDirectory:self.rootPath];
 	}
 return(self);
-}
-
-- (void)dealloc
-{
-[rootPath release];
-rootPath = NULL;
-
-[fileSystem release];
-fileSystem = NULL;
-//
-[super dealloc];
 }
 
 #pragma mark -
@@ -190,15 +179,15 @@ if ([self.fileSystem fileExistsAtPath:thePath isDirectory:&theIsDirectoryFlag] =
 				[theEntry subelement:@"kind"].stringValue = @"file";
                 }
                 
-            CFStringRef thePreferredIdentifier = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (CFStringRef)[theChildPath pathExtension], NULL);
+            CFStringRef thePreferredIdentifier = UTTypeCreatePreferredIdentifierForTag(kUTTagClassFilenameExtension, (__bridge CFStringRef)[theChildPath pathExtension], NULL);
             if (thePreferredIdentifier)
                 {
-                [theEntry subelement:@"identifier"].stringValue = (NSString *)thePreferredIdentifier;
+                [theEntry subelement:@"identifier"].stringValue = (__bridge NSString *)thePreferredIdentifier;
 
                 CFStringRef theMIMEType = UTTypeCopyPreferredTagWithClass(thePreferredIdentifier, kUTTagClassMIMEType);
                 if (theMIMEType)
                     {
-                    [theEntry subelement:@"MIMEType"].stringValue = (NSString *)theMIMEType;
+                    [theEntry subelement:@"MIMEType"].stringValue = (__bridge NSString *)theMIMEType;
                     CFRelease(theMIMEType);
                     }
 

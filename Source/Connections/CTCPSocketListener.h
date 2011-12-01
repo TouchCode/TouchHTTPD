@@ -44,19 +44,6 @@
 @protocol CTCPSocketListenerDelegate;
 
 @interface CTCPSocketListener : NSObject <CTransportDelegate> {
-	id <CTCPSocketListenerDelegate> delegate;
-    id <CTCPConnectionCreationDelegate> connectionCreationDelegate;
-    uint16_t port;
-    NSString *domain;
-    NSString *name;
-    NSString *type;
-    CFSocketRef IPV4Socket;
-    CFSocketRef IPV6Socket;
-    NSNetService *netService;
-	NSMutableArray *mutableConnections;
-	BOOL listening;
-	// flag, indicates is Bonjour broadcast is on
-	BOOL broadcasting;
 }
 
 @property (readwrite, nonatomic, assign) id <CTCPSocketListenerDelegate> delegate;

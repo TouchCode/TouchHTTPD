@@ -53,27 +53,10 @@
 {
 if ((self = [super init]) != NULL)
 	{
-	URLScheme = [@"http" retain];
+	URLScheme = @"http";
 	defaultRequestHandlers = [[NSMutableArray alloc] init];
 	}
 return(self);
-}
-
-- (void)dealloc
-{
-[URLScheme release];
-URLScheme = NULL;
-
-[socketListener release];
-socketListener = NULL;
-
-[defaultRequestHandlers release];
-defaultRequestHandlers = NULL;
-
-[SSLCertificates release];
-SSLCertificates = NULL;
-//
-[super dealloc];
 }
 
 #pragma mark -
@@ -82,7 +65,7 @@ SSLCertificates = NULL;
 {
 if (self.socketListener == NULL)
 	{
-	CTCPSocketListener *theSocketListener = [[[CTCPSocketListener alloc] init] autorelease];
+	CTCPSocketListener *theSocketListener = [[CTCPSocketListener alloc] init];
 	theSocketListener.broadcasting = YES;
 	theSocketListener.type = @"_http._tcp.";
 	theSocketListener.port = 8080;
@@ -97,7 +80,7 @@ if (self.socketListener == NULL)
 // XYZZY
 Class theConnectionClass = [CTCPConnection class];
 
-CTCPConnection *theTCPConnection = [[[theConnectionClass alloc] initWithAddress:inAddress inputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream] autorelease];
+CTCPConnection *theTCPConnection = [[theConnectionClass alloc] initWithAddress:inAddress inputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream];
 theTCPConnection.delegate = inSocketListener;
 
 CWireProtocol *theLowerLink = theTCPConnection;
@@ -114,7 +97,7 @@ if (self.useHTTPS)
 #endif
 	}
 
-CHTTPConnection *theHTTPConnection = [[[CHTTPConnection alloc] initWithServer:self] autorelease];
+CHTTPConnection *theHTTPConnection = [[CHTTPConnection alloc] initWithServer:self];
 theLowerLink.upperLink = theHTTPConnection;
 
 theHTTPConnection.requestHandlers = defaultRequestHandlers;

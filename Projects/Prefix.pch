@@ -25,10 +25,4 @@
         #endif
     #endif
 
-#if TARGET_OS_IPHONE == 0
-    @protocol NSStreamDelegate
-    @end
-#endif /* TARGET_OS_MAC */
-    
-
 #endif

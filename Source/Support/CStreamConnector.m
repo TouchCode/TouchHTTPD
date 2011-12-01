@@ -34,6 +34,7 @@
 @interface CStreamConnector ()
 @property (readwrite, nonatomic, retain) NSMutableData *buffer;
 @property (readwrite, nonatomic, assign) BOOL connected;
+@property (readwrite, nonatomic, assign) BOOL expectingMoreInputFlag;
 
 - (void)disconnect;
 - (void)read;
@@ -49,20 +50,22 @@
 @synthesize outputStream;
 @synthesize delegate;
 @synthesize maximumBufferLength;
+
 @synthesize buffer;
 @synthesize connected;
+@synthesize expectingMoreInputFlag;
 
 + (id)streamConnectorWithInputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream;
 {
-return([[[self alloc] initWithInputStream:inInputStream outputStream:inOutputStream] autorelease]);
+return([[self alloc] initWithInputStream:inInputStream outputStream:inOutputStream]);
 }
 
 - (id)initWithInputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream
 {
 if ((self = [self init]) != NULL)
 	{
-	inputStream = [inInputStream retain];
-	outputStream = [inOutputStream retain];
+	inputStream = inInputStream;
+	outputStream = inOutputStream;
 	maximumBufferLength = 16 * 1024; // 16K is proving to be a good size buffer. 
 	buffer = [[NSMutableData alloc] initWithCapacity:maximumBufferLength];
 	}
@@ -78,16 +81,9 @@ if (self.inputStream.delegate == self)
 if (self.outputStream.delegate == self)
 	self.outputStream.delegate = NULL;
 
-[inputStream release];
-inputStream = NULL;
 
-[outputStream release];
-outputStream = NULL;
 
-[buffer release];
-buffer = NULL;
 //
-[super dealloc];
 }
 
 #pragma mark -

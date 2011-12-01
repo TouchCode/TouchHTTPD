@@ -48,22 +48,11 @@
 if ((self = [self init]) != NULL)
 	{
 	fileManager = [[NSFileManager alloc] init];
-	rootDirectory = [inRootDirectory retain];
+	rootDirectory = inRootDirectory;
 	supportAppleDouble = NO;
 	showDotFiles = YES;
 	}
 return(self);
-}
-
-- (void)dealloc
-{
-[fileManager release];
-fileManager = NULL;
-
-[rootDirectory release];
-rootDirectory = NULL;
-//
-[super dealloc];
 }
 
 #pragma mark -

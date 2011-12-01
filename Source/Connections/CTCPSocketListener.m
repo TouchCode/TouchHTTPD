@@ -56,6 +56,8 @@ static void TCPSocketListenerAcceptCallBack(CFSocketRef socket, CFSocketCallBack
 
 @implementation CTCPSocketListener
 
+@synthesize domain;
+@synthesize name;
 @synthesize delegate;
 @synthesize connectionCreationDelegate;
 @synthesize port;
@@ -63,6 +65,9 @@ static void TCPSocketListenerAcceptCallBack(CFSocketRef socket, CFSocketCallBack
 @synthesize mutableConnections;
 @synthesize listening;
 @synthesize broadcasting;
+@synthesize IPV4Socket;
+@synthesize IPV6Socket;
+@synthesize netService;
 
 - (id)init
 {
@@ -77,9 +82,6 @@ return(self);
 {
 [self stop];
 //
-[netService release];
-netService = NULL;
-
 if (IPV4Socket)
     {
     CFSocketInvalidate(IPV4Socket);
@@ -92,17 +94,6 @@ if (IPV6Socket)
     CFRelease(IPV6Socket);
     IPV6Socket = NULL;
     }
-//
-[domain release];
-domain = NULL;
-
-[name release];
-name = NULL;
-
-[type release];
-type = NULL;
-//
-[super dealloc];
 }
 
 #pragma mark -
@@ -112,15 +103,6 @@ type = NULL;
 if (domain == NULL)
 	return(@"");
 return(domain);
-}
-
-- (void)setDomain:(NSString *)inDomain
-{
-if (domain != inDomain)
-	{
-	[domain autorelease];
-	domain = [inDomain retain];
-    }
 }
 
 - (NSString *)name
@@ -134,20 +116,6 @@ if (name == NULL)
 		}
 	}
 return(name);
-}
-
-- (void)setName:(NSString *)inName
-{
-if (name != inName)
-	{
-	[name autorelease];
-	name = [inName retain];
-    }
-}
-
-- (CFSocketRef)IPV4Socket
-{
-return(IPV4Socket);
 }
 
 - (void)setIPV4Socket:(CFSocketRef)inIPV4Socket
@@ -167,11 +135,6 @@ if (IPV4Socket != inIPV4Socket)
 		IPV4Socket = inIPV4Socket;
 		}
 	}
-}
-
-- (CFSocketRef)IPV6Socket
-{
-return(IPV6Socket);
 }
 
 - (void)setIPV6Socket:(CFSocketRef)inIPV6Socket
@@ -197,18 +160,9 @@ if (IPV6Socket != inIPV6Socket)
 {
 if (netService == NULL)
 	{
-	self.netService = [[[NSNetService alloc] initWithDomain:self.domain type:self.type name:self.name port:port] autorelease];
+	self.netService = [[NSNetService alloc] initWithDomain:self.domain type:self.type name:self.name port:port];
 	}
 return(netService);
-}
-
-- (void)setNetService:(NSNetService *)inNetService
-{
-if (netService != inNetService)
-	{
-	[netService autorelease];
-	netService = [inNetService retain];
-    }
 }
 
 - (NSArray *)connections
@@ -352,7 +306,7 @@ if (!theInputStream || !theOutputStream)
 CFReadStreamSetProperty(theInputStream, kCFStreamPropertyShouldCloseNativeSocket, kCFBooleanTrue);
 CFWriteStreamSetProperty(theOutputStream, kCFStreamPropertyShouldCloseNativeSocket, kCFBooleanTrue);
 
-CTCPConnection *theConnection = [self createTCPConnectionWithAddress:inAddress inputStream:(NSInputStream *)theInputStream outputStream:(NSOutputStream *)theOutputStream];
+CTCPConnection *theConnection = [self createTCPConnectionWithAddress:inAddress inputStream:(__bridge NSInputStream *)theInputStream outputStream:(__bridge NSOutputStream *)theOutputStream];
 theConnection.nativeHandle = inNativeHandle;
 
 if (theConnection == NULL)
@@ -387,7 +341,7 @@ if (IPV4Socket)
     IPV4Socket = NULL;
     }
 
-CFSocketContext socketCtxt = { 0, self, NULL, NULL, NULL };
+CFSocketContext socketCtxt = { 0, (__bridge void *)self, NULL, NULL, NULL };
 CFSocketRef theSocket = CFSocketCreate(kCFAllocatorDefault, PF_INET, SOCK_STREAM, IPPROTO_TCP, kCFSocketAcceptCallBack, (CFSocketCallBack)&TCPSocketListenerAcceptCallBack, &socketCtxt);
 if (theSocket == NULL)
 	{
@@ -403,7 +357,7 @@ setsockopt(CFSocketGetNative(theSocket), SOL_SOCKET, SO_REUSEADDR, (void *)&yes,
 struct sockaddr_in addr4 = { .sin_len = sizeof(addr4), .sin_family = AF_INET, .sin_port = htons(self.port), .sin_addr = htonl(INADDR_ANY) };
 NSData *theAddress4 = [NSData dataWithBytes:&addr4 length:sizeof(addr4)];
 
-CFSocketError theResult = CFSocketSetAddress(theSocket, (CFDataRef)theAddress4);
+CFSocketError theResult = CFSocketSetAddress(theSocket, (__bridge CFDataRef)theAddress4);
 if (theResult != kCFSocketSuccess)
 	{
 	CFRelease(theSocket);
@@ -417,7 +371,7 @@ if (self.port == 0)
 	{
 	// now that the binding was successful, we get the port number
 	// -- we will need it for the v6 endpoint and for the NSNetService
-	NSData *addr = [(NSData *)CFSocketCopyAddress(theSocket) autorelease];
+	NSData *addr = (__bridge_transfer NSData *)CFSocketCopyAddress(theSocket);
 	memcpy(&addr4, [addr bytes], [addr length]);
 	self.port = ntohs(addr4.sin_port);
 	}
@@ -440,7 +394,7 @@ if (IPV6Socket)
     IPV6Socket = NULL;
     }
 
-CFSocketContext socketCtxt = { 0, self, NULL, NULL, NULL };
+CFSocketContext socketCtxt = { 0, (__bridge void *)self, NULL, NULL, NULL };
 CFSocketRef theSocket = CFSocketCreate(kCFAllocatorDefault, PF_INET, SOCK_STREAM, IPPROTO_TCP, kCFSocketAcceptCallBack, (CFSocketCallBack)&TCPSocketListenerAcceptCallBack, &socketCtxt);
 if (theSocket == NULL)
 	{
@@ -457,7 +411,7 @@ struct sockaddr_in6 addr6 = { .sin6_len = sizeof(addr6), .sin6_family = AF_INET6
 
 NSData *address6 = [NSData dataWithBytes:&addr6 length:sizeof(addr6)];
 
-CFSocketError theResult = CFSocketSetAddress(theSocket, (CFDataRef)address6);
+CFSocketError theResult = CFSocketSetAddress(theSocket, (__bridge CFDataRef)address6);
 if (theResult != kCFSocketSuccess)
 	{
 	CFRelease(theSocket);
@@ -485,7 +439,7 @@ static void TCPSocketListenerAcceptCallBack(CFSocketRef inSocket, CFSocketCallBa
 {
 #pragma unused (inSocket, inAddress)
 
-CTCPSocketListener *theTCPSocketListener = (CTCPSocketListener *)ioInfo;
+CTCPSocketListener *theTCPSocketListener = (__bridge CTCPSocketListener *)ioInfo;
 if (inCallbackType == kCFSocketAcceptCallBack)
 	{
 	// for an AcceptCallBack, the data parameter is a pointer to a CFSocketNativeHandle
@@ -498,7 +452,7 @@ if (inCallbackType == kCFSocketAcceptCallBack)
 		thePeerAddress = [NSData dataWithBytes:theSocketName length:theSocketNameLength];
 		}
 
-	if ([theTCPSocketListener shouldHandleNewConnectionFromAddress:(NSData *)inAddress] == YES)
+	if ([theTCPSocketListener shouldHandleNewConnectionFromAddress:(__bridge NSData *)inAddress] == YES)
 		{
 		NSError *theError = NULL;
 		BOOL theResult = [theTCPSocketListener handleNewConnectionFromAddress:thePeerAddress nativeHandle:theNativeSocketHandle error:&theError];

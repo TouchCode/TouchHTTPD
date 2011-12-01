@@ -3,29 +3,31 @@
 //  TouchCode
 //
 //  Created by Jonathan Wight on 11/7/08.
-//  Copyright 2008 toxicsoftware.com. All rights reserved.
+//  Copyright 2011 toxicsoftware.com. All rights reserved.
 //
-//  Permission is hereby granted, free of charge, to any person
-//  obtaining a copy of this software and associated documentation
-//  files (the "Software"), to deal in the Software without
-//  restriction, including without limitation the rights to use,
-//  copy, modify, merge, publish, distribute, sublicense, and/or sell
-//  copies of the Software, and to permit persons to whom the
-//  Software is furnished to do so, subject to the following
-//  conditions:
+//  Redistribution and use in source and binary forms, with or without modification, are
+//  permitted provided that the following conditions are met:
 //
-//  The above copyright notice and this permission notice shall be
-//  included in all copies or substantial portions of the Software.
+//     1. Redistributions of source code must retain the above copyright notice, this list of
+//        conditions and the following disclaimer.
 //
-//  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
-//  EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES
-//  OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
-//  NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
-//  HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY,
-//  WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
-//  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
-//  OTHER DEALINGS IN THE SOFTWARE.
+//     2. Redistributions in binary form must reproduce the above copyright notice, this list
+//        of conditions and the following disclaimer in the documentation and/or other materials
+//        provided with the distribution.
 //
+//  THIS SOFTWARE IS PROVIDED BY TOXICSOFTWARE.COM ``AS IS'' AND ANY EXPRESS OR IMPLIED
+//  WARRANTIES, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND
+//  FITNESS FOR A PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL TOXICSOFTWARE.COM OR
+//  CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL, EXEMPLARY, OR
+//  CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO, PROCUREMENT OF SUBSTITUTE GOODS OR
+//  SERVICES; LOSS OF USE, DATA, OR PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON
+//  ANY THEORY OF LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+//  NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS SOFTWARE, EVEN IF
+//  ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+//
+//  The views and conclusions contained in the software and documentation are those of the
+//  authors and should not be interpreted as representing official policies, either expressed
+//  or implied, of toxicsoftware.com.
 
 #import "RootViewController.h"
 #import "WebDAVServerAppDelegate.h"
@@ -58,15 +60,6 @@
 @synthesize addressLabel = outletAddressLabel;
 @synthesize connectionsLabel = outletConnectionsLabel;
 
-- (void)dealloc
-{
-self.HTTPServer = NULL;
-self.WebDAVSwitch = NULL;
-self.addressLabel = NULL;
-self.connectionsLabel = NULL;
-//
-[super dealloc];
-}
 
 #pragma mark -
 
@@ -87,7 +80,7 @@ self.connectionsLabel = NULL;
 {
 if (self.HTTPServer == NULL)
 	{
-	CHTTPServer *theHTTPServer = [[[CHTTPServer alloc] init] autorelease];
+	CHTTPServer *theHTTPServer = [[CHTTPServer alloc] init];
 	[theHTTPServer createDefaultSocketListener];
 
 //	CHTTPBasicAuthHandler *theAuthHandler = [[[CHTTPBasicAuthHandler alloc] init] autorelease];
@@ -96,16 +89,16 @@ if (self.HTTPServer == NULL)
 
 	NSString *theRoot = [@"~/Documents" stringByExpandingTildeInPath];
 
-	CWebDavHTTPHandler *theRequestHandler = [[[CWebDavHTTPHandler alloc] initWithRootPath:theRoot] autorelease];
+	CWebDavHTTPHandler *theRequestHandler = [[CWebDavHTTPHandler alloc] initWithRootPath:theRoot];
 	[theHTTPServer.defaultRequestHandlers addObject:theRequestHandler];
 
-	CHTTPDefaultHandler *theDefaultHandler = [[[CHTTPDefaultHandler alloc] init] autorelease];
+	CHTTPDefaultHandler *theDefaultHandler = [[CHTTPDefaultHandler alloc] init];
 	[theHTTPServer.defaultRequestHandlers addObject:theDefaultHandler];
 
-	CHTTPStaticResourcesHandler *theStaticResourceHandler = [[[CHTTPStaticResourcesHandler alloc] init] autorelease];
+	CHTTPStaticResourcesHandler *theStaticResourceHandler = [[CHTTPStaticResourcesHandler alloc] init];
 	[theHTTPServer.defaultRequestHandlers addObject:theStaticResourceHandler];
 
-	CHTTPLoggingHandler *theLoggingHandler = [[[CHTTPLoggingHandler alloc] init] autorelease];
+	CHTTPLoggingHandler *theLoggingHandler = [[CHTTPLoggingHandler alloc] init];
 	[theHTTPServer.defaultRequestHandlers addObject:theLoggingHandler];
 
 	// by default your server will be published via Bonjour,
@@ -135,15 +128,11 @@ if (self.HTTPServer == NULL)
 {
 if (self.HTTPServer != NULL)
 	{
-	NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
-	
 	self.addressLabel.text = @"";
 
 	self.HTTPServer = NULL;
 	
 	self.WebDAVSwitch.on = NO;
-	
-	[thePool drain];
 	}
 }
 
@@ -184,7 +173,7 @@ else if (self.WebDAVSwitch.on == NO)
             
             if ( (ll->ifa_flags & (IFF_UP | IFF_RUNNING)) && !(ll->ifa_flags & IFF_LOOPBACK) )
             {
-                [addrs addObject:[[[NSString alloc] initWithBytes:dottedQuadBuf length:strlen(dottedQuadBuf) encoding:NSUTF8StringEncoding] autorelease]];
+                [addrs addObject:[[NSString alloc] initWithBytes:dottedQuadBuf length:strlen(dottedQuadBuf) encoding:NSUTF8StringEncoding]];
             }
         }
         
@@ -193,7 +182,7 @@ else if (self.WebDAVSwitch.on == NO)
     
     freeifaddrs(ll);
     
-    return [[addrs copy] autorelease];
+    return [addrs copy];
 }
 
 - (BOOL)HTTPAuthHandler:(CHTTPBasicAuthHandler *)inHandler shouldAuthenticateCredentials:(NSData *)inData

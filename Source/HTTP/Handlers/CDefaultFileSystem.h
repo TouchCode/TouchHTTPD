@@ -30,10 +30,6 @@
 #import "CFileSystem.h"
 
 @interface CDefaultFileSystem : NSObject <CFileSystem> {
-	NSFileManager *fileManager;
-	NSString *rootDirectory;
-	BOOL supportAppleDouble;
-	BOOL showDotFiles;
 }
 
 @property (readwrite, nonatomic, retain) NSFileManager *fileManager;

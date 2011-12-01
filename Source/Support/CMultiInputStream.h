@@ -30,12 +30,6 @@
 #import <Foundation/Foundation.h>
 
 @interface CMultiInputStream : NSInputStream <NSStreamDelegate> {
-	id delegate;
-	NSRunLoop *runLoop;
-	NSString *mode;
-	NSArray *streams;
-	NSInputStream *currentStream;
-	NSEnumerator *enumerator;
 }
 
 @property (readwrite, nonatomic, retain) id delegate;

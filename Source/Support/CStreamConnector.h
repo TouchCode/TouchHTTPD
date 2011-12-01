@@ -32,13 +32,6 @@
 @protocol CStreamConnectorDelegate;
 
 @interface CStreamConnector : NSObject <NSStreamDelegate> {
-	NSInputStream *inputStream;
-	NSOutputStream *outputStream;
-	id <CStreamConnectorDelegate> delegate;
-	NSInteger maximumBufferLength;
-	NSMutableData *buffer;
-	BOOL connected;
-	BOOL expectingMoreInputFlag;
 }
 
 @property (readwrite, nonatomic, retain) NSInputStream *inputStream;

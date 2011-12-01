@@ -70,17 +70,9 @@
 if ((self = [super init]) != NULL)
 	{
 	lockDatabase = [[CWebDAVLockDatabase alloc] init];
-	handlesPut = YES;
+	self.handlesPut = YES;
 	}
 return(self);
-}
-
-- (void)dealloc
-{
-[lockDatabase release];
-lockDatabase = NULL;
-//
-[super dealloc];
 }
 
 #pragma mark -
@@ -410,7 +402,7 @@ if (theDocument == NULL)
 	// JIWTODO optimize this somehow (i.e. dont create XML here)
 	NSString *theString = @"<?xml version=\"1.0\" encoding=\"utf-8\" ?><D:propfind xmlns:D=\"DAV:\"><D:allprop/></D:propfind>";
 	NSData *theData = [theString dataUsingEncoding:NSUTF8StringEncoding];
-	theDocument = [[[CXMLDocument alloc] initWithData:theData options:0 error:outError] autorelease];
+	theDocument = [[CXMLDocument alloc] initWithData:theData options:0 error:outError];
 	}
 
 //
@@ -431,7 +423,7 @@ if (theResponseElement == NULL)
 if (theDepth > 0 || theDepth == -1)
 	{
 	NSArray *thePaths = [self.fileSystem contentsOfDirectoryAtPath:theRootPath maximumDepth:theDepth error:&theError];
-	for (NSString *thePath in thePaths)
+	for (__strong NSString *thePath in thePaths)
 		{
 		thePath = [theRootPath stringByAppendingPathComponent:thePath];
 

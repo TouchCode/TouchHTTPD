@@ -32,8 +32,6 @@
 @class CTransport;
 
 @interface CWireProtocol : NSObject {
-	CWireProtocol *lowerLink; // Weak
-	CWireProtocol *upperLink;
 }
 
 @property (readwrite, nonatomic, assign) CWireProtocol *lowerLink;

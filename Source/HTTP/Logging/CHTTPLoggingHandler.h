@@ -30,8 +30,6 @@
 #import "CHTTPRequestHandler.h"
 
 @interface CHTTPLoggingHandler : NSObject <CHTTPRequestHandler> {
-	NSString *logFile;
-	NSFileHandle *fileHandle;
 }
 
 @property (readonly, nonatomic, retain) NSString *logFile;

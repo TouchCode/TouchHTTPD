@@ -38,9 +38,6 @@
 #endif
 
 @interface CSecureTransportConnection : CWireProtocol {
-	NSArray *certificates;
-	SSLContextRef context;
-	NSMutableData *inputBuffer;
 }
 
 @property (readwrite, nonatomic, retain) NSArray *certificates;

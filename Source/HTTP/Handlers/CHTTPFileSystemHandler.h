@@ -32,9 +32,6 @@
 @protocol CFileSystem;
 
 @interface CHTTPFileSystemHandler : NSObject <CHTTPRequestHandler> {
-	NSString *rootPath;
-	id <CFileSystem> fileSystem;
-	BOOL handlesPut;
 }
 
 @property (readonly, nonatomic, retain) NSString *rootPath;

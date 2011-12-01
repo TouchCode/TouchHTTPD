@@ -59,7 +59,7 @@
 
 + (CWebDAVLock *)WebDavLockWithHTTPRequest:(CHTTPMessage *)inRequest error:(NSError **)outError
 {
-CWebDAVLock *theLock = [[[self alloc] init] autorelease];
+CWebDAVLock *theLock = [[self alloc] init];
 
 // #### Get the resource
 theLock.resource = [inRequest requestURL];
@@ -148,23 +148,6 @@ if ((self = [super init]) != NULL)
 return(self);
 }
 
-- (void)dealloc
-{
-[resource release];
-resource = NULL;
-
-[token release];
-token = NULL;
-
-[timeout release];
-timeout = NULL;
-
-[owner release];
-owner = NULL;
-//	
-[super dealloc];
-}
-
 #pragma mark -
 
 - (NSString *)debuggingDescription
@@ -194,10 +177,10 @@ else if (self.depth == -1)
 else
 	return(NULL);
 
-CXMLDocument *theOwnerDocument = [[[CXMLDocument alloc] initWithXMLString:self.owner options:0 error:NULL] autorelease];
+CXMLDocument *theOwnerDocument = [[CXMLDocument alloc] initWithXMLString:self.owner options:0 error:NULL];
 CXMLElement *theOwnerElement = theOwnerDocument.rootElement;
 
-[[theLockElement subelement:@"owner"] addChild:[[theOwnerElement copy] autorelease]];
+[[theLockElement subelement:@"owner"] addChild:[theOwnerElement copy]];
 
 [theLockElement subelement:@"timeout"].stringValue = @"Second-600";
 

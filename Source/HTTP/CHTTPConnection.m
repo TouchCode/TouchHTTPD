@@ -60,24 +60,11 @@ if ((self = [self init]) != NULL)
 return(self);
 }
 
-- (void)dealloc
-{
-[requestHandlers release];
-requestHandlers = NULL;
-
-[currentRequest release];
-currentRequest = NULL;
-//
-[super dealloc];
-}
-
 #pragma mark -
 
 - (void)dataReceived:(NSData *)inData
 {
 // JIWTODO -- Try not to modify self until needed.
-
-NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
 
 @try
 	{	
@@ -90,7 +77,7 @@ NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
 
 	if ([self.currentRequest isMessageComplete])
 		{
-		CHTTPMessage *theRequest = [[self.currentRequest retain] autorelease];
+		CHTTPMessage *theRequest = self.currentRequest;
 		self.currentRequest = NULL;
 
 		CHTTPMessage *theResponse = [self responseForRequest:theRequest];
@@ -112,7 +99,6 @@ NSAutoreleasePool *thePool = [[NSAutoreleasePool alloc] init];
 	}
 @finally
 	{
-	[thePool release];
 	}
 }
 
@@ -125,7 +111,7 @@ NSError *theError = NULL;
 
 @try
 	{
-	for (CHTTPRequestHandler *theHandler in self.requestHandlers)
+	for (id <CHTTPRequestHandler> theHandler in self.requestHandlers)
 		{
 		[theHandler handleRequest:inRequest forConnection:self response:&theResponse error:&theError];
 		}
@@ -180,7 +166,7 @@ if (inResponse.body)
 		NSAssert(NO, @"Unknown body");
 	}
 
-CMultiInputStream *theMultistream = [[[CMultiInputStream alloc] initWithStreams:theStreams] autorelease];
+CMultiInputStream *theMultistream = [[CMultiInputStream alloc] initWithStreams:theStreams];
 [self sendStream:theMultistream];
 }
 

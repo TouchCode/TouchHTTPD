@@ -45,7 +45,6 @@
 		459DF7E90F0E9ADF0028AEEF /* NSError_HTTPDExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF7B80F0E9ADF0028AEEF /* NSError_HTTPDExtensions.m */; };
 		459DF7EA0F0E9ADF0028AEEF /* NSError_XMLOutputExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF7BA0F0E9ADF0028AEEF /* NSError_XMLOutputExtensions.m */; };
 		459DF7EC0F0E9ADF0028AEEF /* NSStream_Extensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF7BE0F0E9ADF0028AEEF /* NSStream_Extensions.m */; };
-		459DF7EF0F0E9ADF0028AEEF /* HSK_CFUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = 459DF7C50F0E9ADF0028AEEF /* HSK_CFUtilities.m */; };
 		45C141741270AD1B00C2CF4E /* NSFileManager_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C141711270AD1B00C2CF4E /* NSFileManager_AppleDoubleExtensions.m */; };
 		45C141751270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.m in Sources */ = {isa = PBXBuildFile; fileRef = 45C141731270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.m */; };
 		45C142731270BC9100C2CF4E /* entries.xsl in Resources */ = {isa = PBXBuildFile; fileRef = 45C142701270BC9100C2CF4E /* entries.xsl */; };
@@ -155,8 +154,6 @@
 		459DF7BA0F0E9ADF0028AEEF /* NSError_XMLOutputExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSError_XMLOutputExtensions.m; sourceTree = "<group>"; };
 		459DF7BD0F0E9ADF0028AEEF /* NSStream_Extensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSStream_Extensions.h; sourceTree = "<group>"; };
 		459DF7BE0F0E9ADF0028AEEF /* NSStream_Extensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSStream_Extensions.m; sourceTree = "<group>"; };
-		459DF7C40F0E9ADF0028AEEF /* HSK_CFUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HSK_CFUtilities.h; sourceTree = "<group>"; };
-		459DF7C50F0E9ADF0028AEEF /* HSK_CFUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HSK_CFUtilities.m; sourceTree = "<group>"; };
 		45C141701270AD1B00C2CF4E /* NSFileManager_AppleDoubleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSFileManager_AppleDoubleExtensions.h; sourceTree = "<group>"; };
 		45C141711270AD1B00C2CF4E /* NSFileManager_AppleDoubleExtensions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = NSFileManager_AppleDoubleExtensions.m; sourceTree = "<group>"; };
 		45C141721270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NSString_AppleDoubleExtensions.h; sourceTree = "<group>"; };
@@ -428,18 +425,8 @@
 				45C141711270AD1B00C2CF4E /* NSFileManager_AppleDoubleExtensions.m */,
 				45C141721270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.h */,
 				45C141731270AD1B00C2CF4E /* NSString_AppleDoubleExtensions.m */,
-				459DF7C30F0E9ADF0028AEEF /* SKPInputStreamConnector */,
 			);
 			path = Support;
-			sourceTree = "<group>";
-		};
-		459DF7C30F0E9ADF0028AEEF /* SKPInputStreamConnector */ = {
-			isa = PBXGroup;
-			children = (
-				459DF7C40F0E9ADF0028AEEF /* HSK_CFUtilities.h */,
-				459DF7C50F0E9ADF0028AEEF /* HSK_CFUtilities.m */,
-			);
-			path = SKPInputStreamConnector;
 			sourceTree = "<group>";
 		};
 		45C1426F1270BC9100C2CF4E /* static */ = {
@@ -680,7 +667,6 @@
 				459DF7E90F0E9ADF0028AEEF /* NSError_HTTPDExtensions.m in Sources */,
 				459DF7EA0F0E9ADF0028AEEF /* NSError_XMLOutputExtensions.m in Sources */,
 				459DF7EC0F0E9ADF0028AEEF /* NSStream_Extensions.m in Sources */,
-				459DF7EF0F0E9ADF0028AEEF /* HSK_CFUtilities.m in Sources */,
 				45CD44F8126CBAB800F38B80 /* GMAppleDouble.m in Sources */,
 				45CD44F9126CBAB800F38B80 /* CXMLDocument_CreationExtensions.m in Sources */,
 				45CD44FA126CBAB800F38B80 /* CXMLNode_CreationExtensions.m in Sources */,
@@ -721,6 +707,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ARC_MIGRATION = donothing;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -741,6 +728,7 @@
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				CLANG_ARC_MIGRATION = donothing;
+				CLANG_ENABLE_OBJC_ARC = YES;
 				COPY_PHASE_STRIP = YES;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = ../Prefix.pch;

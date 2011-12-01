@@ -48,15 +48,15 @@
 
 + (CHTTPMessage *)HTTPMessageRequest
 {
-CHTTPMessage *theHTTPMessage = [[[self alloc] init] autorelease];
+CHTTPMessage *theHTTPMessage = [[self alloc] init];
 theHTTPMessage.message = CFHTTPMessageCreateEmpty(kCFAllocatorDefault, YES);
 return(theHTTPMessage);
 }
 
 + (CHTTPMessage *)HTTPMessageResponseWithStatusCode:(NSInteger)inStatusCode statusDescription:(NSString *)inStatusDescription httpVersion:(NSString *)inHTTPVersion;
 {
-CHTTPMessage *theHTTPMessage = [[[self alloc] init] autorelease];
-theHTTPMessage.message = CFHTTPMessageCreateResponse(kCFAllocatorDefault, inStatusCode, (CFStringRef)inStatusDescription, (CFStringRef)inHTTPVersion);
+CHTTPMessage *theHTTPMessage = [[self alloc] init];
+theHTTPMessage.message = CFHTTPMessageCreateResponse(kCFAllocatorDefault, inStatusCode, (__bridge CFStringRef)inStatusDescription, (__bridge CFStringRef)inHTTPVersion);
 [theHTTPMessage setHeader:@"0" forKey:@"Content-Length"];
 return(theHTTPMessage);
 }
@@ -68,17 +68,6 @@ if (message)
 	CFRelease(message);
 	message = NULL;
 	}
-
-[body release];
-body = NULL;
-
-[error release];
-error = NULL;
-
-[bodyWriter release];
-bodyWriter = NULL;
-//
-[super dealloc];
 }
 
 #pragma mark -
@@ -92,7 +81,7 @@ bodyWriter = NULL;
 
 - (NSData *)headerData
 {
-NSData *theHeaderData = [(NSData *)CFHTTPMessageCopySerializedMessage(self.message) autorelease];
+NSData *theHeaderData = (__bridge_transfer NSData *)CFHTTPMessageCopySerializedMessage(self.message);
 return(theHeaderData);
 }
 
@@ -135,19 +124,19 @@ self.body = inBodyStream;
 
 - (NSString *)requestMethod
 {
-NSString *theMethod = [(NSString *)CFHTTPMessageCopyRequestMethod(self.message) autorelease];
+NSString *theMethod = (__bridge_transfer NSString *)CFHTTPMessageCopyRequestMethod(self.message);
 return(theMethod);
 }
 
 - (NSURL *)requestURL
 {
-NSURL *theURL = [(NSURL *)CFHTTPMessageCopyRequestURL(self.message) autorelease];
+NSURL *theURL = (__bridge_transfer NSURL *)CFHTTPMessageCopyRequestURL(self.message);
 return(theURL);
 }
 
 - (NSString *)HTTPVersion
 {
-NSString *theVersion = [(NSString *)CFHTTPMessageCopyVersion(self.message) autorelease];
+NSString *theVersion = (__bridge_transfer NSString *)CFHTTPMessageCopyVersion(self.message);
 return(theVersion);
 }
 
@@ -181,7 +170,7 @@ if (self.isHeaderComplete == NO)
 				}
 			}
 
-		NSData *theData = [(NSData *)CFHTTPMessageCopyBody(self.message) autorelease];
+		NSData *theData = (__bridge_transfer NSData *)CFHTTPMessageCopyBody(self.message);
 
 		// Clear the CFHTTPMessage's body - we keep track of the body ourself
 		CFHTTPMessageSetBody(self.message, NULL);
@@ -192,7 +181,7 @@ if (self.isHeaderComplete == NO)
 		self.bodyWriter = theTempFile.fileHandle;
 		if (self.chunked == YES)
 			{
-			CChunkWriter *theWriter = [[[CChunkWriter alloc] init] autorelease];
+			CChunkWriter *theWriter = [[CChunkWriter alloc] init];
 			theWriter.delegate = self;
 			theWriter.outputFile = self.bodyWriter;
 			self.bodyWriter = theWriter;
@@ -275,12 +264,12 @@ return(NO);
 
 - (NSString *)headerForKey:(NSString *)inKey
 {
-return([(NSString *)CFHTTPMessageCopyHeaderFieldValue(self.message, (CFStringRef)inKey) autorelease]);
+return((__bridge_transfer NSString *)CFHTTPMessageCopyHeaderFieldValue(self.message, (__bridge CFStringRef)inKey));
 }
 
 - (void)setHeader:(NSString *)inHeader forKey:(NSString *)inKey
 {
-CFHTTPMessageSetHeaderFieldValue(self.message, (CFStringRef)inKey, (CFStringRef)inHeader);
+CFHTTPMessageSetHeaderFieldValue(self.message, (__bridge CFStringRef)inKey, (__bridge CFStringRef)inHeader);
 }
 
 #pragma mark -
@@ -292,7 +281,7 @@ NSMutableData *theData = [NSMutableData data];
 CFDataRef theHeaderData = CFHTTPMessageCopySerializedMessage(self.message);
 if (theHeaderData)
 	{
-	[theData appendData:(NSData *)theHeaderData];
+	[theData appendData:(__bridge NSData *)theHeaderData];
 	CFRelease(theHeaderData);
 	}
 
@@ -305,7 +294,7 @@ return(theData);
 - (NSString *)debuggingDescription
 {
 NSData *theData = [self serializedMessage];
-NSString *theString = [[[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding] autorelease];
+NSString *theString = [[NSString alloc] initWithData:theData encoding:NSUTF8StringEncoding];
 return(theString);
 }
 
