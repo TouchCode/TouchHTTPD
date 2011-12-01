@@ -8,12 +8,11 @@ TouchHTTPD requires TouchFoundation and TouchXML (*).
 
 ## How to build
 
-You need to check out TouchFoundation and TouchXML into the same parent directory as TouchHTTPD:
+Don't forget to do a submodule update from the root directory.
 
-	<parent directory>
-		TouchFoundation
-		TouchHTTPD
-		TouchXML
+    git submodule update --init --recursive
+
+Xcode projects should compile after submodules are updated.
 
 ## TODO
 
