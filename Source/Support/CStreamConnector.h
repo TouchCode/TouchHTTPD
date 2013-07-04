@@ -34,9 +34,9 @@
 @interface CStreamConnector : NSObject <NSStreamDelegate> {
 }
 
-@property (readwrite, nonatomic, retain) NSInputStream *inputStream;
-@property (readwrite, nonatomic, retain) NSOutputStream *outputStream;
-@property (readwrite, nonatomic, assign) id <CStreamConnectorDelegate> delegate;
+@property (readwrite, nonatomic, strong) NSInputStream *inputStream;
+@property (readwrite, nonatomic, strong) NSOutputStream *outputStream;
+@property (readwrite, nonatomic, unsafe_unretained) id <CStreamConnectorDelegate> delegate;
 @property (readwrite, nonatomic, assign) NSInteger maximumBufferLength;
 @property (readonly, nonatomic, assign) BOOL connected;
 

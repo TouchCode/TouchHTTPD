@@ -34,7 +34,7 @@
 @interface CTCPConnection : CTransport {
 }
 
-@property (readonly, nonatomic, retain) NSData *address;
+@property (readonly, nonatomic, strong) NSData *address;
 @property (readwrite, nonatomic, assign) CFSocketNativeHandle nativeHandle;
 
 - (id)initWithAddress:(NSData *)inAddress inputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream;

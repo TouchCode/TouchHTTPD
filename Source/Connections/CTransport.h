@@ -38,7 +38,7 @@
 
 @property (readonly, nonatomic, assign) CFReadStreamRef remoteReadStream;
 @property (readonly, nonatomic, assign) CFWriteStreamRef remoteWriteStream;
-@property (readwrite, nonatomic, assign) id <CTransportDelegate> delegate; // Not retained.
+@property (readwrite, nonatomic, unsafe_unretained) id <CTransportDelegate> delegate; // Not retained.
 @property (readonly, nonatomic, assign) BOOL isOpen;
 
 - (id)initWithInputStream:(NSInputStream *)inInputStream outputStream:(NSOutputStream *)inOutputStream;

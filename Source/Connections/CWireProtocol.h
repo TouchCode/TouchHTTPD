@@ -34,9 +34,9 @@
 @interface CWireProtocol : NSObject {
 }
 
-@property (readwrite, nonatomic, assign) CWireProtocol *lowerLink;
-@property (readwrite, nonatomic, retain) CWireProtocol *upperLink;
-@property (readonly, nonatomic, assign) CTransport *transport;
+@property (readwrite, nonatomic, unsafe_unretained) CWireProtocol *lowerLink;
+@property (readwrite, nonatomic, strong) CWireProtocol *upperLink;
+@property (readonly, nonatomic, unsafe_unretained) CTransport *transport;
 
 - (void)close;
 

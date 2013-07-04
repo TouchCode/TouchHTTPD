@@ -46,7 +46,7 @@
 
 @interface CWebDavHTTPHandler ()
 
-@property (readwrite, nonatomic, retain) CWebDAVLockDatabase *lockDatabase;
+@property (readwrite, nonatomic, strong) CWebDAVLockDatabase *lockDatabase;
 
 - (CHTTPMessage *)responseForOptionsRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
 - (CHTTPMessage *)responseForDeleteRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
@@ -84,7 +84,7 @@ return(@"1,2");
 
 - (NSArray *)allowedMethods
 {
-return([NSArray arrayWithObjects:@"OPTIONS", @"GET", @"HEAD", @"PUT", @"POST", @"COPY", @"PROPFIND", @"DELETE", @"MKCOL", @"MOVE", @"PROPPATCH", @"LOCK", @"UNLOCK", NULL]);
+return(@[@"OPTIONS", @"GET", @"HEAD", @"PUT", @"POST", @"COPY", @"PROPFIND", @"DELETE", @"MKCOL", @"MOVE", @"PROPPATCH", @"LOCK", @"UNLOCK"]);
 }
 
 - (BOOL)handleRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection response:(CHTTPMessage **)ioResponse error:(NSError **)outError;

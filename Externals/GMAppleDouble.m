@@ -159,7 +159,7 @@ typedef struct {
   int dataStartOffset = 
     sizeof(DoubleHeader) + [entries_ count] * sizeof(DoubleEntryHeader);
   for (int i = 0; i < [entries_ count]; ++i) {
-    GMAppleDoubleEntry* entry = [entries_ objectAtIndex:i];
+    GMAppleDoubleEntry* entry = entries_[i];
 
     DoubleEntryHeader entryHeader;
     memset(&entryHeader, 0, sizeof(entryHeader));

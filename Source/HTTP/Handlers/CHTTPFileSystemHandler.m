@@ -48,7 +48,7 @@
 #import "NSDate_InternetDateExtensions.h"
 
 @interface CHTTPFileSystemHandler ()
-@property (readwrite, nonatomic, retain) NSString *rootPath;
+@property (readwrite, nonatomic, strong) NSString *rootPath;
 
 - (CHTTPMessage *)responseForGetRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;
 - (CHTTPMessage *)responseForHeadRequest:(CHTTPMessage *)inRequest forConnection:(CHTTPConnection *)inConnection error:(NSError **)outError;

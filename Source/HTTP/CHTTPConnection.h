@@ -36,8 +36,8 @@
 @interface CHTTPConnection : CWireProtocol {
 }
 
-@property (readonly, nonatomic, assign) CHTTPServer *server;
-@property (readwrite, nonatomic, retain) NSMutableArray *requestHandlers;
+@property (readonly, nonatomic, unsafe_unretained) CHTTPServer *server;
+@property (readwrite, nonatomic, strong) NSMutableArray *requestHandlers;
 
 - (id)initWithServer:(CHTTPServer *)inServer;
 

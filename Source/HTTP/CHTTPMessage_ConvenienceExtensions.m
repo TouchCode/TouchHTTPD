@@ -173,7 +173,7 @@ NSArray *theComponents = [self headerComponentsForKey:inKey];
 if ([theComponents count] < 1)
 	return(NULL);
 else
-	return([theComponents objectAtIndex:0]);
+	return(theComponents[0]);
 }
 
 - (void)setContentType:(NSString *)inContentType bodyData:(NSData *)inBodyData

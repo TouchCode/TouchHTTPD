@@ -87,9 +87,7 @@ CXMLElement *thePropElement = [thePropStatElement subelement:@"prop"];
 NSError *theError = NULL;
 BOOL theAllPropFlag = NO;
 
-NSDictionary *theNamespaceMappings = [NSDictionary dictionaryWithObjectsAndKeys:
-	@"DAV:", @"D",
-	NULL];
+NSDictionary *theNamespaceMappings = @{@"D": @"DAV:"};
 
 if ([[inDocument nodesForXPath:@"/D:propfind/D:allprop" namespaceMappings:theNamespaceMappings error:&theError] count] == 1)
 	theAllPropFlag = YES;
@@ -129,13 +127,13 @@ if (theFileAttributes == NULL)
 // #### getlastmodified
 if (theAllPropFlag == YES || [[inDocument nodesForXPath:@"/D:propfind/D:prop/D:getlastmodified" namespaceMappings:theNamespaceMappings error:&theError] count] == 1)
 	{
-	[thePropElement subelement:@"getlastmodified"].stringValue = [[theFileAttributes objectForKey:NSFileModificationDate] RFC822String];
+	[thePropElement subelement:@"getlastmodified"].stringValue = [theFileAttributes[NSFileModificationDate] RFC822String];
 	}
 
 // #### getcontentlength
 if ((theAllPropFlag == YES || [[inDocument nodesForXPath:@"/D:propfind/D:prop/D:getcontentlength" namespaceMappings:theNamespaceMappings error:&theError] count] == 1) && theIsDirectoryFlag == NO)
 	{
-	[thePropElement subelement:@"getcontentlength"].stringValue = [[theFileAttributes objectForKey:NSFileSize] stringValue];
+	[thePropElement subelement:@"getcontentlength"].stringValue = [theFileAttributes[NSFileSize] stringValue];
 	}
 
 // #### lockdiscovery

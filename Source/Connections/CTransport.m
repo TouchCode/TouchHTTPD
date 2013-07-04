@@ -39,7 +39,7 @@ static void RemoteWriteStreamClientCallBack(CFWriteStreamRef stream, CFStreamEve
 @property (readwrite, nonatomic, assign) CFReadStreamRef remoteReadStream;
 @property (readwrite, nonatomic, assign) CFWriteStreamRef remoteWriteStream;
 @property (readwrite, nonatomic, assign) BOOL isOpen;
-@property (readwrite, nonatomic, retain) CStreamConnector *streamConnector;
+@property (readwrite, nonatomic, strong) CStreamConnector *streamConnector;
 //- (void)inputStreamHandleEvent:(NSStreamEvent)inEventCode;
 //- (void)outputStreamHandleEvent:(NSStreamEvent)inEventCode;
 @end

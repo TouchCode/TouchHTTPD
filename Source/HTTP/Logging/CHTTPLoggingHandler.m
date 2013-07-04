@@ -33,8 +33,8 @@
 #import "CHTTPMessage_ConvenienceExtensions.h"
 
 @interface CHTTPLoggingHandler ()
-@property (readwrite, nonatomic, retain) NSString *logFile;
-@property (readwrite, nonatomic, retain) NSFileHandle *fileHandle;
+@property (readwrite, nonatomic, strong) NSString *logFile;
+@property (readwrite, nonatomic, strong) NSFileHandle *fileHandle;
 @end
 
 #pragma mark -

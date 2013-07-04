@@ -30,12 +30,12 @@
 #import "CMultiInputStream.h"
 
 @interface CMultiInputStream ()
-@property (readwrite, nonatomic, retain) NSRunLoop *runLoop;
-@property (readwrite, nonatomic, retain) NSString *mode;
-@property (readwrite, nonatomic, retain) NSArray *streams;
-@property (readwrite, nonatomic, retain) NSInputStream *currentStream;
-@property (readonly, nonatomic, retain) NSInputStream *nextStream;
-@property (readwrite, nonatomic, retain) NSEnumerator *enumerator;
+@property (readwrite, nonatomic, strong) NSRunLoop *runLoop;
+@property (readwrite, nonatomic, strong) NSString *mode;
+@property (readwrite, nonatomic, strong) NSArray *streams;
+@property (readwrite, nonatomic, strong) NSInputStream *currentStream;
+@property (readonly, nonatomic, strong) NSInputStream *nextStream;
+@property (readwrite, nonatomic, strong) NSEnumerator *enumerator;
 
 - (NSInputStream *)currentStream;
 @end

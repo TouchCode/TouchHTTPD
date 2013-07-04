@@ -44,10 +44,10 @@
 	IBOutlet UILabel *outletConnectionsLabel;
 }
 
-@property (readwrite, nonatomic, retain) CHTTPServer *HTTPServer;
-@property (readwrite, nonatomic, retain) UISwitch *WebDAVSwitch;
-@property (readwrite, nonatomic, retain) UILabel *addressLabel;
-@property (readwrite, nonatomic, retain) UILabel *connectionsLabel;
+@property (readwrite, nonatomic, strong) CHTTPServer *HTTPServer;
+@property (readwrite, nonatomic, strong) UISwitch *WebDAVSwitch;
+@property (readwrite, nonatomic, strong) UILabel *addressLabel;
+@property (readwrite, nonatomic, strong) UILabel *connectionsLabel;
 
 - (IBAction)actionWebDAVSwitch:(id)inSender;
 

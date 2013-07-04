@@ -32,8 +32,8 @@
 @interface CHTTPLoggingHandler : NSObject <CHTTPRequestHandler> {
 }
 
-@property (readonly, nonatomic, retain) NSString *logFile;
-@property (readonly, nonatomic, retain) NSFileHandle *fileHandle;
+@property (readonly, nonatomic, strong) NSString *logFile;
+@property (readonly, nonatomic, strong) NSFileHandle *fileHandle;
 
 - (id)initWithLogFile:(NSString *)inLogFile;
 

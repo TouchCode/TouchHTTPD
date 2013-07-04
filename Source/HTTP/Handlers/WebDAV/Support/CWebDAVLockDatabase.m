@@ -33,8 +33,8 @@
 
 @interface CWebDAVLockDatabase ()
 
-@property (readwrite, nonatomic, retain) NSMutableDictionary *locksByToken;
-@property (readwrite, nonatomic, retain) NSMutableDictionary *locksByResource;
+@property (readwrite, nonatomic, strong) NSMutableDictionary *locksByToken;
+@property (readwrite, nonatomic, strong) NSMutableDictionary *locksByResource;
 
 @end
 
@@ -59,18 +59,18 @@ return(self);
 
 - (CWebDAVLock *)lockByToken:(NSString *)inToken
 {
-return([self.locksByToken objectForKey:inToken]);
+return((self.locksByToken)[inToken]);
 }
 
 - (CWebDAVLock *)lockByResource:(NSURL *)inResource
 {
-return([self.locksByResource objectForKey:inResource]);
+return((self.locksByResource)[inResource]);
 }
 
 - (void)addLock:(CWebDAVLock *)inLock
 {
-[self.locksByToken setObject:inLock forKey:inLock.token];
-[self.locksByResource setObject:inLock forKey:inLock.resource];
+(self.locksByToken)[inLock.token] = inLock;
+(self.locksByResource)[inLock.resource] = inLock;
 }
 
 - (void)removeLock:(CWebDAVLock *)inLock

@@ -225,12 +225,10 @@ if (self.supportAppleDouble == YES && [thePath pathIsAppleDouble] == YES)
 		return(NULL);
     NSError *theError = NULL;
 	NSDictionary *theDataForkAttributes = [self.fileManager attributesOfItemAtPath:thePath error:&theError];
-	NSDictionary *theAttributes = [NSDictionary dictionaryWithObjectsAndKeys:
-		NSFileTypeRegular, NSFileType,
-		[NSNumber numberWithInteger:theAppleDoubleData.length], NSFileSize,
-		[theDataForkAttributes objectForKey:NSFileModificationDate], NSFileModificationDate,
-		[theDataForkAttributes objectForKey:NSFileCreationDate], NSFileCreationDate,
-		NULL];
+	NSDictionary *theAttributes = @{NSFileType: NSFileTypeRegular,
+		NSFileSize: [NSNumber numberWithInteger:theAppleDoubleData.length],
+		NSFileModificationDate: theDataForkAttributes[NSFileModificationDate],
+		NSFileCreationDate: theDataForkAttributes[NSFileCreationDate]};
 	return(theAttributes);
 	}
 else

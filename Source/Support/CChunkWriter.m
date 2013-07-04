@@ -32,7 +32,7 @@
 @interface CChunkWriter ()
 @property (readwrite, nonatomic, assign) BOOL moreChunksComing;
 @property (readwrite, nonatomic, assign) NSInteger remainingChunkLength;
-@property (readwrite, nonatomic, retain) NSMutableData *buffer;
+@property (readwrite, nonatomic, strong) NSMutableData *buffer;
 @end
 
 @implementation CChunkWriter

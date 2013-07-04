@@ -36,13 +36,13 @@
 #import "TouchHTTPDConstants.h"
 
 @interface CWebDAVLock ()
-@property (readwrite, nonatomic, retain) NSURL *resource;
-@property (readwrite, nonatomic, retain) NSString *token;
+@property (readwrite, nonatomic, strong) NSURL *resource;
+@property (readwrite, nonatomic, strong) NSString *token;
 @property (readwrite, nonatomic, assign) NSInteger depth;
-@property (readwrite, nonatomic, retain) NSDate *timeout;
+@property (readwrite, nonatomic, strong) NSDate *timeout;
 @property (readwrite, nonatomic, assign) EWebDavLockScope scope;
 @property (readwrite, nonatomic, assign) EWebDavLockType type;
-@property (readwrite, nonatomic, retain) NSString *owner;
+@property (readwrite, nonatomic, strong) NSString *owner;
 @end
 
 #pragma mark -
@@ -91,9 +91,7 @@ if (theDocument == NULL)
 	}
 
 // JIWTODO this needs to be made global!
-NSDictionary *theNamespaceMappings = [NSDictionary dictionaryWithObjectsAndKeys:
-	@"DAV:", @"D",
-	NULL];
+NSDictionary *theNamespaceMappings = @{@"D": @"DAV:"};
 
 NSError *theError = NULL;
 NSArray *theNodes = NULL;
@@ -127,7 +125,7 @@ if (theNodes.count != 1)
 		*outError = [NSError errorWithDomain:kHTTPErrorDomain code:kHTTPStatusCode_BadRequest underlyingError:NULL request:inRequest];
 	return(NULL);
 	}
-CXMLElement *theOwnerElement = [theNodes objectAtIndex:0];
+CXMLElement *theOwnerElement = theNodes[0];
 theLock.owner = [theOwnerElement XMLString];
 
 // #### Create a token for the new lock.

@@ -58,7 +58,7 @@ CXMLElement *theUserInfoElement = [CXMLNode elementWithName:@"userInfo"];
 
 for (NSString *theKey in [self.userInfo allKeys])
 	{
-	id theValue = [self.userInfo objectForKey:theKey];
+	id theValue = (self.userInfo)[theKey];
 	if (theValue != NULL)
 		{
 		if ([theValue respondsToSelector:@selector(stringValue)])
@@ -70,7 +70,7 @@ for (NSString *theKey in [self.userInfo allKeys])
 		}
 	}
 
-NSError *theUnderlyingError = [self.userInfo objectForKey:NSUnderlyingErrorKey];
+NSError *theUnderlyingError = (self.userInfo)[NSUnderlyingErrorKey];
 if (theUnderlyingError != NULL)
 	{
 	CXMLElement *theUnderlyingErrorElement = [CXMLNode elementWithName:NSUnderlyingErrorKey];

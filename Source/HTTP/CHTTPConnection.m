@@ -37,8 +37,8 @@
 #import "CMultiInputStream.h"
 
 @interface CHTTPConnection ()
-@property (readwrite, nonatomic, assign) CHTTPServer *server;
-@property (readwrite, nonatomic, retain) CHTTPMessage *currentRequest;
+@property (readwrite, nonatomic, unsafe_unretained) CHTTPServer *server;
+@property (readwrite, nonatomic, strong) CHTTPMessage *currentRequest;
 @end
 
 #pragma mark -
@@ -120,9 +120,7 @@ NSError *theError = NULL;
 	{
 	NSLog(@"EXCEPTION CAUGHT: %@", e);
 	
-	NSDictionary *theUserInfo = [NSDictionary dictionaryWithObjectsAndKeys:
-		e, @"NSUnderlyingException",
-		NULL];
+	NSDictionary *theUserInfo = @{@"NSUnderlyingException": e};
 	theError = [NSError errorWithDomain:kHTTPErrorDomain code:kHTTPStatusCode_InternalServerError userInfo:theUserInfo];
 	
 	theError = [NSError errorWithDomain:kHTTPErrorDomain code:kHTTPStatusCode_InternalServerError underlyingError:theError request:inRequest format:@"Exception caught."];

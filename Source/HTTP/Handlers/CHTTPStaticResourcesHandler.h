@@ -33,6 +33,6 @@
 @interface CHTTPStaticResourcesHandler : NSObject <CHTTPRequestHandler> {
 }
 
-@property (readwrite, nonatomic, retain) NSString *rootDirectory;
+@property (readwrite, nonatomic, strong) NSString *rootDirectory;
 
 @end

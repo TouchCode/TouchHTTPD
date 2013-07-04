@@ -63,16 +63,16 @@ NSNumber *theDepth = NULL;
 NSString *theDepthString = [self headerForKey:@"Depth"];
 if (theDepthString == NULL)
 	{
-	theDepth = [NSNumber numberWithInteger:-1];
+	theDepth = @-1;
 	}
 else
 	{
 	if ([theDepthString isEqualToString:@"0"])
-		theDepth = [NSNumber numberWithInteger:0];
+		theDepth = @0;
 	else if ([theDepthString isEqualToString:@"1"])
-		theDepth = [NSNumber numberWithInteger:1];
+		theDepth = @1;
 	else if ([theDepthString isEqualToString:@"infinity"])
-		theDepth = [NSNumber numberWithInteger:-1];
+		theDepth = @-1;
 	}
 
 return(theDepth);
@@ -82,15 +82,15 @@ return(theDepth);
 {
 NSString *theOverwriteString = [self headerForKey:@"Overwrite"];
 if (theOverwriteString == NULL)
-	return([NSNumber numberWithBool:YES]);
+	return(@YES);
 if ([theOverwriteString isEqualToString:@"T"])
-	return([NSNumber numberWithBool:YES]);
+	return(@YES);
 else if ([theOverwriteString isEqualToString:@"F"])
-	return([NSNumber numberWithBool:NO]);
+	return(@NO);
 else
 	{
 	LOG_(@"Weird overwrite header value: %@", theOverwriteString);
-	return([NSNumber numberWithBool:YES]);
+	return(@YES);
 	}
 }
 

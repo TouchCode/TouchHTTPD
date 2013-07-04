@@ -32,7 +32,7 @@
 @interface CHTTPDefaultHandler : NSObject <CHTTPRequestHandler> {
 }
 
-@property (readonly, nonatomic, retain) NSDictionary *defaultHeaders;
+@property (readonly, nonatomic, strong) NSDictionary *defaultHeaders;
 
 - (id)init;
 - (id)initWithDefaultHeaders:(NSDictionary *)inDefaultHeaders;

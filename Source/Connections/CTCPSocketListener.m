@@ -44,8 +44,8 @@ static void TCPSocketListenerAcceptCallBack(CFSocketRef socket, CFSocketCallBack
 
 @property (readwrite, nonatomic, assign) CFSocketRef IPV4Socket;
 @property (readwrite, nonatomic, assign) CFSocketRef IPV6Socket;
-@property (readwrite, nonatomic, retain) NSNetService *netService;
-@property (readwrite, nonatomic, retain) NSMutableArray *mutableConnections;
+@property (readwrite, nonatomic, strong) NSNetService *netService;
+@property (readwrite, nonatomic, strong) NSMutableArray *mutableConnections;
 @property (readwrite, nonatomic, assign) BOOL listening;
 
 - (BOOL)handleNewConnectionFromAddress:(NSData *)inAddress nativeHandle:(CFSocketNativeHandle)inNativeHandle error:(NSError **)outError;

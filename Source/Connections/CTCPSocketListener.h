@@ -46,16 +46,16 @@
 @interface CTCPSocketListener : NSObject <CTransportDelegate> {
 }
 
-@property (readwrite, nonatomic, assign) id <CTCPSocketListenerDelegate> delegate;
-@property (readwrite, nonatomic, assign) id <CTCPConnectionCreationDelegate> connectionCreationDelegate;
+@property (readwrite, nonatomic, unsafe_unretained) id <CTCPSocketListenerDelegate> delegate;
+@property (readwrite, nonatomic, unsafe_unretained) id <CTCPConnectionCreationDelegate> connectionCreationDelegate;
 @property (readwrite, nonatomic, assign) uint16_t port;
-@property (readwrite, nonatomic, retain) NSString *domain;
-@property (readwrite, nonatomic, retain) NSString *name;
-@property (readwrite, nonatomic, retain) NSString *type;
+@property (readwrite, nonatomic, strong) NSString *domain;
+@property (readwrite, nonatomic, strong) NSString *name;
+@property (readwrite, nonatomic, strong) NSString *type;
 @property (readonly, nonatomic, assign) CFSocketRef IPV4Socket;
 @property (readonly, nonatomic, assign) CFSocketRef IPV6Socket;
-@property (readonly, nonatomic, retain) NSNetService *netService;
-@property (readonly, nonatomic, retain) NSArray *connections;
+@property (readonly, nonatomic, strong) NSNetService *netService;
+@property (readonly, nonatomic, strong) NSArray *connections;
 @property (readonly, nonatomic, assign) BOOL listening;
 @property (readwrite, nonatomic, assign) BOOL broadcasting;
 

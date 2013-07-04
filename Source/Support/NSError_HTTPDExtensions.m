@@ -37,9 +37,9 @@
 {
 NSMutableDictionary *theUserInfo = [NSMutableDictionary dictionary];
 if (inUnderlyingError)
-	[theUserInfo setObject:inUnderlyingError forKey:NSUnderlyingErrorKey];
+	theUserInfo[NSUnderlyingErrorKey] = inUnderlyingError;
 if (inRequest && [inRequest debuggingDescription])
-	[theUserInfo setObject:[inRequest debuggingDescription] forKey:@"TouchHTTPRequestKey"];
+	theUserInfo[@"TouchHTTPRequestKey"] = [inRequest debuggingDescription];
 
 NSError *theError = [self errorWithDomain:domain code:code userInfo:theUserInfo];
 
@@ -51,16 +51,16 @@ return(theError);
 {
 NSMutableDictionary *theUserInfo = [NSMutableDictionary dictionary];
 if (inUnderlyingError)
-	[theUserInfo setObject:inUnderlyingError forKey:NSUnderlyingErrorKey];
+	theUserInfo[NSUnderlyingErrorKey] = inUnderlyingError;
 if (inRequest && [inRequest debuggingDescription])
-	[theUserInfo setObject:[inRequest debuggingDescription] forKey:@"TouchHTTPRequestKey"];
+	theUserInfo[@"TouchHTTPRequestKey"] = [inRequest debuggingDescription];
 
 va_list theArgs;
 va_start(theArgs, inFormat);
 NSString *theDescription = [[NSString alloc] initWithFormat:inFormat arguments:theArgs];
 va_end(theArgs);
 
-[theUserInfo setObject:theDescription forKey:NSLocalizedDescriptionKey];
+theUserInfo[NSLocalizedDescriptionKey] = theDescription;
 
 NSError *theError = [self errorWithDomain:domain code:code userInfo:theUserInfo];
 

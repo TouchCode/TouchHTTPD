@@ -32,7 +32,7 @@
 #import "NSStream_Extensions.h"
 
 @interface CStreamConnector ()
-@property (readwrite, nonatomic, retain) NSMutableData *buffer;
+@property (readwrite, nonatomic, strong) NSMutableData *buffer;
 @property (readwrite, nonatomic, assign) BOOL connected;
 @property (readwrite, nonatomic, assign) BOOL expectingMoreInputFlag;
 

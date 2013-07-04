@@ -32,8 +32,8 @@
 @interface CMultiInputStream : NSInputStream <NSStreamDelegate> {
 }
 
-@property (readwrite, nonatomic, retain) id delegate;
-@property (readonly, nonatomic, retain) NSArray *streams;
+@property (readwrite, nonatomic, strong) id delegate;
+@property (readonly, nonatomic, strong) NSArray *streams;
 
 - (id)initWithStreams:(NSArray *)inStreams;
 

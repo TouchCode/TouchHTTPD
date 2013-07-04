@@ -32,7 +32,7 @@
 #import <sys/socket.h>
 
 @interface CTCPConnection ()
-@property (readwrite, nonatomic, retain) NSData *address;
+@property (readwrite, nonatomic, strong) NSData *address;
 @end
 
 @implementation CTCPConnection

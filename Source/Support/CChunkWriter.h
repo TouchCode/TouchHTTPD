@@ -35,11 +35,11 @@
 @interface CChunkWriter : NSObject {
 }
 
-@property (readwrite, nonatomic, retain) NSFileHandle *outputFile;
+@property (readwrite, nonatomic, strong) NSFileHandle *outputFile;
 @property (readonly, nonatomic, assign) BOOL moreChunksComing;
 @property (readonly, nonatomic, assign) NSInteger remainingChunkLength;
-@property (readonly, nonatomic, retain) NSMutableData *buffer; // JIWTODO not currently used
-@property (readwrite, nonatomic, assign) id <CChunkWriterDelegate> delegate;
+@property (readonly, nonatomic, strong) NSMutableData *buffer; // JIWTODO not currently used
+@property (readwrite, nonatomic, unsafe_unretained) id <CChunkWriterDelegate> delegate;
 
 - (void)writeData:(NSData *)inData;
 

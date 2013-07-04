@@ -32,8 +32,8 @@
 @interface CDefaultFileSystem : NSObject <CFileSystem> {
 }
 
-@property (readwrite, nonatomic, retain) NSFileManager *fileManager;
-@property (readwrite, nonatomic, retain) NSString *rootDirectory;
+@property (readwrite, nonatomic, strong) NSFileManager *fileManager;
+@property (readwrite, nonatomic, strong) NSString *rootDirectory;
 @property (readwrite, nonatomic, assign) BOOL supportAppleDouble;
 @property (readwrite, nonatomic, assign) BOOL showDotFiles;
 

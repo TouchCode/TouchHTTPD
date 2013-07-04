@@ -34,7 +34,7 @@
 #import "NSDate_InternetDateExtensions.h"
 
 @interface CHTTPDefaultHandler ()
-@property (readwrite, nonatomic, retain) NSDictionary *defaultHeaders;
+@property (readwrite, nonatomic, strong) NSDictionary *defaultHeaders;
 @end
 
 #pragma mark -
@@ -49,9 +49,7 @@ if ((self = [super init]) != NULL)
 	{
 	if (defaultHeaders == NULL)
 		{
-		NSDictionary *theDefaultHeaders = [NSDictionary dictionaryWithObjectsAndKeys:
-			@"TouchHTTPD/0.0.1 (Unix) (Mac OS X)", @"Server",
-			NULL];
+		NSDictionary *theDefaultHeaders = @{@"Server": @"TouchHTTPD/0.0.1 (Unix) (Mac OS X)"};
 		defaultHeaders = theDefaultHeaders;
 		}
 	}
@@ -79,7 +77,7 @@ for (NSString *theHeader in self.defaultHeaders)
 	{
 	if ([theResponse headerForKey:theHeader] == NULL)
 		{
-		NSString *theValue = [self.defaultHeaders objectForKey:theHeader];
+		NSString *theValue = (self.defaultHeaders)[theHeader];
 		[theResponse setHeader:theValue forKey:theHeader];
 		}
 	}
